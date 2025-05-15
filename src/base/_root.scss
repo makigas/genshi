@@ -1,0 +1,32 @@
+// Style definitions that affect the entire document layout
+// and structure, such as positioning, margin, padding...
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:where(body) {
+  margin: 0;
+  padding: 0;
+  background: var(--genshi-background-color);
+  color: var(--genshi-foreground-color);
+}
+
+:where(p) {
+  margin-top: 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+:where(li) + :where(li),
+:where(li) :where(ul),
+:where(li) :where(ol) {
+  margin-top: 0.85rem;
+}
+
+:where(hr) {
+  height: 0;
+  border: 0;
+  border-top: 1px solid oklch(from var(--genshi-foreground-color) l c h / 50%);
+}

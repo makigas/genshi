@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PaletteStack from "../../components/PaletteStack.astro";
+---
+
+<Layout>
+  <h1>Colors</h1>
+  <p>This design system comes with a bunch of colors of different luminosity level and hue.</p>
+
+  <PaletteStack
+    palettes={["red", "orange", "yellow", "green", "cyan", "blue", "purple", "teal", "gray"]}
+  />
+
+  <p>There are also additional palettes for some brand colors.</p>
+
+  <PaletteStack palettes={["makigas", "ngl"]} />
+
+  <p>
+    To compose either of these colors, use a CSS variable with the following structure: <code>
+      --genshi-<var>palette</var>-<var>lum</var>
+    </code>. Some examples:
+  </p>
+
+  <ul>
+    <li><code>--genshi-red-400</code></li>
+    <li><code>--genshi-blue-900</code></li>
+    <li><code>--genshi-makigas-500</code></li>
+  </ul>
+</Layout>

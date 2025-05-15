@@ -1,0 +1,29 @@
+// Columns
+// =======
+// Use this component to render multiple HTML nodes using columns.
+
+@use "../theme/responsive";
+
+.GenshiCols {
+  gap: 1rem;
+
+  @include responsive.on-flow {
+    display: flex;
+
+    & > * {
+      flex: 1;
+    }
+  }
+
+  &--gapless {
+    gap: 0;
+  }
+
+  &--compact {
+    gap: 0.5rem;
+  }
+
+  &--cozy {
+    gap: 1.5rem;
+  }
+}

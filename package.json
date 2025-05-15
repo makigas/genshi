@@ -1,0 +1,49 @@
+{
+  "name": "@makigas/genshi",
+  "version": "1.0.0-alpha.0",
+  "description": "Genshi design system",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "sass src/genshi.scss dist/genshi.css",
+    "build:watch": "sass --watch src/genshi.scss dist/genshi.css",
+    "fmt": "prettier -w .",
+    "lint": "stylelint src",
+    "lint:fix": "stylelint src --fix",
+    "docs": "run-s docs:build build docs:copy",
+    "docs:dev": "astro dev",
+    "docs:build": "astro build",
+    "docs:copy": "copyfiles dist/* www",
+    "docs:preview": "astro preview",
+    "clean": "rimraf dist www .astro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makigas/genshi.git"
+  },
+  "keywords": [
+    "genshi",
+    "design",
+    "css",
+    "components"
+  ],
+  "author": {
+    "name": "Dani Rodríguez",
+    "email": "dani@danirod.es"
+  },
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/makigas/genshi/issues"
+  },
+  "homepage": "https://github.com/makigas/genshi#readme",
+  "devDependencies": {
+    "astro": "^5.7.13",
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "sass": "^1.88.0",
+    "stylelint": "^16.19.1",
+    "stylelint-config-property-sort-order-smacss": "^10.0.0",
+    "stylelint-config-standard-scss": "^15.0.0"
+  }
+}

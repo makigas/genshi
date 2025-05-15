@@ -1,0 +1,16 @@
+---
+const values = Array(9)
+  .fill(0)
+  .map((_, i) => (i + 1) * 100);
+---
+
+<style>
+  .node {
+    text-align: center;
+  }
+</style>
+
+<div class="GenshiCols GenshiCols--gapless">
+  <div></div>
+  {values.map((val) => <div class="node">{val}</div>)}
+</div>

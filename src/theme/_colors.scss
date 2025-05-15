@@ -1,0 +1,138 @@
+@use "sass:color";
+@use "sass:map";
+@use "sass:math";
+
+$-tone-increase: 15%;
+
+@function define-palette($color, $base) {
+  $color-map: (
+    "color-500": $base,
+  );
+
+  @for $i from 1 through 4 {
+    $darker: "color-#{$i * 100 + 500}";
+    $darker-color: color.mix(black, $base, $-tone-increase * $i - 5%, $method: oklch);
+    $lighter: "color-#{$i * 100}";
+    $lighter-color: color.mix($base, white, $-tone-increase * $i + 30%, $method: oklch);
+    $color-map: map.merge($color-map, (#{$lighter}: $lighter-color, #{$darker}: $darker-color));
+  }
+
+  @return $color-map;
+}
+
+@function define-color-map($map) {
+  $colors: ();
+
+  @each $name, $base in $map {
+    $palette: define-palette($name, $base);
+    $colors: map.merge(
+      $colors,
+      (
+        $name: $palette,
+      )
+    );
+  }
+
+  @return $colors;
+}
+
+@function -color-channel-luminance($rgb255-value) {
+  $norm: math.div($rgb255-value, 255);
+
+  @if $norm <= 0.0405 {
+    @return math.div($norm, 12.92);
+  } @else {
+    $div: math.div($norm + 0.055, 1.055);
+
+    @return math.pow($div, 2.4);
+  }
+}
+
+@function color-luminance($color) {
+  $r: -color-channel-luminance(color.channel($color, "red"));
+  $g: -color-channel-luminance(color.channel($color, "green"));
+  $b: -color-channel-luminance(color.channel($color, "blue"));
+
+  @return 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
+}
+
+@function color-contrast($color1, $color2) {
+  $lumi1: color-luminance($color1);
+  $lumi2: color-luminance($color2);
+
+  @if $lumi1 > $lumi2 {
+    @return math.div($lumi1 + 0.05, $lumi2 + 0.05);
+  } @else {
+    @return math.div($lumi2 + 0.05, $lumi1 + 0.05);
+  }
+}
+
+@function max-contrast($color) {
+  $contrast-black: color-contrast($color, black);
+  $contrast-white: color-contrast($color, white);
+
+  @if $contrast-black > $contrast-white {
+    @return black;
+  } @else {
+    @return white;
+  }
+}
+
+$black: rgb(32 32 32);
+$white: rgb(252 247 247);
+$makigas: #4d6699;
+$edu: #cc9629;
+$ngl: #59aa48;
+$red: #c96857;
+$orange: #c59763;
+$yellow: #c5c763;
+$green: #8bb65a;
+$cyan: #58afc9;
+$blue: #186d92;
+$purple: #654d91;
+$teal: #8a8d86;
+$gray: #a6aaaf;
+$makigas-contrast: max-contrast($makigas);
+$edu-contrast: max-contrast($edu);
+$ngl-contrast: max-contrast($ngl);
+$red-contrast: max-contrast($red);
+$orange-contrast: max-contrast($orange);
+$yellow-contrast: max-contrast($yellow);
+$green-contrast: max-contrast($green);
+$cyan-contrast: max-contrast($cyan);
+$blue-contrast: max-contrast($blue);
+$purple-contrast: max-contrast($purple);
+$teal-contrast: max-contrast($teal);
+$gray-contrast: max-contrast($gray);
+$palettes: define-color-map(
+  (
+    "makigas": $makigas,
+    "edu": $edu,
+    "ngl": $ngl,
+
+    "red": $red,
+    "orange": $orange,
+    "yellow": $yellow,
+    "green": $green,
+    "cyan": $cyan,
+    "blue": $blue,
+    "purple": $purple,
+    "gray": $gray,
+    "teal": $teal,
+  )
+);
+$contrast: (
+  "makigas": $makigas-contrast,
+  "edu": $edu-contrast,
+  "ngl": $ngl-contrast,
+
+  "red": $red-contrast,
+  "orange": $orange-contrast,
+  "yellow": $yellow-contrast,
+  "green": $green-contrast,
+  "cyan": $cyan-contrast,
+  "blue": $blue-contrast,
+  "purple": $purple-contrast,
+  "teal": $teal-contrast,
+  "gray": $gray-contrast,
+);

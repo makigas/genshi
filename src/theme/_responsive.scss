@@ -1,0 +1,71 @@
+@use "sass:map";
+@use "sass:color";
+
+$wrapper-width: 15px !default;
+$breakpoints: (
+  tablet: (
+    breakpoint: 768px,
+    viewport: auto,
+    margin: 15px,
+  ),
+  desktop: (
+    breakpoint: 1024px,
+    viewport: 992px,
+    margin: auto,
+  ),
+  wide: (
+    breakpoint: 1400px,
+    viewport: 1280px,
+    margin: auto,
+  ),
+  ultrawide: (
+    breakpoint: 1920px,
+    viewport: 1600px,
+    slim: 1280px,
+    margin: auto,
+  ),
+);
+
+@function breakpoint($name) {
+  @return map.get(map.get($breakpoints, $name), "breakpoint");
+}
+
+// This mixin will be used by multiple components that create a flex system, such
+// as the cols or the stack in horizontal mode, so that the flex system only
+// triggers at the appropiate breakpoints.
+// The @contents provided to these mixin will be triggered in the following cases:
+// - Always, if the element has the xsflow modifier.
+// - On tablet or higher, if the element has no modifier or the smflow modifier.
+// - On desktop or higher, if the element has the mdflow modifier.
+// - On wide or higher, if the element has the lgflow modifier.
+// - On ultrawide, if the element has the xlflow modifier.
+@mixin on-flow {
+  &--xsflow {
+    @content;
+  }
+
+  &--smflow,
+  &:not(&--xsflow, &--mdflow, &--lgflow, &--xlflow) {
+    @media screen and (min-width: breakpoint("tablet")) {
+      @content;
+    }
+  }
+
+  &--mdflow {
+    @media screen and (min-width: breakpoint("desktop")) {
+      @content;
+    }
+  }
+
+  &--lgflow {
+    @media screen and (min-width: breakpoint("wide")) {
+      @content;
+    }
+  }
+
+  &--xlflow {
+    @media screen and (min-width: breakpoint("ultrawide")) {
+      @content;
+    }
+  }
+}

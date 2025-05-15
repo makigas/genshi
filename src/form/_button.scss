@@ -1,0 +1,137 @@
+.GenshiButton {
+  --genshi-button-foreground: var(--genshi-button-accent);
+  --genshi-button-background: oklch(from var(--genshi-button-accent) l c h / 2%);
+  --genshi-button-hover-background: oklch(from var(--genshi-button-accent) l c h / 8%);
+  --genshi-button-active-background: oklch(from var(--genshi-button-accent) l c h / 24%);
+  --genshi-button-border-color: oklch(from var(--genshi-button-foreground) l c h / 50%);
+  --genshi-button-hover-border-color: oklch(from var(--genshi-button-foreground) l c h / 70%);
+  --genshi-button-focus-border-color: oklch(from var(--genshi-button-foreground) l c h / 90%);
+  --genshi-button-focus-outline-color: oklch(from var(--genshi-button-border-color) l c h / 33%);
+
+  display: inline-flex;
+  padding: 0.5em 1em;
+  transition:
+    outline-color 0.25s ease-in-out,
+    background-color 0.125s ease-in-out,
+    border-color 0.25s ease-in-out;
+  border: 1px solid var(--genshi-button-border-color);
+  border-radius: 5px;
+  outline: 0.2em solid transparent;
+  background-color: var(--genshi-button-background);
+  color: var(--genshi-button-foreground);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+  gap: 0.5rem;
+
+  &--xs {
+    font-size: 0.65rem;
+  }
+
+  &--sm {
+    font-size: 0.8rem;
+  }
+
+  &--md {
+    font-size: 1rem;
+  }
+
+  &--lg {
+    font-size: 1.2rem;
+  }
+
+  &--xl {
+    font-size: 1.35rem;
+  }
+
+  &__icon {
+    width: 1.2rem;
+    height: 1.2em;
+  }
+
+  &:hover {
+    border-color: var(--genshi-button-hover-border-color);
+    background-color: var(--genshi-button-hover-background);
+  }
+
+  &:active {
+    background-color: var(--genshi-button-active-background);
+  }
+
+  &:active,
+  &:focus {
+    border-color: var(--genshi-button-focus-border-color);
+  }
+
+  &:focus {
+    outline-color: var(--genshi-button-focus-outline-color);
+  }
+
+  &--suggested {
+    --genshi-button-accent: var(--genshi-button-suggested-accent);
+    --genshi-bold-button-accent: var(
+      --genshi-bold-button-suggested-accent,
+      var(--genshi-button-accent)
+    );
+  }
+
+  &--destructive {
+    --genshi-button-accent: var(--genshi-button-destructive-accent);
+    --genshi-bold-button-accent: var(
+      --genshi-bold-button-destructive-accent,
+      var(--genshi-button-accent)
+    );
+  }
+
+  &--bold {
+    --genshi-button-foreground: white;
+    --genshi-button-background: var(--genshi-bold-button-accent);
+    --genshi-button-hover-background: color-mix(
+      in oklch,
+      var(--genshi-bold-button-accent),
+      var(--genshi-button-foreground) 8%
+    );
+    --genshi-button-active-background: color-mix(
+      in oklch,
+      var(--genshi-bold-button-accent),
+      var(--genshi-button-background) 4%
+    );
+    --genshi-button-border-color: color-mix(
+      in oklch,
+      var(--genshi-foreground-color),
+      var(--genshi-button-background) 75%
+    );
+    --genshi-button-hover-border-color: color-mix(
+      in oklch,
+      var(--genshi-foreground-color),
+      var(--genshi-button-background) 50%
+    );
+    --genshi-button-focus-border-color: color-mix(
+      in oklch,
+      var(--genshi-foreground-color),
+      var(--genshi-button-background) 50%
+    );
+    --genshi-button-focus-outline-color: oklch(
+      from color-mix(in oklch, var(--genshi-bold-button-accent), var(--genshi-foreground-color) 60%)
+        l c h / 40%
+    );
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+a.GenshiButton {
+  display: inline-block;
+
+  &:hover {
+    color: var(--genshi-button-foreground);
+  }
+}

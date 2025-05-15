@@ -1,0 +1,40 @@
+@use "../theme/responsive";
+
+.GenshiStack {
+  flex-direction: row;
+  gap: 1rem;
+
+  --genshi-stack-type: flex;
+
+  &--inline {
+    --genshi-stack-type: inline-flex;
+  }
+
+  @include responsive.on-flow {
+    display: var(--genshi-stack-type);
+  }
+
+  &--gapless {
+    gap: 0;
+  }
+
+  &--compact {
+    gap: 0.5rem;
+  }
+
+  &--cozy {
+    gap: 1.5rem;
+  }
+
+  &--v {
+    flex-direction: column;
+  }
+
+  &--hr {
+    flex-direction: row-reverse;
+  }
+
+  &--vr {
+    flex-direction: column-reverse;
+  }
+}

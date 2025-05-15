@@ -1,0 +1,23 @@
+@mixin theme {
+  --genshi-background-color: var(--genshi-white);
+  --genshi-foreground-color: var(--genshi-black);
+  --genshi-accent-color: var(--genshi-blue-500);
+  --genshi-link-color: var(--genshi-blue-500);
+  --genshi-link-color-hover: oklch(from var(--genshi-link-color) l calc(c + 0.1) h);
+  --genshi-mark-color: var(--genshi-black);
+  --genshi-mark-bg-color: var(--genshi-yellow-100);
+  --genshi-ins-color: var(--genshi-green-800);
+  --genshi-ins-bg-color: var(--genshi-green-100);
+  --genshi-del-color: var(--genshi-red-900);
+  --genshi-del-bg-color: var(--genshi-red-100);
+  --genshi-kbd-color: var(--genshi-white);
+  --genshi-kbd-bg-color: var(--genshi-gray-900);
+  --genshi-pre-code-bg-color: var(--genshi-blue-100);
+  --genshi-button-accent: var(--genshi-teal-800);
+  --genshi-bold-button-accent: var(--genshi-teal-700);
+  --genshi-button-suggested-accent: var(--genshi-blue-600);
+  --genshi-button-destructive-accent: var(--genshi-red-700);
+  --genshi-form-valid-accent: var(--genshi-green-800);
+  --genshi-form-invalid-accent: var(--genshi-red-700);
+  --genshi-form-checkbox-accent: var(--genshi-blue-600);
+}

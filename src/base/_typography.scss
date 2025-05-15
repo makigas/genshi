@@ -1,0 +1,136 @@
+// Rules that affect how the font looks.
+// Notice the use of :where(). This is to force these rules
+// to always have a lower priority, so that they can be easily
+// overriden by other CSS rules.
+
+:where(:root) {
+  font-family: var(--genshi-font-family);
+  font-size: var(--genshi-font-size);
+  line-height: 1.4;
+}
+
+:where(h1),
+:where(h2),
+:where(h3),
+:where(h4),
+:where(h5),
+:where(h6) {
+  font-family: var(--genshi-title-family);
+}
+
+:where(h1) {
+  font-size: 1.8rem;
+}
+
+:where(h2) {
+  font-size: 1.6rem;
+}
+
+:where(h3) {
+  font-size: 1.4rem;
+}
+
+:where(h4) {
+  font-size: 1.2rem;
+}
+
+:where(h5) {
+  font-size: 1rem;
+}
+
+:where(h6) {
+  font-size: 0.8rem;
+}
+
+:where(a) {
+  color: var(--genshi-link-color);
+
+  &:hover {
+    color: var(--genshi-link-color-hover);
+  }
+}
+
+:where(b),
+:where(strong) {
+  font-weight: 700;
+}
+
+:where(em),
+:where(i),
+:where(cite) {
+  font-style: italic;
+}
+
+:where(mark),
+:where(ins),
+:where(del) {
+  padding: 0.08rem 0.24rem;
+}
+
+:where(mark) {
+  background: var(--genshi-mark-bg-color);
+  color: var(--genshi-mark-color);
+}
+
+:where(ins) {
+  background-color: var(--genshi-ins-bg-color);
+  color: var(--genshi-ins-color);
+}
+
+:where(del) {
+  background-color: var(--genshi-del-bg-color);
+  color: var(--genshi-del-color);
+}
+
+:where(kbd) {
+  padding: 0.12rem 0.36rem;
+  background-color: var(--genshi-kbd-bg-color);
+  color: var(--genshi-kbd-color);
+  font-weight: 600;
+}
+
+:where(kbd),
+:where(code),
+:where(pre) {
+  font-family: var(--genshi-mono-family);
+  font-size: 0.95rem;
+}
+
+:where(pre).code {
+  padding: 1.5rem;
+  overflow: hidden;
+  overflow-x: auto;
+  border-radius: 10px;
+  background: var(--genshi-pre-code-bg-color);
+}
+
+:where(small) {
+  font-size: 0.9rem;
+}
+
+:where(blockquote) {
+  margin: 2rem;
+  padding-left: 1rem;
+  border-left: 3px solid oklch(from var(--genshi-accent-color) l c h / 25%);
+}
+
+:where(ul),
+:where(ol) {
+  padding-left: 1.75rem;
+}
+
+:where(dt) {
+  font-weight: 700;
+}
+
+:where(dd) {
+  margin-left: 0;
+}
+
+:where(dt) + :where(dd) {
+  margin-top: 0.25rem;
+}
+
+:where(dd) + :where(dt) {
+  margin-top: 1rem;
+}

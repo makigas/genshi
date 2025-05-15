@@ -1,0 +1,51 @@
+---
+import LayoutFooter from "../components/LayoutFooter.astro";
+import LayoutNav from "../components/LayoutNav.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/genshi/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Genshi</title>
+    <link rel="stylesheet" href="http://localhost:8000/dist/genshi.css" />
+    <style>
+      @media screen and (min-width: 1024px) {
+        .app {
+          display: flex;
+          gap: 2rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        .app > header {
+          width: 200px;
+        }
+
+        .app > main {
+          flex: 1;
+          margin-bottom: 2rem;
+          min-width: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="GenshiWrapper GenshiWrapper--slim">
+      <div class="app">
+        <header>
+          <a href="/genshi/" role="banner">
+            <img src="/genshi/genshi.svg" alt="Genshi" />
+          </a>
+          <LayoutNav />
+        </header>
+        <main>
+          <slot />
+        </main>
+      </div>
+    </div>
+    <LayoutFooter />
+  </body>
+</html>

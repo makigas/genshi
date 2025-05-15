@@ -1,0 +1,15 @@
+---
+import PaletteRow from "./PaletteRow.astro";
+import PaletteRuler from "./PaletteRuler.astro";
+
+interface Props {
+  palettes: string[];
+}
+
+const { palettes } = Astro.props;
+---
+
+<div class="GenshiStack GenshiStack--gapless GenshiStack--v">
+  <PaletteRuler />
+  {palettes.map((pal) => <PaletteRow key={pal} name={pal} />)}
+</div>

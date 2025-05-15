@@ -1,0 +1,34 @@
+@use "sass:map";
+@use "../theme/responsive";
+
+.GenshiWrapper {
+  margin-right: responsive.$wrapper-width;
+  margin-left: responsive.$wrapper-width;
+
+  @each $breakpoint, $config in responsive.$breakpoints {
+    @media screen and (min-width: map.get($config, "breakpoint")) {
+      width: map.get($config, "viewport");
+      margin-right: map.get($config, "margin");
+      margin-left: map.get($config, "margin");
+    }
+
+    @if map.has-key($config, "slim") {
+      &--slim {
+        @media screen and (min-width: map.get($config, "breakpoint")) {
+          width: map.get($config, "slim");
+        }
+      }
+    }
+  }
+
+  &--breath {
+    margin-top: responsive.$wrapper-width;
+    margin-bottom: responsive.$wrapper-width;
+  }
+
+  &--fluid {
+    width: initial;
+    margin-right: responsive.$wrapper-width;
+    margin-left: responsive.$wrapper-width;
+  }
+}

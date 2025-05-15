@@ -1,0 +1,39 @@
+---
+interface Props {
+  key: string;
+  name: string;
+}
+
+const { key, name } = Astro.props;
+
+const values = Array(9)
+  .fill(0)
+  .map((_, i) => (i + 1) * 100);
+---
+
+<style>
+  .name {
+    align-content: center;
+    text-align: center;
+  }
+  .block {
+    height: 3rem;
+  }
+</style>
+
+<div class="GenshiCols GenshiCols--gapless">
+  <div
+    class="name"
+    style={{
+      color: `var(--genshi-${key}-contrast)`,
+      backgroundColor: `var(--genshi-${key}-500)`,
+    }}
+  >
+    {name}
+  </div>
+  {
+    values.map((val) => (
+      <div class="block" style={{ backgroundColor: `var(--genshi-${key}-${val})` }} />
+    ))
+  }
+</div>
