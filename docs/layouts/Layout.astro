@@ -14,8 +14,9 @@ import LayoutNav from "../components/LayoutNav.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Genshi</title>
     <style>
-      .logo {
-        max-width: 200px;
+      .logo img {
+        max-width: 240px;
+        margin-top: 0.5rem;
       }
 
       @media screen and (min-width: 1024px) {
@@ -27,7 +28,7 @@ import LayoutNav from "../components/LayoutNav.astro";
         }
 
         .app > header {
-          width: 200px;
+          width: 240px;
         }
 
         .app > main {
@@ -42,8 +43,12 @@ import LayoutNav from "../components/LayoutNav.astro";
     <div class="GenshiWrapper GenshiWrapper--slim">
       <div class="app">
         <header>
-          <a href="/genshi/" role="banner">
-            <img src="/genshi/genshi.png" alt="Genshi" class="logo" />
+          <a href="/genshi/">
+            <picture class="logo">
+              <source media="(prefers-color-scheme: dark)" srcset="/genshi/genshi@dark.png" />
+              <source media="(prefers-color-scheme: light)" srcset="/genshi/genshi.png" />
+              <img alt="Genshi" src="/genshi/genshi.png" />
+            </picture>
           </a>
           <LayoutNav />
         </header>
