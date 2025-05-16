@@ -1,0 +1,46 @@
+---
+import RootLayout from "./RootLayout.astro";
+
+import type { MarkdownLayoutProps } from "astro";
+
+interface Props {
+  frontmatter?: {
+    title?: string;
+  };
+  title: string;
+}
+
+const { frontmatter, title } = Astro.props;
+const pageTitle = title || frontmatter?.title;
+---
+
+<style>
+  .pageHeader {
+    margin-top: 1rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .pageHeader {
+      margin-top: 0;
+      height: 6rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .pageHeader h1 {
+    margin: 0;
+  }
+</style>
+
+<RootLayout title={pageTitle}>
+  {
+    pageTitle && (
+      <header class="pageHeader">
+        <h1>{pageTitle}</h1>
+      </header>
+    )
+  }
+  <slot />
+</RootLayout>

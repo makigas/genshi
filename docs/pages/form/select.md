@@ -1,8 +1,8 @@
 ---
-layout: ../../layouts/Layout.astro
----
+layout: ../../layouts/DocLayout.astro
 
-# Select
+title: Select
+---
 
 The select component allows an user to choice from a dropdown list.
 

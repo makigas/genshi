@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/Layout.astro
+layout: ../layouts/RootLayout.astro
 ---
 
 **Genshi** is the design system in use in makigas.es. Genshi is the japanese word for **atom**,

@@ -9,7 +9,17 @@ interface Props {
 const { palettes } = Astro.props;
 ---
 
-<div class="GenshiStack GenshiStack--gapless GenshiStack--v">
+<style>
+  @media screen and (max-width: 767px) {
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 1rem;
+    }
+  }
+</style>
+
+<div class="GenshiStack GenshiStack--gapless GenshiStack--v stack">
   <PaletteRuler />
   {palettes.map((pal) => <PaletteRow key={pal} name={pal} />)}
 </div>

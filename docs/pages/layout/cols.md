@@ -1,8 +1,8 @@
 ---
-layout: ../../layouts/Layout.astro
----
+layout: ../../layouts/DocLayout.astro
 
-# Cols
+title: Cols
+---
 
 Cols create equally sized columns to render HTML. This component is equivalent to an horizontal flex
 where every item has the same size.

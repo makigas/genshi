@@ -1,8 +1,8 @@
 ---
-layout: ../../layouts/Layout.astro
----
+layout: ../../layouts/DocLayout.astro
 
-# Stack
+title: Stack
+---
 
 Stacks allow to group horizontally or vertically a set of nodes. Note that the elements will keep
 their size. In other words, this is not a flexbox, but a grid.

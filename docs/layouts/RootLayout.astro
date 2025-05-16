@@ -4,6 +4,21 @@ import "@fontsource/montserrat/700.css";
 import "../../src/genshi.scss";
 import LayoutFooter from "../components/LayoutFooter.astro";
 import LayoutNav from "../components/LayoutNav.astro";
+import LayoutHeader from "../components/LayoutHeader.astro";
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+
+function documentTitle() {
+  if (title) {
+    return `Genshi — ${title}`;
+  } else {
+    return "Genshi";
+  }
+}
 ---
 
 <html lang="en">
@@ -12,28 +27,31 @@ import LayoutNav from "../components/LayoutNav.astro";
     <link rel="icon" type="image/svg+xml" href="/genshi/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Genshi</title>
+    <title>{documentTitle()}</title>
     <style>
-      .logo img {
-        max-width: 240px;
-        margin-top: 0.5rem;
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .app {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
       }
 
       @media screen and (min-width: 1024px) {
         .app {
           display: flex;
-          gap: 2rem;
-          margin-top: 1rem;
-          margin-bottom: 1rem;
+          gap: 4rem;
         }
 
-        .app > header {
-          width: 240px;
+        .app-left {
+          width: 15rem;
         }
 
-        .app > main {
+        .app main {
           flex: 1;
-          margin-bottom: 2rem;
           min-width: 0;
         }
       }
@@ -42,16 +60,10 @@ import LayoutNav from "../components/LayoutNav.astro";
   <body>
     <div class="GenshiWrapper GenshiWrapper--slim">
       <div class="app">
-        <header>
-          <a href="/genshi/">
-            <picture class="logo">
-              <source media="(prefers-color-scheme: dark)" srcset="/genshi/genshi@dark.png" />
-              <source media="(prefers-color-scheme: light)" srcset="/genshi/genshi.png" />
-              <img alt="Genshi" src="/genshi/genshi.png" />
-            </picture>
-          </a>
+        <div class="app-left">
+          <LayoutHeader />
           <LayoutNav />
-        </header>
+        </div>
         <main>
           <slot />
         </main>

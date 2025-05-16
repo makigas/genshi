@@ -1,8 +1,8 @@
 ---
-layout: ../../layouts/Layout.astro
----
+layout: ../../layouts/DocLayout.astro
 
-# Typography
+title: Typography
+---
 
 This is the typography test card, showing all the things you can do with typography. You are
 currently reading a paragraph. Genshi uses `rem` as the size and spacing unit, so things will flow

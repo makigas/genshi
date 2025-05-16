@@ -1,8 +1,8 @@
 ---
-layout: ../../layouts/Layout.astro
----
+layout: ../../layouts/DocLayout.astro
 
-# Text Field
+title: Text Field
+---
 
 The canonical text field uses `GenshiInput` as its base class block.
 

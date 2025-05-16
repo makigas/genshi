@@ -12,28 +12,45 @@ const values = Array(9)
 ---
 
 <style>
+  .pal {
+    font-size: 0.85rem;
+  }
   .name {
     align-content: center;
     text-align: center;
   }
   .block {
     height: 3rem;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    .block span {
+      display: none;
+    }
   }
 </style>
 
-<div class="GenshiCols GenshiCols--gapless">
+<div class="GenshiCols GenshiCols--gapless pal">
   <div
     class="name"
     style={{
       color: `var(--genshi-${key}-contrast)`,
       backgroundColor: `var(--genshi-${key}-500)`,
-    }}
-  >
+    }}>
     {name}
   </div>
   {
     values.map((val) => (
-      <div class="block" style={{ backgroundColor: `var(--genshi-${key}-${val})` }} />
+      <div
+        class="block"
+        style={{
+          backgroundColor: `var(--genshi-${key}-${val})`,
+        }}>
+        <span style={{ color: `var(--genshi-${key}-contrast)` }}>{val}</span>
+      </div>
     ))
   }
 </div>

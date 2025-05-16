@@ -11,10 +11,7 @@ export default defineConfig({
   publicDir: "docs/public",
   markdown: {
     shikiConfig: {
-      themes: {
-        light: "one-light",
-        dark: "one-dark-pro",
-      },
+      theme: "catppuccin-frappe",
       transformers: [
         {
           pre(node) {

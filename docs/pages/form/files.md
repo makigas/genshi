@@ -1,8 +1,8 @@
 ---
-layout: ../../layouts/Layout.astro
----
+layout: ../../layouts/DocLayout.astro
 
-# Files
+title: Files
+---
 
 File controls can be used to select files and attach them to forms.
 

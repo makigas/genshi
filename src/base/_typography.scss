@@ -74,7 +74,7 @@
 }
 
 :where(mark) {
-  background: var(--genshi-mark-bg-color);
+  background-color: var(--genshi-mark-bg-color);
   color: var(--genshi-mark-color);
 }
 
@@ -107,7 +107,7 @@
   overflow: hidden;
   overflow-x: auto;
   border-radius: 10px;
-  background: var(--genshi-pre-code-bg-color);
+  background-color: var(--genshi-pre-code-bg-color);
 }
 
 :where(small) {

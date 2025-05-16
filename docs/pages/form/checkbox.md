@@ -1,8 +1,8 @@
 ---
-layout: ../../layouts/Layout.astro
----
+layout: ../../layouts/DocLayout.astro
 
-# Checkbox
+title: Checkbox
+---
 
 The checkbox component.
 

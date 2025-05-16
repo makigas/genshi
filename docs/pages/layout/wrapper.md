@@ -1,8 +1,8 @@
 ---
-layout: ../../layouts/Layout.astro
----
+layout: ../../layouts/DocLayout.astro
 
-# Wrapper
+title: Wrapper
+---
 
 A wrapper is a centered block region that contains some HTML, whose main purpose is usually to
 control or limit its width in the browser viewport.

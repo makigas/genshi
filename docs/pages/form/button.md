@@ -1,8 +1,8 @@
 ---
-layout: ../../layouts/Layout.astro
----
+layout: ../../layouts/DocLayout.astro
 
-# Button
+title: Button
+---
 
 To create a button, add the `GenshiButton` class to a button:
 
