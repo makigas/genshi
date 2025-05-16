@@ -4,16 +4,14 @@
   "description": "Genshi design system",
   "main": "dist/index.js",
   "scripts": {
-    "build": "sass src/genshi.scss dist/genshi.css",
-    "build:watch": "sass --watch src/genshi.scss dist/genshi.css",
+    "dist": "sass src/genshi.scss dist/genshi.css",
+    "dist:min": "sass src/genshi.scss dist/genshi.min.css --style=compressed",
     "fmt": "prettier -w .",
     "lint": "stylelint src",
     "lint:fix": "stylelint src --fix",
-    "docs": "run-s docs:build build docs:copy",
+    "docs": "astro build",
     "docs:dev": "astro dev",
-    "docs:build": "astro build",
-    "docs:copy": "copyfiles dist/* www",
-    "docs:preview": "astro preview",
+        "docs:preview": "astro preview",
     "clean": "rimraf dist www .astro"
   },
   "repository": {
@@ -38,9 +36,7 @@
   "devDependencies": {
     "@fontsource/montserrat": "^5.2.5",
     "astro": "^5.7.13",
-    "copyfiles": "^2.4.1",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^3.5.3",
+        "prettier": "^3.5.3",
     "rimraf": "^6.0.1",
     "sass": "^1.88.0",
     "stylelint": "^16.19.1",

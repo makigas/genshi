@@ -68,8 +68,14 @@ and copying the output to the proper directories.
 
 ```sh
 npm i
-npm run build
+
+# To compile the unminified version (if you are going to use a bundler)
+npm run dist
 cp dist/genshi.css ~/wherever/you/need
+
+# To compile the minified version (if you are going to import this raw)
+npm run dist:min
+cp dist/genshi.min.css ~/wherever/you/need
 ```
 
 Come back soon for a bundled version.
