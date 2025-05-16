@@ -1,4 +1,6 @@
 ---
+import "@fontsource/montserrat";
+import "@fontsource/montserrat/700.css";
 import LayoutFooter from "../components/LayoutFooter.astro";
 import LayoutNav from "../components/LayoutNav.astro";
 ---
@@ -12,6 +14,10 @@ import LayoutNav from "../components/LayoutNav.astro";
     <title>Genshi</title>
     <link rel="stylesheet" href="/genshi/dist/genshi.css" />
     <style>
+      .logo {
+        max-width: 200px;
+      }
+
       @media screen and (min-width: 1024px) {
         .app {
           display: flex;
@@ -37,7 +43,7 @@ import LayoutNav from "../components/LayoutNav.astro";
       <div class="app">
         <header>
           <a href="/genshi/" role="banner">
-            <img src="/genshi/genshi.svg" alt="Genshi" />
+            <img src="/genshi/genshi.png" alt="Genshi" class="logo" />
           </a>
           <LayoutNav />
         </header>

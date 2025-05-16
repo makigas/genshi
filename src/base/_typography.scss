@@ -51,7 +51,13 @@
 }
 
 :where(b),
-:where(strong) {
+:where(strong),
+:where(h1),
+:where(h2),
+:where(h3),
+:where(h4),
+:where(h5),
+:where(h6) {
   font-weight: 700;
 }
 
