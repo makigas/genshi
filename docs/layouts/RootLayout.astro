@@ -5,12 +5,16 @@ import "../../src/genshi.scss";
 import LayoutFooter from "../components/LayoutFooter.astro";
 import LayoutNav from "../components/LayoutNav.astro";
 import LayoutHeader from "../components/LayoutHeader.astro";
+import socialOpenGraphImage from "../assets/opengraph.png";
+import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 
 function documentTitle() {
   if (title) {
@@ -18,6 +22,21 @@ function documentTitle() {
   } else {
     return "Genshi";
   }
+}
+
+function documentDescription() {
+  return description || `An atomic design system`;
+}
+
+const socialImage = await getImage({
+  src: socialOpenGraphImage,
+  format: "png",
+});
+
+function socialImageUrl() {
+  const url = new URL(Astro.url);
+  url.pathname = socialImage.src;
+  return decodeURIComponent(url.toString());
 }
 ---
 
@@ -28,6 +47,20 @@ function documentTitle() {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{documentTitle()}</title>
+    <meta name="description" content={documentDescription()} />
+    <link rel="canonical" href={Astro.url} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={documentTitle()} />
+    <meta name="twitter:description" content={documentDescription()} />
+    <meta name="twitter:image" content={socialImageUrl()} />
+
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={documentTitle()} />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={documentDescription()} />
+    <meta property="og:site_name" content="Genshi" />
+    <meta property="og:image" content={socialImageUrl()} />
     <style>
       body {
         min-height: 100vh;

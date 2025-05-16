@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/public/genshi@dark.png" />
-  <source media="(prefers-color-scheme: light)" srcset="docs/public/genshi.png" />
-  <img alt="Genshi" src="docs/public/genshi.png" />
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/genshi@dark.png" />
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/genshi.png" />
+  <img alt="Genshi" src="docs/assets/genshi.png" />
 </picture>
 
 # Genshi

@@ -1,5 +1,7 @@
 ---
-
+import genshiLogoLight from "../assets/genshi.png";
+import genshiLogoDark from "../assets/genshi@dark.png";
+import { Image } from "astro:assets";
 ---
 
 <style>
@@ -17,9 +19,9 @@
 <header>
   <a href="/genshi/">
     <picture class="logo">
-      <source media="(prefers-color-scheme: dark)" srcset="/genshi/genshi@dark.png" />
-      <source media="(prefers-color-scheme: light)" srcset="/genshi/genshi.png" />
-      <img alt="Genshi" src="/genshi/genshi.png" />
+      <source media="(prefers-color-scheme: dark)" srcset={genshiLogoDark.src} />
+      <source media="(prefers-color-scheme: light)" srcset={genshiLogoLight.src} />
+      <Image src={genshiLogoLight} alt="Genshi" />
     </picture>
   </a>
 </header>
