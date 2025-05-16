@@ -7,22 +7,22 @@ $breakpoints: (
   tablet: (
     breakpoint: 768px,
     style: "fluid",
-    base: 0,
+    base: $-base-step,
   ),
   desktop: (
     breakpoint: 1024px,
     style: "fixed",
-    base: $-base-step,
+    base: 2 * $-base-step,
   ),
   wide: (
     breakpoint: 1280px,
     style: "fixed",
-    base: 2 * $-base-step,
+    base: 3 * $-base-step,
   ),
   ultrawide: (
     breakpoint: 1600px,
     style: "fixed",
-    base: 3 * $-base-step,
+    base: 4 * $-base-step,
   ),
 );
 

@@ -19,27 +19,27 @@
 }
 
 :where(h1) {
-  font-size: 1.8rem;
+  font-size: calc(2 * var(--genshi-font-size));
 }
 
 :where(h2) {
-  font-size: 1.6rem;
+  font-size: calc(1.75 * var(--genshi-font-size));
 }
 
 :where(h3) {
-  font-size: 1.4rem;
+  font-size: calc(1.5 * var(--genshi-font-size));
 }
 
 :where(h4) {
-  font-size: 1.2rem;
+  font-size: calc(1.25 * var(--genshi-font-size));
 }
 
 :where(h5) {
-  font-size: 1rem;
+  font-size: var(--genshi-font-size);
 }
 
 :where(h6) {
-  font-size: 0.8rem;
+  font-size: calc(0.75 * var(--genshi-font-size));
 }
 
 :where(a) {

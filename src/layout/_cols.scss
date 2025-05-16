@@ -6,6 +6,7 @@
 
 .GenshiCols {
   gap: 1rem;
+  margin-bottom: 1rem;
 
   @include responsive.on-flow {
     display: flex;
