@@ -1,28 +1,28 @@
 @use "sass:map";
 @use "sass:color";
 
-$wrapper-width: 15px !default;
+$-base-step: 0.0625 !default;
+$wrapper-width: 1rem !default;
 $breakpoints: (
   tablet: (
     breakpoint: 768px,
-    viewport: auto,
-    margin: 15px,
+    style: "fluid",
+    base: 0,
   ),
   desktop: (
     breakpoint: 1024px,
-    viewport: 992px,
-    margin: auto,
+    style: "fixed",
+    base: $-base-step,
   ),
   wide: (
-    breakpoint: 1400px,
-    viewport: 1280px,
-    margin: auto,
+    breakpoint: 1280px,
+    style: "fixed",
+    base: 2 * $-base-step,
   ),
   ultrawide: (
-    breakpoint: 1920px,
-    viewport: 1600px,
-    slim: 1280px,
-    margin: auto,
+    breakpoint: 1600px,
+    style: "fixed",
+    base: 3 * $-base-step,
   ),
 );
 

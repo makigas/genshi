@@ -136,7 +136,7 @@ status without depending on color.
 Use the `GenshiInput--xs`, `GenshiInput--sm`, `GenshiInput--lg` and `GenshiInput--lg` to alter the
 font size.
 
-<div class="GenshiStack GenshiStack--v">
+<div class="GenshiStack GenshiStack--v GenshiStack--gapless">
   <div class="GenshiInput GenshiInput--xs">
     <label class="GenshiInput__label">
       User bio

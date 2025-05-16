@@ -43,15 +43,6 @@ Genshi provides the following browser viewports:
 | lg   | wide      | 1400px    | 1280px        |
 | xl   | ultrawide | 1920px    | 1600px        |
 
-## Slim mode
-
-The ultrawide wrapper supports an additional modifier called `GenshiWrapper--slim`. If present, the
-viewport size for the ultrawide layout will be capped at 1280px, like the one used in the wide
-wrapper.
-
-The main use case for this is to further limit the width of typography elements, where a larger
-viewport size may make reading uncomfortable.
-
 ## Fluid
 
 Use the fluid variant if you want the element to span the whole browser viewport, but you want to

@@ -16,7 +16,7 @@ The radio button component.
 </div>
 ```
 
-<div class="GenshiStack GenshiStack--v">
+<div class="GenshiStack GenshiStack--v GenshiStack--gapless">
   <div class="GenshiInput">
     <label class="GenshiInput__label">
       <input type="radio" checked name="update" value="now" class="GenshiInput__control" />
@@ -50,8 +50,8 @@ The radio button component.
 
 Radio buttons may be valid or invalid.
 
-<div class="GenshiStack GenshiStack--c">
-  <div class="GenshiStack GenshiStack--v">
+<div class="GenshiCols GenshiCols--cozy">
+  <div class="GenshiStack GenshiStack--v GenshiStack--gapless">
     <div class="GenshiInput">
       <label class="GenshiInput__label">
         <input type="radio" class="GenshiInput__control" checked name="invalid1" value="a" aria-invalid="false" />
@@ -71,7 +71,7 @@ Radio buttons may be valid or invalid.
       </small>
     </div>
   </div>
-  <div class="GenshiStack GenshiStack--v">
+  <div class="GenshiStack GenshiStack--v GenshiStack--gapless">
     <div class="GenshiInput">
       <label class="GenshiInput__label">
         <input type="radio" class="GenshiInput__control" aria-invalid="false" name="invalid2" value="a" />
@@ -95,7 +95,7 @@ Radio buttons may be valid or invalid.
 
 ## Component sizes
 
-<div class="GenshiStack GenshiStack--v">
+<div class="GenshiStack GenshiStack--v GenshiStack--gapless">
   <div class="GenshiInput GenshiInput--xs">
     <label class="GenshiInput__label">
       <input type="radio" checked name="update2" value="1" class="GenshiInput__control" />

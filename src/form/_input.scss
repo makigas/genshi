@@ -13,6 +13,7 @@
   --genshi-checkbox-background: var(--genshi-form-checkbox-accent);
 
   display: block;
+  margin-bottom: 1rem;
 
   &:has(&__control[aria-invalid="true"]) {
     --genshi-input-accent: var(--genshi-form-invalid-accent);
@@ -49,14 +50,14 @@
   }
 
   &__helper {
-    margin-top: 0.5em;
+    display: inline-block;
     color: var(--genshi-input-helper-color, var(--genshi-foreground));
     font-size: 0.875em;
   }
 
   &__label:has(input[type="checkbox"]) + &__helper,
   &__label:has(input[type="radio"]) + &__helper {
-    padding-left: 2.1em;
+    margin-left: 2.1em;
   }
 
   &__label:has(input[type="checkbox"][disabled]),

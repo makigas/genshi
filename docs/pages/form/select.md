@@ -117,7 +117,7 @@ You can use the `aria-invalid` attribute to set the validity of the component.
 
 ## Sizes
 
-<div class="GenshiStack GenshiStack--v">
+<div class="GenshiStack GenshiStack--v GenshiStack--gapless">
   <div class="GenshiSelect GenshiSelect--xs">
     <label class="GenshiSelect__label">
       Continent

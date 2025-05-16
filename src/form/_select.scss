@@ -9,6 +9,7 @@
   --genshi-select-font-family: inherit;
 
   display: block;
+  margin-bottom: 1rem;
 
   &:has([aria-invalid="true"]) {
     --genshi-select-accent: var(--genshi-form-invalid-accent);
@@ -16,6 +17,12 @@
 
   &:has([aria-invalid="false"]) {
     --genshi-select-accent: var(--genshi-form-valid-accent);
+  }
+
+  &__helper {
+    display: inline-block;
+    color: var(--genshi-input-helper-color, var(--genshi-foreground));
+    font-size: 0.875em;
   }
 
   &:has([aria-invalid="true"]) &__label,

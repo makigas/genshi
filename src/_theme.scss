@@ -1,7 +1,9 @@
 @use "theme/light";
 @use "theme/dark";
 @use "theme/colors";
+@use "theme/responsive";
 @use "sass:map";
+@use "sass:math";
 
 @mixin -unroll-color-map($base, $map) {
   @for $i from 1 through 9 {
@@ -9,7 +11,7 @@
   }
 }
 
-:root {
+:where(:root) {
   --genshi-font-family:
     system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu, cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
@@ -40,5 +42,15 @@
     color-scheme: dark;
 
     @include dark.theme;
+  }
+}
+
+@each $breakpoint, $config in responsive.$breakpoints {
+  @media screen and (min-width: map.get($config, "breakpoint")) {
+    :where(:root) {
+      $percentage: 100% + math.percentage(map.get($config, "base"));
+
+      --genshi-font-size: #{$percentage};
+    }
   }
 }

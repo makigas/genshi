@@ -10,9 +10,11 @@ To create a button, add the `GenshiButton` class to a button:
 <button type="button" class="GenshiButton">Click me</button>
 ```
 
+<p>
 <button type="button" class="GenshiButton">
   Click me
 </button>
+</p>
 
 However, if you want to use a button to change the browser URL, you can also add the `GenshiButton`
 class to a link. It is important to always remember the semantic distinction between using `<a>` and
@@ -24,8 +26,10 @@ using `<button>`.
 </a>
 ```
 
+<p>
 <a href="https://github.com/makigas/genshi" target="_blank" class="GenshiButton">Star repo on
 GitHub</a>
+</p>
 
 ## Button sizes
 
@@ -39,13 +43,13 @@ Buttons come in a variety of sizes. Choose the one of your wish:
 <button type="button" class="GenshiButton GenshiButton--xl">Extra large</button>
 ```
 
-<div>
+<p>
   <button type="button" class="GenshiButton GenshiButton--xs">Extra small</button>
   <button type="button" class="GenshiButton GenshiButton--sm">Small</button>
   <button type="button" class="GenshiButton GenshiButton--md">Medium (default)</button>
   <button type="button" class="GenshiButton GenshiButton--lg">Large</button>
   <button type="button" class="GenshiButton GenshiButton--xl">Extra large</button>
-</div>
+</p>
 
 ## Bold button
 
@@ -57,9 +61,9 @@ mark it as bold, by using the `GenshiButton--bold` class:
 <button class="GenshiButton GenshiButton--bold">Back</button>
 ```
 
-<div>
+<p>
 <button class="GenshiButton GenshiButton--bold">Back</button>
-</div>
+</p>
 
 ## Color buttons
 
@@ -73,10 +77,10 @@ Use `GenshiButton--suggested` to convey the primary button, or the button that m
 <button class="GenshiButton GenshiButton--suggested GenshiButton--bold">Submit</button>
 ```
 
-<div>
+<p>
   <button class="GenshiButton GenshiButton--suggested">Save</button>
   <button class="GenshiButton GenshiButton--suggested GenshiButton--bold">Submit</button>
-</div>
+</p>
 
 Use `GenshiButton--destructive` to convey the dangerous button, which is often used to mark that
 pressing a button will have important consequences such as the destruction of records.
@@ -86,10 +90,10 @@ pressing a button will have important consequences such as the destruction of re
 <button class="GenshiButton GenshiButton--destructive GenshiButton--bold">Delete</button>
 ```
 
-<div>
+<p>
   <button class="GenshiButton GenshiButton--destructive">Revert</button>
   <button class="GenshiButton GenshiButton--destructive GenshiButton--bold">Delete</button>
-</div>
+</p>
 
 ## Buttons with icons
 
@@ -100,7 +104,7 @@ To add an icon to the button simply add the node before or after the text. You c
 text, but please make sure to add an `aria-label` attribute at the `<button>` for accessibility
 purposes. (I shouldn't be the one telling you here...)
 
-<div>
+<p>
   <button type="button" class="GenshiButton">
     <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
       fill="none" stroke-linecap="round" stroke-linejoin="round" class="GenshiButton__icon">
@@ -136,7 +140,7 @@ purposes. (I shouldn't be the one telling you here...)
       <line x1="8" y1="12" x2="16" y2="12"></line>
     </svg>
   </button>
-</div>
+</p>
 
 ## Disabled buttons
 
@@ -146,7 +150,7 @@ Simply add the `disabled` attribute to the button tag to mark it as disabled.
 <button type="button" disabled class="GenshiButton">Can't touch this</button>
 ```
 
-<div class="GenshiStack GenshiStack--c GenshiStack--compact">
+<div class="GenshiStack GenshiStack--v GenshiStack--compact">
   <div>
     <button type="button" disabled class="GenshiButton">
       Can't touch this
