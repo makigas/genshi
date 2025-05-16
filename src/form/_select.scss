@@ -18,10 +18,6 @@
     --genshi-select-accent: var(--genshi-form-valid-accent);
   }
 
-  &:has([aria-invalid="false"]),
-  &:has([aria-invalid="false"]) {
-  }
-
   &:has([aria-invalid="true"]) &__label,
   &:has([aria-invalid="true"]) &__helper,
   &:has([aria-invalid="false"]) &__label,

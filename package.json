@@ -11,7 +11,7 @@
     "lint:fix": "stylelint src --fix",
     "docs": "astro build",
     "docs:dev": "astro dev",
-        "docs:preview": "astro preview",
+    "docs:preview": "astro preview",
     "clean": "rimraf dist www .astro"
   },
   "repository": {
@@ -36,7 +36,7 @@
   "devDependencies": {
     "@fontsource/montserrat": "^5.2.5",
     "astro": "^5.7.13",
-        "prettier": "^3.5.3",
+    "prettier": "^3.5.3",
     "rimraf": "^6.0.1",
     "sass": "^1.88.0",
     "stylelint": "^16.19.1",
