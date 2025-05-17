@@ -10,11 +10,15 @@ const { palettes } = Astro.props;
 ---
 
 <style>
-  @media screen and (max-width: 767px) {
+  .stack {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 1rem;
+  }
+
+  @media screen and (min-width: 768px) {
     .stack {
-      display: grid;
-      grid-template-columns: repeat(3, auto);
-      gap: 1rem;
+      display: block;
     }
   }
 </style>

@@ -69,13 +69,16 @@ function socialImageUrl() {
       }
 
       .app {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         margin-top: 2rem;
         margin-bottom: 2rem;
       }
 
       @media screen and (min-width: 1024px) {
         .app {
-          display: flex;
+          flex-direction: row;
           gap: 4rem;
         }
 
@@ -83,7 +86,7 @@ function socialImageUrl() {
           width: 12rem;
         }
 
-        .app main {
+        main {
           flex: 1;
           min-width: 0;
         }
@@ -91,16 +94,14 @@ function socialImageUrl() {
     </style>
   </head>
   <body>
-    <div class="GenshiWrapper">
-      <div class="app">
-        <div class="app-left">
-          <LayoutHeader />
-          <LayoutNav />
-        </div>
-        <main>
-          <slot />
-        </main>
+    <div class="GenshiWrapper app">
+      <div class="app-left">
+        <LayoutHeader />
+        <LayoutNav />
       </div>
+      <main>
+        <slot />
+      </main>
     </div>
     <LayoutFooter />
   </body>
