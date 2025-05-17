@@ -2,6 +2,8 @@
 layout: ../layouts/RootLayout.astro
 ---
 
+# Genshi
+
 **Genshi** is the design system in use in makigas.es. Genshi is the japanese word for **atom**,
 because this project defines atomic components that can be used to build bigger user interfaces and
 layouts.
@@ -9,6 +11,17 @@ layouts.
 Genshi is currently under development. The components are being extracted from the website, and
 cleaned up as they are imported here. Version 1.0.0 will be released once Genshi is deployed to
 production.
+
+I started working on Genshi because the original stylesheet of makigas.es was getting difficult to
+maintain, and code was being duplicated. Changes were difficult to make, so things like a dark mode
+or a new dashboard did not have a chance to be developed.
+
+Currently, Genshi will focus on the components that I need right now in the website, including the
+CMS system, such as forms and data tables. **Genshi is very opinionated** about some things because
+it has born as a design system for a specific set of websites.
+
+<s>Genshi is not a general purpose web framework.</s> I hope I don't accidentally create a general
+purpose web framework.
 
 ## Features
 
@@ -18,20 +31,6 @@ production.
   component framework such as ViewComponent or Svelte, so the framework will write the class names
   for you.
 - Lightweight and without too much fluff.
-
-## Is Genshi for me?
-
-**Probably not, unless you are working on prototypes.** Genshi is a private design system, it
-implements the design in use in a particular website, but it has a very opinionated design and
-appearance.
-
-I started working on Genshi because the original stylesheet of makigas.es was getting difficult to
-maintain, and code was being duplicated. Changes were difficult to make, so things like a dark mode
-or a new dashboard did not have a chance to be developed.
-
-Genshi will focus on the components that I need the most in the website, including the backoffice
-system, such as forms or data tables. However, **this is not a general purpose CSS web framework**,
-or at least I hope I don't accidentally create a general purpose CSS web framework.
 
 ## Is it stable?
 
@@ -52,33 +51,14 @@ to see how the project advances.
 
 ## Stack
 
-**Genshi** is powered by:
+**Genshi** is powered by SCSS, using the `dart-scss` dialect. I am making use of new features like
+`@use` and `@forward`, which are currently not present in other dialects. So far I don't have a
+strong opinion, but it is good to namespace things. Porting this to PostCSS could be a good
+experiment in the future, but it is currently not a priority because things work.
 
-- `dart-sass`: I am not using other SCSS dialect such as PostCSS, because I am making use of `@use`,
-  `@forward` and functions from the standard library. I thought it was a good experiment. Porting
-  this to PostCSS in the future could be a good experiment too, but it is currently not a priority.
-- `astro`: the docs site is built using it.
-- `stylelint` for linting, already configured to support SCSS and SMACSS.
-- `prettier` for code formatting.
+I am using Astro for [the docs](https://makigas.github.io/genshi/).
 
-## Usage
-
-Because it is under development, it's currently not possible to use it without compiling manually
-and copying the output to the proper directories.
-
-```sh
-npm i
-
-# To compile the unminified version (if you are going to use a bundler)
-npm run dist
-cp dist/genshi.css ~/wherever/you/need
-
-# To compile the minified version (if you are going to import this raw)
-npm run dist:min
-cp dist/genshi.min.css ~/wherever/you/need
-```
-
-Come back soon for a bundled version.
+And I am using things like Stylelint and Prettier for the linting and formatting.
 
 ## License
 

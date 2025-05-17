@@ -4,4 +4,5 @@ module.exports = {
   trailingComma: "all",
   bracketSameLine: true,
   htmlWhitespaceSensitivity: "ignore",
+  proseWrap: "always",
 };
