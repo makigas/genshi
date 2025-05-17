@@ -1,8 +1,9 @@
 {
   "name": "@makigas/genshi",
   "version": "1.0.0-alpha.0",
-  "description": "Genshi design system",
-  "main": "dist/index.js",
+  "description": "An atomic design system",
+  "main": "dist/genshi.css",
+  "style": "dist/genshi.css",
   "scripts": {
     "dist": "sass src/genshi.scss dist/genshi.css",
     "dist:min": "sass src/genshi.scss dist/genshi.min.css --style=compressed",
@@ -13,12 +14,16 @@
     "docs": "astro build",
     "docs:dev": "astro dev",
     "docs:preview": "astro preview",
-    "clean": "rimraf dist www .astro"
+    "clean": "rimraf dist www .astro",
+    "prepack": "run-s fmt:check lint dist dist:min"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/makigas/genshi.git"
   },
+  "files": [
+    "dist/*.{css,map}"
+  ],
   "keywords": [
     "genshi",
     "design",
@@ -37,6 +42,7 @@
   "devDependencies": {
     "@fontsource/montserrat": "^5.2.5",
     "astro": "^5.7.13",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.5.3",
     "rimraf": "^6.0.1",
     "sass": "^1.88.0",
