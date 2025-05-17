@@ -2,29 +2,29 @@
 // =======
 // Use this component to render multiple HTML nodes using columns.
 
+// One thing to notice is that flex is always enabled in cols, even in mobile
+// mode. However, on mobile, the flex is set to column to stack vertically
+// the elements. This is done to keep the stacked columns separated by a gap.
+// Otherwise, the last element of a column and the first element of the next
+// column will be too close.
+
+@use "../traits";
 @use "../theme/responsive";
 
 .GenshiCols {
-  gap: 1rem;
+  --genshi-cols-direction: column;
+
+  display: flex;
+  flex-direction: var(--genshi-cols-direction);
   margin-bottom: 1rem;
 
+  & > * {
+    flex: 1;
+  }
+
   @include responsive.on-flow {
-    display: flex;
-
-    & > * {
-      flex: 1;
-    }
+    --genshi-cols-direction: row;
   }
 
-  &--gapless {
-    gap: 0;
-  }
-
-  &--compact {
-    gap: 0.5rem;
-  }
-
-  &--cozy {
-    gap: 1.5rem;
-  }
+  @include traits.gap-density;
 }

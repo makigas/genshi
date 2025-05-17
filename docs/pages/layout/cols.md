@@ -35,7 +35,7 @@ Use an additional modifier to configure the size of the gap:
 - Compact (0.5rem): `GenshiCols--compact`
 - Cozy (1.5rem): `GenshiCols--cozy`
 
-<div class="GenshiStack GenshiStack--v">
+<div class="GenshiStack GenshiStack--v GenshiStack--gapless">
   <div class="GenshiCols GenshiCols--gapless">
     <div class="box">1</div>
     <div class="box">2</div>

@@ -25,6 +25,48 @@ To create an stack, use the following code:
   <button type="button" class="GenshiButton">Forward</button>
 </div>
 
+The stack will wrap nicely if the screen isn't large enough for the items. If you have special needs, make sure that you aren't using a stack where you should be actually using a col, which doesn't have this behaviour.
+
+Change the size of the window to test the behaviour in the following example:
+
+<div class="GenshiStack GenshiStack--compact">
+  <button type="button" class="GenshiButton">Button 1</button>
+  <button type="button" class="GenshiButton">Button 2</button>
+  <button type="button" class="GenshiButton">Button 3</button>
+  <button type="button" class="GenshiButton">Button 4</button>
+  <button type="button" class="GenshiButton">Button 5</button>
+  <button type="button" class="GenshiButton">Button 6</button>
+</div>
+
+## Stack positioning
+
+You can further control the positioning of the stack by pushing the elements to the end of the view, using the `GenshiStack--end` modifier:
+
+<div class="GenshiStack GenshiStack--end">
+  <button type="button" class="GenshiButton">Compose</button>
+  <button type="button" class="GenshiButton">Reply</button>
+  <button type="button" class="GenshiButton">Reply All</button>
+  <button type="button" class="GenshiButton">Forward</button>
+</div>
+
+Or center the elements evenly with `GenshiStack--center`:
+
+<div class="GenshiStack GenshiStack--center">
+  <button type="button" class="GenshiButton">Compose</button>
+  <button type="button" class="GenshiButton">Reply</button>
+  <button type="button" class="GenshiButton">Reply All</button>
+  <button type="button" class="GenshiButton">Forward</button>
+</div>
+
+Or just place space between the elements with `GenshiStack--between`:
+
+<div class="GenshiStack GenshiStack--between">
+  <button type="button" class="GenshiButton">Compose</button>
+  <button type="button" class="GenshiButton">Reply</button>
+  <button type="button" class="GenshiButton">Reply All</button>
+  <button type="button" class="GenshiButton">Forward</button>
+</div>
+
 ## Stack direction
 
 By default, the stack is horizontal: items are placed horizontally. You can change this with the
@@ -34,56 +76,35 @@ additional modifiers:
 - To make an horizontal stack with reverse order, use `GenshiButton--hr`.
 - To make a vertical stack with reverse order, use `GenshiButton--vr`.
 
-<div class="GenshiStack GenshiStack--v GenshiStack--cozy">
+<div class="GenshiStack GenshiStack--cozy GenshiStack--center">
   <div class="GenshiStack GenshiStack--v GenshiStack--cozy">
     <div class="GenshiStack GenshiStack--inline">
-      <button type="button" class="GenshiButton">Compose</button>
-      <button type="button" class="GenshiButton">Reply</button>
-      <button type="button" class="GenshiButton">Reply All</button>
-      <button type="button" class="GenshiButton">Forward</button>
+      <button type="button" class="GenshiButton">1</button>
+      <button type="button" class="GenshiButton">2</button>
+      <button type="button" class="GenshiButton">3</button>
+      <button type="button" class="GenshiButton">4</button>
     </div>
     <div class="GenshiStack GenshiStack--inline GenshiStack--hr">
-      <button type="button" class="GenshiButton">Compose</button>
-      <button type="button" class="GenshiButton">Reply</button>
-      <button type="button" class="GenshiButton">Reply All</button>
-      <button type="button" class="GenshiButton">Forward</button>
+      <button type="button" class="GenshiButton">1</button>
+      <button type="button" class="GenshiButton">2</button>
+      <button type="button" class="GenshiButton">3</button>
+      <button type="button" class="GenshiButton">4</button>
     </div>
   </div>
   <div class="GenshiStack GenshiStack--cozy">
     <div class="GenshiStack GenshiStack--inline GenshiStack--v">
-      <button type="button" class="GenshiButton">Compose</button>
-      <button type="button" class="GenshiButton">Reply</button>
-      <button type="button" class="GenshiButton">Reply All</button>
-      <button type="button" class="GenshiButton">Forward</button>
+      <button type="button" class="GenshiButton">1</button>
+      <button type="button" class="GenshiButton">2</button>
+      <button type="button" class="GenshiButton">3</button>
+      <button type="button" class="GenshiButton">4</button>
     </div>
     <div class="GenshiStack GenshiStack--inline GenshiStack--vr">
-      <button type="button" class="GenshiButton">Compose</button>
-      <button type="button" class="GenshiButton">Reply</button>
-      <button type="button" class="GenshiButton">Reply All</button>
-      <button type="button" class="GenshiButton">Forward</button>
+      <button type="button" class="GenshiButton">1</button>
+      <button type="button" class="GenshiButton">2</button>
+      <button type="button" class="GenshiButton">3</button>
+      <button type="button" class="GenshiButton">4</button>
     </div>
   </div>
-</div>
-
-## Inline
-
-By default, the stack will span the entire width of the container. This is noticeable when using the
-reverse directions:
-
-<div class="GenshiStack GenshiStack--hr">
-  <button type="button" class="GenshiButton">Compose</button>
-  <button type="button" class="GenshiButton">Reply</button>
-  <button type="button" class="GenshiButton">Reply All</button>
-  <button type="button" class="GenshiButton">Forward</button>
-</div>
-
-To make it inline, add the `GenshiStack--inline` modifier:
-
-<div class="GenshiStack GenshiStack--inline GenshiStack--hr">
-  <button type="button" class="GenshiButton">Compose</button>
-  <button type="button" class="GenshiButton">Reply</button>
-  <button type="button" class="GenshiButton">Reply All</button>
-  <button type="button" class="GenshiButton">Forward</button>
 </div>
 
 ## Gap size
