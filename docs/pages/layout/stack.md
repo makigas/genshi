@@ -25,7 +25,9 @@ To create an stack, use the following code:
   <button type="button" class="GenshiButton">Forward</button>
 </div>
 
-The stack will wrap nicely if the screen isn't large enough for the items. If you have special needs, make sure that you aren't using a stack where you should be actually using a col, which doesn't have this behaviour.
+The stack will wrap nicely if the screen isn't large enough for the items. If you have special
+needs, make sure that you aren't using a stack where you should be actually using a col, which
+doesn't have this behaviour.
 
 Change the size of the window to test the behaviour in the following example:
 
@@ -40,7 +42,8 @@ Change the size of the window to test the behaviour in the following example:
 
 ## Stack positioning
 
-You can further control the positioning of the stack by pushing the elements to the end of the view, using the `GenshiStack--end` modifier:
+You can further control the positioning of the stack by pushing the elements to the end of the view,
+using the `GenshiStack--end` modifier:
 
 <div class="GenshiStack GenshiStack--end">
   <button type="button" class="GenshiButton">Compose</button>
