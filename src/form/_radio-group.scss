@@ -1,0 +1,46 @@
+.GenshiRadioGroup {
+  margin-bottom: 1rem;
+  padding: 0;
+  border: none;
+
+  &[aria-invalid="true"] {
+    --genshi-radiogroup-accent: var(--genshi-form-invalid-accent);
+  }
+
+  &[aria-invalid="false"] {
+    --genshi-radiogroup-accent: var(--genshi-form-valid-accent);
+  }
+
+  &[aria-invalid="true"],
+  &[aria-invalid="false"] {
+    --genshi-radiogroup-validation-accent: var(--genshi-radiogroup-accent);
+    --genshi-radiogroup-legend-color: var(--genshi-radiogroup-accent);
+    --genshi-radiogroup-helper-color: var(--genshi-radiogroup-accent);
+  }
+
+  legend {
+    margin-bottom: 0.5rem;
+    padding-left: 0;
+    color: var(--genshi-radiogroup-legend-color, (var(--genshi-foreground)));
+  }
+
+  .GenshiInput {
+    margin-bottom: 0.5rem;
+  }
+
+  &__helper {
+    display: inline-block;
+    color: var(--genshi-radiogroup-helper-color, var(--genshi-foreground));
+    font-size: 0.875em;
+  }
+
+  &--inline {
+    display: inline-flex;
+    flex-flow: row wrap;
+    column-gap: 1rem;
+
+    .GenshiInput {
+      display: inline-grid;
+    }
+  }
+}

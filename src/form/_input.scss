@@ -1,5 +1,5 @@
 .GenshiInput {
-  --genshi-input-accent: var(--genshi-foreground-color);
+  --genshi-input-accent: var(--genshi-radiogroup-validation-accent, var(--genshi-foreground-color));
   --genshi-input-foreground: var(--genshi-foreground-color);
   --genshi-input-background-color: oklch(from var(--genshi-input-accent) l c h / 3%);
   --genshi-input-border-color: oklch(from var(--genshi-input-accent) l c h / 20%);
@@ -10,7 +10,11 @@
   --genshi-file-field-button-background: oklch(from var(--genshi-input-accent) l c h / 4%);
   --genshi-file-field-button-hover-background: oklch(from var(--genshi-input-accent) l c h / 16%);
   --genshi-file-field-button-active-background: oklch(from var(--genshi-input-accent) l c h / 24%);
-  --genshi-checkbox-background: var(--genshi-form-checkbox-accent);
+  --genshi-input-label-color: var(--genshi-radiogroup-validation-accent, var(--genshi-foreground));
+  --genshi-checkbox-background: var(
+    --genshi-radiogroup-validation-accent,
+    var(--genshi-form-checkbox-accent)
+  );
 
   display: block;
   margin-bottom: 1rem;
@@ -39,7 +43,7 @@
   }
 
   &__label {
-    color: var(--genshi-input-label-color, var(--genshi-foreground));
+    color: var(--genshi-input-label-color);
   }
 
   &__label:has(input[type="checkbox"]),

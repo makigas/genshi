@@ -2,6 +2,11 @@
 
 ## trunk
 
+Added:
+
+- Form components:
+  - RadioGroup component for grouping in a fieldset different checkbox options.
+
 Changed:
 
 - Color palette now uses hexadecimal colors rather than `rgb()` expressions.
