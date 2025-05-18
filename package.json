@@ -22,7 +22,8 @@
     "url": "git+https://github.com/makigas/genshi.git"
   },
   "files": [
-    "dist/*.{css,map}"
+    "dist/*.{css,map}",
+    "docs/assets/genshi*.png"
   ],
   "keywords": [
     "genshi",

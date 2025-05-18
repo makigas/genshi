@@ -38,6 +38,38 @@ components may be split. Some mixins may be made. Some variables may change.
 If you want to follow updates, watch the repo on GitHub so that you can get notified of new releases
 to see how the project advances.
 
+## Installation instructions
+
+Genshi is available both in [NPM][npm] and in the [GitHub Packages registry][ghcr].
+
+```bash
+npm i --save @makigas/genshi
+```
+
+Note that until 1.0.0 is reached, every alpha may have breaking changes. Reading the [changelog] is
+important, but also it is important to pin the version in use, and manually update, to prevent
+accidental layout breaks.
+
+```json
+"dependencies": {
+  "@makigas/genshi": "1.0.0-alpha.0",
+}
+```
+
+If you are using a CSS preprocessor or bundler such as PostCSS, you should be able to just import
+Genshi by using the following import statement in your bundle file:
+
+```js
+import "@makigas/genshi";
+```
+
+If your bundler does not support reading the `style` attribute from a package.json file, you can
+also use the full import path:
+
+```js
+import "@makigas/genshi/dist/genshi.css";
+```
+
 ## Roadmap
 
 - Move existing components from github.com/makigas/makigas.es
@@ -54,12 +86,17 @@ to see how the project advances.
 strong opinion, but it is good to namespace things. Porting this to PostCSS could be a good
 experiment in the future, but it is currently not a priority because things work.
 
-I am using Astro for [the docs](https://makigas.github.io/genshi/).
+I am using Astro for [the docs][docs].
 
 And I am using things like Stylelint and Prettier for the linting and formatting.
 
 ## License
 
 Genshi is published under the terms of the GNU Lesser Public License 3.0, or simply GNU LGPL 3.0.
-Make sure you [read the public license](https://www.gnu.org/licenses/lgpl-3.0.en.html) before using
-this library in your project.
+Make sure you [read the public license][lgpl] before using this library in your project.
+
+[changelog]: https://github.com/makigas/genshi/blob/trunk/CHANGELOG.md
+[docs]: https://makigas.github.io/genshi/
+[lgpl]: https://www.gnu.org/licenses/lgpl-3.0.en.html
+[npm]: https://www.npmjs.com/package/@makigas/genshi
+[ghcr]: https://github.com/makigas/genshi/pkgs/npm/genshi
