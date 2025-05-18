@@ -69,39 +69,36 @@ function socialImageUrl() {
       }
 
       .app {
-        display: flex;
-        flex-direction: column;
+        display: grid;
         gap: 1rem;
         margin-top: 2rem;
         margin-bottom: 2rem;
       }
 
+      main {
+        min-width: 0;
+      }
+
       @media screen and (min-width: 1024px) {
         .app {
-          flex-direction: row;
-          gap: 4rem;
-        }
-
-        .app-left {
-          width: 12rem;
-        }
-
-        main {
-          flex: 1;
-          min-width: 0;
+          gap: 3rem;
+          justify-content: center;
+          grid-template-columns: 12rem 65ch;
         }
       }
     </style>
   </head>
   <body>
-    <div class="GenshiWrapper app">
-      <div class="app-left">
-        <LayoutHeader />
-        <LayoutNav />
+    <div class="GenshiWrapper">
+      <div class="app">
+        <div class="app-left">
+          <LayoutHeader />
+          <LayoutNav />
+        </div>
+        <main>
+          <slot />
+        </main>
       </div>
-      <main>
-        <slot />
-      </main>
     </div>
     <LayoutFooter />
   </body>
