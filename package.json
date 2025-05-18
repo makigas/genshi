@@ -1,6 +1,6 @@
 {
   "name": "@makigas/genshi",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "An atomic design system",
   "main": "dist/genshi.css",
   "style": "dist/genshi.css",

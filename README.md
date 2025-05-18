@@ -56,7 +56,7 @@ accidental layout breaks.
 
 ```json
 "dependencies": {
-  "@makigas/genshi": "1.0.0-alpha.0",
+  "@makigas/genshi": "1.0.0-alpha.1",
 }
 ```
 
