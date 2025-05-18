@@ -5,7 +5,7 @@ title: Textarea
 ---
 
 The textarea shares the usage of the `GenshiInput` class as well, considering it is very similar to
-the [text field](/form/text-field). As long as the `GenshiInput__control` tag is applied to a
+the [text field](/genshi/form/text-field). As long as the `GenshiInput__control` tag is applied to a
 textarea, it will be rendered in a consistent way with other text fields.
 
 ```html

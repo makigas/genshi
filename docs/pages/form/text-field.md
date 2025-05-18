@@ -125,7 +125,7 @@ This control can also be used for the following other input types:
   </label>
 </div>
 
-To see examples for files, please see [its own page](/form/files)
+To see examples for files, please see [its own page](/genshi/form/files)
 
 ## Monospace
 
