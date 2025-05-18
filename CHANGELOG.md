@@ -9,6 +9,7 @@ Added:
 
 Changed:
 
+- Cols will now expand horizontally and use the the whole container width.
 - Color palette now uses hexadecimal colors rather than `rgb()` expressions.
 
 ## 1.0.0-alpha.0
