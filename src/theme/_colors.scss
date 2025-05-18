@@ -1,8 +1,17 @@
 @use "sass:color";
 @use "sass:map";
 @use "sass:math";
+@use "sass:string";
 
 $-tone-increase: 15%;
+
+@function -mix-color($color1, $color2, $weight) {
+  $rgb-color: color.mix($color1, $color2, $weight, $method: oklch);
+  $ie-hex-color: color.ie-hex-str($rgb-color);
+  $hex-color: string.slice($ie-hex-color, 4);
+
+  @return "##{$hex-color}";
+}
 
 @function define-palette($color, $base) {
   $color-map: (
@@ -11,9 +20,9 @@ $-tone-increase: 15%;
 
   @for $i from 1 through 4 {
     $darker: "color-#{$i * 100 + 500}";
-    $darker-color: color.mix(black, $base, $-tone-increase * $i - 5%, $method: oklch);
+    $darker-color: -mix-color(black, $base, $-tone-increase * $i - 5%);
     $lighter: "color-#{$i * 100}";
-    $lighter-color: color.mix($base, white, $-tone-increase * $i + 30%, $method: oklch);
+    $lighter-color: -mix-color($base, white, $-tone-increase * $i + 30%);
     $color-map: map.merge($color-map, (#{$lighter}: $lighter-color, #{$darker}: $darker-color));
   }
 
@@ -78,8 +87,8 @@ $-tone-increase: 15%;
   }
 }
 
-$black: rgb(32 32 32);
-$white: rgb(252 247 247);
+$black: #202020;
+$white: #fcf7f7;
 $makigas: #4d6699;
 $edu: #cc9629;
 $ngl: #59aa48;

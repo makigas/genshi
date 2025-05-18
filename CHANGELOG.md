@@ -1,5 +1,11 @@
 # Changelog for @makigas/genshi
 
+## trunk
+
+Changed:
+
+- Color palette now uses hexadecimal colors rather than `rgb()` expressions.
+
 ## 1.0.0-alpha.0
 
 This is the first alpha. It adds a couple of components and selectors as a proof of concept. Now,
