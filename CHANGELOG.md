@@ -2,6 +2,10 @@
 
 ## trunk
 
+- Fixed:
+
+  - Invalid width/height for .GenshiButton_icon class
+
 ## 1.0.0-alpha.1
 
 Added:
