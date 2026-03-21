@@ -4,11 +4,9 @@
 // Compact (--compact): 0.5rem
 // Gap-less (--gapless): 0
 @mixin gap-density {
-  & {
-    --genshi-density-gap: 1rem;
+  --genshi-density-gap: 1rem;
 
-    gap: var(--genshi-density-gap);
-  }
+  gap: var(--genshi-density-gap);
 
   &--gapless {
     --genshi-density-gap: 0;
