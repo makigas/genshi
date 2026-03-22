@@ -22,11 +22,13 @@ $white: #f6f6f6;
     "color-900": $dark,
     "color-950": color.mix($dark, $black, 66%, $method: oklch),
   );
+
   @return $palette;
 }
 
 @function define-color-map($map) {
   $colors: ();
+
   @each $name, $values in $map {
     $base: color.to-space(list.nth($values, 1), oklch);
     $light-l: list.nth($values, 2);
@@ -41,6 +43,7 @@ $white: #f6f6f6;
       )
     );
   }
+
   @return $colors;
 }
 
@@ -91,7 +94,7 @@ $edu: #cc9629;
 $ngl: #59aa48;
 $red: #ae452c; // oklch(0.5285 0.1428 35.04)
 $orange: #e69e35; // oklch(0.7533 0.1428 72.32)
-$yellow:  #e7e05c; // oklch(0.8867 0.1513 106.2)
+$yellow: #e7e05c; // oklch(0.8867 0.1513 106.2)
 $green: #59cf51; // oklch(0.76 0.1974 142.2)
 $cyan: #30c0ec; // oklch(0.7533 0.1304 223.73)
 $blue: #2b65c2; // oklch(0.52 0.1579 259.73)
