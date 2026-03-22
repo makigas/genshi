@@ -4,13 +4,20 @@
 @use "theme/responsive";
 @use "sass:map";
 @use "sass:math";
+@use "sass:color";
+@use "sass:string";
+
+@function to-hex($color) {
+  $ie-hex-color: color.ie-hex-str($color);
+  @return "#" + string.slice($ie-hex-color, 4);
+}
 
 @mixin -unroll-color-map($base, $map) {
-  --genshi-#{$base}-50: #{map.get($map, "color-50")};
+  --genshi-#{$base}-50: #{to-hex(map.get($map, "color-50"))};
   @for $i from 1 through 9 {
-    --genshi-#{$base}-#{$i * 100}: #{map.get($map, "color-#{$i * 100}")};
+    --genshi-#{$base}-#{$i * 100}: #{to-hex(map.get($map, "color-#{$i * 100}"))};
   }
-  --genshi-#{$base}-950: #{map.get($map, "color-950")};
+  --genshi-#{$base}-950: #{to-hex(map.get($map, "color-950"))};
 }
 
 :where(:root) {
