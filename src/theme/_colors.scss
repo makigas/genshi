@@ -1,39 +1,39 @@
 @use "sass:color";
+@use "sass:list";
 @use "sass:map";
 @use "sass:math";
-@use "sass:string";
 
-$-tone-increase: 15%;
+$black: #0a0a0a;
+$white: #f6f6f6;
 
-@function -mix-color($color1, $color2, $weight) {
-  $rgb-color: color.mix($color1, $color2, $weight, $method: oklch);
-  $ie-hex-color: color.ie-hex-str($rgb-color);
-  $hex-color: string.slice($ie-hex-color, 4);
-
-  @return "##{$hex-color}";
-}
-
-@function define-palette($color, $base) {
-  $color-map: (
+@function define-palette($base, $light-l, $dark-l, $light-c, $dark-c) {
+  $light: color.change($base, $lightness: $light-l, $chroma: $light-c);
+  $dark: color.change($base, $lightness: $dark-l, $chroma: $dark-c);
+  $palette: (
+    "color-50": color.mix($light, $white, 55%, $method: oklch),
+    "color-100": $light,
+    "color-200": color.mix($light, $base, 75%, $method: oklch),
+    "color-300": color.mix($light, $base, 50%, $method: oklch),
+    "color-400": color.mix($light, $base, 25%, $method: oklch),
     "color-500": $base,
+    "color-600": color.mix($base, $dark, 75%, $method: oklch),
+    "color-700": color.mix($base, $dark, 50%, $method: oklch),
+    "color-800": color.mix($base, $dark, 25%, $method: oklch),
+    "color-900": $dark,
+    "color-950": color.mix($dark, $black, 66%, $method: oklch),
   );
-
-  @for $i from 1 through 4 {
-    $darker: "color-#{$i * 100 + 500}";
-    $darker-color: -mix-color(black, $base, $-tone-increase * $i - 5%);
-    $lighter: "color-#{$i * 100}";
-    $lighter-color: -mix-color($base, white, $-tone-increase * $i + 30%);
-    $color-map: map.merge($color-map, (#{$lighter}: $lighter-color, #{$darker}: $darker-color));
-  }
-
-  @return $color-map;
+  @return $palette;
 }
 
 @function define-color-map($map) {
   $colors: ();
-
-  @each $name, $base in $map {
-    $palette: define-palette($name, $base);
+  @each $name, $values in $map {
+    $base: color.to-space(list.nth($values, 1), oklch);
+    $light-l: list.nth($values, 2);
+    $dark-l: list.nth($values, 3);
+    $light-c: list.nth($values, 4);
+    $dark-c: list.nth($values, 5);
+    $palette: define-palette($base, $light-l, $dark-l, $light-c, $dark-c);
     $colors: map.merge(
       $colors,
       (
@@ -41,7 +41,6 @@ $-tone-increase: 15%;
       )
     );
   }
-
   @return $colors;
 }
 
@@ -87,20 +86,18 @@ $-tone-increase: 15%;
   }
 }
 
-$black: #202020;
-$white: #fcf7f7;
 $makigas: #4d6699;
 $edu: #cc9629;
 $ngl: #59aa48;
-$red: #c96857;
-$orange: #c59763;
-$yellow: #c5c763;
-$green: #8bb65a;
-$cyan: #58afc9;
-$blue: #186d92;
-$purple: #654d91;
-$teal: #8a8d86;
-$gray: #a6aaaf;
+$red: #ae452c; // oklch(0.5285 0.1428 35.04)
+$orange: #e69e35; // oklch(0.7533 0.1428 72.32)
+$yellow:  #e7e05c; // oklch(0.8867 0.1513 106.2)
+$green: #59cf51; // oklch(0.76 0.1974 142.2)
+$cyan: #30c0ec; // oklch(0.7533 0.1304 223.73)
+$blue: #2b65c2; // oklch(0.52 0.1579 259.73)
+$purple: #825ad8; // oklch(0.5733 0.1842 294.67)
+$teal: #63695b; // oklch(0.5113 0.0228 126.15)
+$gray: #808589; // oklch(0.6138 0.0085 241.74)
 $makigas-contrast: max-contrast($makigas);
 $edu-contrast: max-contrast($edu);
 $ngl-contrast: max-contrast($ngl);
@@ -115,19 +112,19 @@ $teal-contrast: max-contrast($teal);
 $gray-contrast: max-contrast($gray);
 $palettes: define-color-map(
   (
-    "makigas": $makigas,
-    "edu": $edu,
-    "ngl": $ngl,
+    "makigas": $makigas 0.8912 0.2732 0.0548 0.0428,
+    "edu": $edu 0.9654 0.5574 0.1019 0.1139,
+    "ngl": $ngl 0.8924 0.3844 0.0443 0.0953,
 
-    "red": $red,
-    "orange": $orange,
-    "yellow": $yellow,
-    "green": $green,
-    "cyan": $cyan,
-    "blue": $blue,
-    "purple": $purple,
-    "gray": $gray,
-    "teal": $teal,
+    "red": $red 0.8185 0.2495 0.0828 0.1828,
+    "orange": $orange 0.9183 0.4053 0.0808 0.1338,
+    "yellow": $yellow 0.9667 0.7717 0.0633 0.1273,
+    "green": $green 0.95 0.545 0.1154 0.1694,
+    "cyan": $cyan 0.9113 0.4933 0.0744 0.1114,
+    "blue": $blue 0.825 0.305 0.1069 0.1359,
+    "purple": $purple 0.8383 0.3413 0.1052 0.1002,
+    "gray": $gray 0.8963 0.2813 0.001 0.001,
+    "teal": $teal 0.8438 0.3288 0.001 0.001,
   )
 );
 $contrast: (

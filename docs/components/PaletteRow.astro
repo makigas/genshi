@@ -6,9 +6,10 @@ interface Props {
 
 const { key, name } = Astro.props;
 
-const values = Array(9)
+const regValues = Array(9)
   .fill(0)
   .map((_, i) => (i + 1) * 100);
+const values = [50, ...regValues, 950];
 ---
 
 <style>

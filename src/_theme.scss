@@ -6,9 +6,11 @@
 @use "sass:math";
 
 @mixin -unroll-color-map($base, $map) {
+  --genshi-#{$base}-50: #{map.get($map, "color-50")};
   @for $i from 1 through 9 {
     --genshi-#{$base}-#{$i * 100}: #{map.get($map, "color-#{$i * 100}")};
   }
+  --genshi-#{$base}-950: #{map.get($map, "color-950")};
 }
 
 :where(:root) {
