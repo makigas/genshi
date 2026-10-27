@@ -1,0 +1,5 @@
+# Five days, in minutes.
+minimumReleaseAge: 7200
+allowBuilds:
+  "@parcel/watcher": true
+  esbuild: true
