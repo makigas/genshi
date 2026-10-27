@@ -1,0 +1,4 @@
+interface:
+  display_name: "Update dependencies"
+  short_description: "Update Astro and Sass dependencies, preserving Node major"
+  default_prompt: "Use $update-dependencies to update this repository's dependencies and verify migrations while preserving its configured Node.js major."
