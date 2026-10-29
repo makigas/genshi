@@ -1,45 +1,17 @@
 {
-  "name": "@makigas/genshi",
-  "version": "1.0.0-alpha.1",
-  "description": "An atomic design system",
-  "main": "dist/genshi.css",
-  "style": "dist/genshi.css",
+  "name": "genshi-workspace",
   "scripts": {
-    "dist": "sass src/genshi.scss dist/genshi.css",
-    "dist:min": "sass src/genshi.scss dist/genshi.min.css --style=compressed",
+    "dist": "pnpm --filter @makigas/genshi run dist",
+    "dist:min": "pnpm --filter @makigas/genshi run dist:min",
     "fmt": "prettier -w .",
     "fmt:check": "prettier -c .",
-    "lint": "stylelint src",
-    "lint:fix": "stylelint src --fix",
+    "lint": "stylelint packages/css/src",
+    "lint:fix": "stylelint packages/css/src --fix",
     "docs": "astro build",
     "docs:dev": "astro dev",
     "docs:preview": "astro preview",
-    "clean": "rimraf dist www .astro",
-    "prepack": "run-s fmt:check lint dist dist:min"
+    "clean": "rimraf packages/css/dist www .astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/makigas/genshi.git"
-  },
-  "files": [
-    "dist/*.{css,map}",
-    "docs/assets/genshi*.png"
-  ],
-  "keywords": [
-    "genshi",
-    "design",
-    "css",
-    "components"
-  ],
-  "author": {
-    "name": "Dani Rodríguez",
-    "email": "dani@danirod.es"
-  },
-  "license": "LGPL-3.0",
-  "bugs": {
-    "url": "https://github.com/makigas/genshi/issues"
-  },
-  "homepage": "https://github.com/makigas/genshi#readme",
   "devDependencies": {
     "@astrojs/markdown-remark": "^7.3.4",
     "@fontsource/montserrat": "^5.3.0",
@@ -55,5 +27,6 @@
     "stylelint-order": "^8.1.2",
     "stylelint-prettier": "^5.0.3"
   },
-  "packageManager": "pnpm@12.15.0"
+  "packageManager": "pnpm@12.15.0",
+  "private": true
 }

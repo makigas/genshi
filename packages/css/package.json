@@ -1,0 +1,35 @@
+{
+  "name": "@makigas/genshi",
+  "version": "1.0.0-alpha.1",
+  "description": "An atomic design system",
+  "main": "dist/genshi.css",
+  "style": "dist/genshi.css",
+  "scripts": {
+    "dist": "sass src/genshi.scss dist/genshi.css",
+    "dist:min": "sass src/genshi.scss dist/genshi.min.css --style=compressed",
+    "prepack": "pnpm --workspace-root run fmt:check && pnpm --workspace-root run lint && pnpm run dist && pnpm run dist:min"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makigas/genshi.git"
+  },
+  "files": [
+    "dist/*.{css,map}",
+    "docs/assets/genshi*.png"
+  ],
+  "keywords": [
+    "genshi",
+    "design",
+    "css",
+    "components"
+  ],
+  "author": {
+    "name": "Dani Rodríguez",
+    "email": "dani@danirod.es"
+  },
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/makigas/genshi/issues"
+  },
+  "homepage": "https://github.com/makigas/genshi#readme"
+}
