@@ -28,7 +28,7 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         id: deployment
         with:
-          path: www
+          path: apps/docs/www
   deploy:
     environment:
       name: github-pages
