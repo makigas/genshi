@@ -20,5 +20,5 @@ jobs:
       - run: pnpm install
       - run: pnpm run fmt:check
       - run: pnpm run lint
-      - run: pnpm run dist:min
-      - run: pnpm run docs
+      - run: pnpm run check
+      - run: pnpm run build

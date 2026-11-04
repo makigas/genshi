@@ -1,0 +1,135 @@
+<script lang="ts">
+	import { base } from '$app/paths';
+</script>
+
+<label class="burguer" aria-label="Open menu">
+	<input type="checkbox" />
+	<svg
+		viewBox="0 0 24 24"
+		width="1.25rem"
+		height="1.25rem"
+		stroke="currentColor"
+		stroke-width="2"
+		fill="none"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="css-i6dzq1">
+		<line x1="3" y1="12" x2="21" y2="12"></line>
+		<line x1="3" y1="6" x2="21" y2="6"></line>
+		<line x1="3" y1="18" x2="21" y2="18"></line>
+	</svg>
+
+	Navigation
+</label>
+<nav>
+	<ul>
+		<li>
+			<strong>Layout</strong>
+			<ul>
+				<li><a href={`${base}/layout/cols/`}>Cols</a></li>
+				<li><a href={`${base}/layout/stack/`}>Stack</a></li>
+				<li><a href={`${base}/layout/wrapper/`}>Wrapper</a></li>
+			</ul>
+		</li>
+		<li>
+			<strong>Form</strong>
+			<ul>
+				<li><a href={`${base}/form/button/`}>Button</a></li>
+				<li><a href={`${base}/form/text-field/`}>Text Field</a></li>
+				<li><a href={`${base}/form/textarea/`}>Textarea</a></li>
+				<li><a href={`${base}/form/select/`}>Select</a></li>
+				<li><a href={`${base}/form/checkbox/`}>Checkbox</a></li>
+				<li><a href={`${base}/form/radio/`}>Radio</a></li>
+				<li><a href={`${base}/form/files/`}>File</a></li>
+			</ul>
+		</li>
+		<li>
+			<strong>Links</strong>
+			<ul>
+				<li><a href="https://github.com/makigas/genshi">GitHub</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+<style>
+	ul {
+		list-style: none;
+		padding-left: 0;
+		margin-top: 0;
+	}
+
+	li {
+		margin-top: 0;
+		margin-bottom: 0.25rem;
+	}
+
+	nav > ul > li + li {
+		margin-top: 1rem;
+	}
+
+	nav > ul ul {
+		margin-top: 0.25rem;
+	}
+
+	nav {
+		display: none;
+		background-color: var(--genshi-gray-100);
+		padding: 1rem;
+		margin-left: -15px;
+		margin-right: -15px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	label {
+		margin-left: -15px;
+		margin-right: -15px;
+		padding-left: 15px;
+		padding-right: 15px;
+		display: flex;
+		font-size: 1rem;
+		align-items: center;
+		gap: 1rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 1px solid var(--genshi-gray-200);
+		cursor: pointer;
+
+		&:hover {
+			color: var(--genshi-link-color);
+		}
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		nav {
+			background-color: var(--genshi-gray-900);
+		}
+
+		label {
+			border-bottom-color: var(--genshi-gray-700);
+		}
+	}
+
+	label input {
+		display: none;
+	}
+
+	label:has(input:checked) + nav {
+		display: block;
+	}
+
+	@media screen and (min-width: 1024px) {
+		.burguer {
+			display: none;
+		}
+
+		nav {
+			margin: 0;
+			padding: 0;
+			display: block;
+			text-align: right;
+			background: transparent;
+		}
+	}
+</style>

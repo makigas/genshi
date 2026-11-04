@@ -1,4 +1,5 @@
-.astro
-dist
-node_modules
-www
+.env
+.env.*
+!.env.example
+!.env.test
+node_modules/
