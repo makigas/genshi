@@ -7,7 +7,8 @@
   "scripts": {
     "dist": "sass src/genshi.scss dist/genshi.css",
     "dist:min": "sass src/genshi.scss dist/genshi.min.css --style=compressed",
-    "prepack": "pnpm --workspace-root run fmt:check && pnpm --workspace-root run lint && pnpm run dist && pnpm run dist:min"
+    "prepack": "pnpm --workspace-root run fmt:check && pnpm --workspace-root run lint && pnpm run dist && pnpm run dist:min",
+    "watch": "sass --watch src/genshi.scss dist/genshi.css"
   },
   "repository": {
     "type": "git",

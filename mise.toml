@@ -1,3 +1,25 @@
 [tools]
 node = "24"
 pnpm = "latest"
+
+[tasks."css:build"]
+run = "pnpm --filter @makigas/genshi run dist"
+
+[tasks."css:watch"]
+depends = ["css:build"]
+run = "pnpm --filter @makigas/genshi run watch"
+
+[tasks.docs]
+depends = ["css:build"]
+run = "pnpm --filter @makigas/genshi-docs run build"
+
+[tasks."docs:serve"]
+depends = ["css:build"]
+hide = true
+run = "pnpm --filter @makigas/genshi-docs run dev"
+
+[tasks."docs:dev"]
+depends = ["css:watch", "docs:serve"]
+
+[tasks."docs:preview"]
+run = "pnpm --filter @makigas/genshi-docs run preview"

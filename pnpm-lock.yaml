@@ -195,6 +195,10 @@ importers:
         version: 5.0.3(prettier@3.9.10)(stylelint@17.16.0(supports-color@10.2.2))
 
   apps/docs:
+    dependencies:
+      '@makigas/genshi':
+        specifier: workspace:*
+        version: link:../../packages/css
     devDependencies:
       '@astrojs/markdown-remark':
         specifier: ^7.3.4

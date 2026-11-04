@@ -7,9 +7,9 @@
     "fmt:check": "prettier -c .",
     "lint": "stylelint packages/css/src",
     "lint:fix": "stylelint packages/css/src --fix",
-    "docs": "pnpm --filter @makigas/genshi-docs run build",
-    "docs:dev": "pnpm --filter @makigas/genshi-docs run dev",
-    "docs:preview": "pnpm --filter @makigas/genshi-docs run preview",
+    "docs": "mise run docs",
+    "docs:dev": "mise run docs:dev",
+    "docs:preview": "mise run docs:preview",
     "clean": "rimraf packages/css/dist apps/docs/www apps/docs/.astro"
   },
   "devDependencies": {

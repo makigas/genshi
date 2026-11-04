@@ -1,6 +1,9 @@
 {
   "name": "@makigas/genshi-docs",
   "private": true,
+  "dependencies": {
+    "@makigas/genshi": "workspace:*"
+  },
   "scripts": {
     "build": "astro build",
     "dev": "astro dev",

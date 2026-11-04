@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: "24"
           cache: "pnpm"
+      - uses: jdx/mise-action@v3
       - run: pnpm install
       - run: pnpm run docs
       - uses: actions/upload-pages-artifact@v3
