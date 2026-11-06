@@ -1,5 +1,9 @@
 ---
+import { sections } from "../navigation.mjs";
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const path = Astro.url.pathname.slice(base.length);
+const rendition = path.startsWith("/svelte/") ? "svelte" : "html";
 ---
 
 <style>
@@ -7,6 +11,10 @@
     list-style: none;
     padding-left: 0;
     margin-top: 0;
+  }
+
+  [aria-current="page"] {
+    font-weight: bold;
   }
 
   li {
@@ -96,14 +104,10 @@
     stroke-linecap="round"
     stroke-linejoin="round"
     class="css-i6dzq1">
-    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line
-      x1="3"
-      y1="18"
-      x2="21"
-      y2="18">
-    </line>
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
   </svg>
-
   Navigation
 </label>
 <nav>
@@ -119,30 +123,41 @@
         </li>
       </ul>
     </li>
+    {Object.entries(sections).map(([section, pages]) => (
+      <li>
+        <strong>{section === "layout" ? "Layout" : "Form"}</strong>
+        <ul>
+          {pages.map(({ slug, title }) => {
+            const route = "/" + rendition + "/" + section + "/" + slug + "/";
+            return (
+              <li>
+                <a
+                  href={base + route}
+                  aria-current={path.replace(/\/?$/, "/") === route ? "page" : undefined}>
+                  {title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </li>
+    ))}
     <li>
-      <strong>Layout</strong>
+      <strong>Integrations</strong>
       <ul>
-        <li><a href="/genshi/layout/cols/">Cols</a></li>
-        <li><a href="/genshi/layout/stack/">Stack</a></li>
-        <li><a href="/genshi/layout/wrapper/">Wrapper</a></li>
-      </ul>
-    </li>
-    <li>
-      <strong>Form</strong>
-      <ul>
-        <li><a href="/genshi/form/button/">Button</a></li>
-        <li><a href="/genshi/form/text-field/">Text Field</a></li>
-        <li><a href="/genshi/form/textarea/">Textarea</a></li>
-        <li><a href="/genshi/form/select/">Select</a></li>
-        <li><a href="/genshi/form/checkbox/">Checkbox</a></li>
-        <li><a href="/genshi/form/radio/">Radio</a></li>
-        <li><a href="/genshi/form/files/">File</a></li>
+        <li>
+          <a href={base + "/svelte/"} aria-current={path === "/svelte/" ? "page" : undefined}>
+            Svelte
+          </a>
+        </li>
       </ul>
     </li>
     <li>
       <strong>Links</strong>
       <ul>
-        <li><a href="https://github.com/makigas/genshi">GitHub</a></li>
+        <li>
+          <a href="https://github.com/makigas/genshi">GitHub</a>
+        </li>
       </ul>
     </li>
   </ul>

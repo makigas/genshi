@@ -1,0 +1,53 @@
+---
+layout: ../../../layouts/DocLayout.astro
+title: File Field
+renditions: [html, svelte]
+---
+
+import Example from "../../../examples/svelte/FilesExamples.svelte";
+
+File controls can be used to select files and attach them to forms.
+
+```svelte
+import {FileField} from "@makigas/svelte";
+
+<FileField label="Avatar" helper="Select a photo to use as profile picture." />
+```
+
+<Example example="basic" />
+
+## Disabled
+
+Add the `disabled` prop to mark the field as disabled.
+
+<Example example="disabled" />
+
+## Icon
+
+The `FileField` component supports an additional snippet called `iconAfter`, to put an icon at the
+end of the input. There is no point on adding an icon at the start due to the nature of this widget.
+
+<Example example="icon" />
+
+## Validation
+
+For validation purposes, you can add the `validation` prop with the value either as `"valid"` or
+`"invalid"`.
+
+<Example example="validation" />
+
+<Example example="validation-2" />
+
+## Sizes
+
+Use the `size` prop to alter the size of the file field.
+
+<Example example="sizes" />
+
+<Example example="sizes-2" />
+
+<Example example="sizes-3" />
+
+<Example example="sizes-4" />
+
+<Example example="sizes-5" />

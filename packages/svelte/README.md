@@ -11,7 +11,7 @@ These are the Svelte Components required to integrate Genshi into a Svelte appli
 **Genshi** is the design system in use in makigas.es. Genshi is the japanese word for atom, because
 this project defines atomic components that can be used to build bigger user interfaces and layouts.
 
-For more information, please check out [the original Genshi docs][genshi].
+For more information, please check out [the Svelte documentation][genshi].
 
 ## Is it stable?
 
@@ -64,6 +64,6 @@ Make sure you [read the public license][lgpl] before using this library in your 
 
 [npm]: https://www.npmjs.com/package/@makigas/genshi-svelte
 [ghcr]: https://github.com/makigas/genshi-svelte/pkgs/npm/genshi-svelte
-[changelog]: https://github.com/makigas/genshi-svelte/blob/trunk/CHANGELOG.md
-[genshi]: https://makigas.github.io/genshi
+[changelog]: https://github.com/makigas/genshi/blob/trunk/packages/svelte/CHANGELOG.md
+[genshi]: https://makigas.github.io/genshi/svelte/
 [lgpl]: https://www.gnu.org/licenses/lgpl-3.0.en.html

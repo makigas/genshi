@@ -1,0 +1,72 @@
+---
+layout: ../../../layouts/DocLayout.astro
+title: Select
+renditions: [html, svelte]
+---
+
+import Example from "../../../examples/svelte/SelectExamples.svelte";
+
+The select component allows to pick an item from a list.
+
+```svelte
+import {(Select, SelectOption)} from "@makigas/genshi-svelte";
+
+<Select
+  label="Continent"
+  helper="Specify your region in order to show the fastest CDNs in your area.">
+  <SelectOption value="africa">Africa</SelectOption>
+  <SelectOption value="america">America</SelectOption>
+  <SelectOption value="asia">Asia</SelectOption>
+  <SelectOption value="europe">Europe</SelectOption>
+  <SelectOption value="oceania">Oceania</SelectOption>
+</Select>
+```
+
+<Example example="basic" client:load />
+
+## List
+
+Pass the `multiple` prop to the `Select` component to render it as a list.
+
+```svelte
+<Select
+  multiple
+  rows={3}
+  label="Continent"
+  helper="Specify your region in order to show the fastest CDNs in your area.">
+  <SelectOption value="africa">Africa</SelectOption>
+  <SelectOption value="america">America</SelectOption>
+  <SelectOption value="asia">Asia</SelectOption>
+  <SelectOption value="europe">Europe</SelectOption>
+  <SelectOption value="oceania">Oceania</SelectOption>
+</Select>
+```
+
+<Example example="list" client:load />
+
+## Disabled
+
+Selects can also be disabled with the `disabled` prop:
+
+<Example example="disabled" />
+
+<Example example="disabled-2" />
+
+## Validation
+
+You can add the `validation` prop to mark the field as valid or invalid with either the `"valid"` or
+`"invalid"` string. Absence of this prop will mark the field as default.
+
+<Example example="validation" />
+
+## Sizes
+
+<Example example="sizes" />
+
+<Example example="sizes-2" />
+
+<Example example="sizes-3" />
+
+<Example example="sizes-4" />
+
+<Example example="sizes-5" />

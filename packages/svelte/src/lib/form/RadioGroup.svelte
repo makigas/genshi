@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ariaInvalid, type Validation } from '$lib/common.js';
+	import { ariaInvalid, type Validation } from '../common.js';
 	import type { Snippet } from 'svelte';
 	import type { HTMLFieldsetAttributes } from 'svelte/elements';
 

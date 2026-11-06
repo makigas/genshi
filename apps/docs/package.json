@@ -2,7 +2,8 @@
   "name": "@makigas/genshi-docs",
   "private": true,
   "dependencies": {
-    "@makigas/genshi": "workspace:*"
+    "@makigas/genshi": "workspace:*",
+    "@makigas/genshi-svelte": "workspace:*"
   },
   "scripts": {
     "build": "astro build",
@@ -16,9 +17,14 @@
   },
   "devDependencies": {
     "@astrojs/markdown-remark": "^7.3.4",
+    "@astrojs/mdx": "^8.1.2",
+    "@astrojs/svelte": "^9.1.2",
     "@fontsource/montserrat": "^5.3.0",
+    "@lucide/svelte": "^0.511.0",
     "astro": "^7.4.2",
     "sass": "^1.106.1",
-    "sharp": "^0.35.5"
+    "sharp": "^0.35.5",
+    "svelte": "5.57.3",
+    "typescript": "^5.9.3"
   }
 }

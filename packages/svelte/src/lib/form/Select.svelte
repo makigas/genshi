@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ariaInvalid, type FormControlProps } from '$lib/common.js';
+	import { ariaInvalid, type FormControlProps } from '../common.js';
 	import type { Snippet } from 'svelte';
 	import type { HTMLSelectAttributes } from 'svelte/elements';
 	import FormControl from './FormControl.svelte';

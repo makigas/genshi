@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from 'svelte/elements';
 	import FormControl from './FormControl.svelte';
-	import { ariaInvalid, type FormControlProps } from '$lib/common.js';
+	import { ariaInvalid, type FormControlProps } from '../common.js';
 	import type { Icon } from '@lucide/svelte';
 
 	interface Props extends FormControlProps<HTMLInputAttributes> {

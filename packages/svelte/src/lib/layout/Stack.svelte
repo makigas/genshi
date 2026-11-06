@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { densityClass, modifierClass, type Density } from '$lib/common.js';
+	import { densityClass, modifierClass, type Density } from '../common.js';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 

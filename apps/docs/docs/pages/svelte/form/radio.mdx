@@ -1,0 +1,63 @@
+---
+layout: ../../../layouts/DocLayout.astro
+title: Radio button
+renditions: [html, svelte]
+---
+
+import Example from "../../../examples/svelte/RadioExamples.svelte";
+
+The radio button component.
+
+Radio buttons usually are placed in a `RadioGroup`. Not only it adds semantic value to the form, but
+also it provides validation to the whole fieldset, and allows to mark the fieldset as inline.
+
+```svelte
+import {(RadioButton, RadioGroup)} from '@makigas/genshi-svelte';
+
+<RadioGroup label="Install updates">
+  <RadioButton
+    label="Install update now"
+    bind:group={updates}
+    value="now"
+    helper="The application will be restarted" />
+  <RadioButton
+    label="Install update later"
+    bind:group={updates}
+    value="later"
+    helper="The application will be updated on next launch" />
+  <RadioButton
+    disabled
+    label="Do not update the app"
+    bind:group={updates}
+    value="never"
+    helper="You cannot disable updates if you are using the free version" />
+</RadioGroup>
+```
+
+<Example example="basic" client:load />
+
+## Inline mode
+
+If you add the `inline` prop to a `RadioGroup`, you can make it render inline.
+
+<Example example="inline-mode" client:load />
+
+## Validation
+
+You can mark the whole `RadioGroup` as invalid or valid using the `validation` attribute. Unlike
+Genshi, the Svelte integration does not offer support for marking specific radio buttons as valid or
+invalid.
+
+<Example example="validation" client:load />
+
+## Component sizes
+
+<Example example="component-sizes" client:load />
+
+<Example example="component-sizes-2" client:load />
+
+<Example example="component-sizes-3" client:load />
+
+<Example example="component-sizes-4" client:load />
+
+<Example example="component-sizes-5" client:load />

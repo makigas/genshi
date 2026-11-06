@@ -9,13 +9,17 @@ run = "pnpm --filter @makigas/genshi run build"
 depends = ["css:build"]
 run = "pnpm --filter @makigas/genshi run watch"
 
+[tasks."svelte:build"]
+hide = true
+run = "pnpm --filter @makigas/genshi-svelte run build"
+
 [tasks."docs:build"]
 alias = "docs"
-depends = ["css:build"]
+depends = ["css:build", "svelte:build"]
 run = "pnpm --filter @makigas/genshi-docs run build"
 
 [tasks."docs:serve"]
-depends = ["css:build"]
+depends = ["css:build", "svelte:build"]
 hide = true
 run = "pnpm --filter @makigas/genshi-docs run dev"
 
@@ -24,11 +28,3 @@ depends = ["css:watch", "docs:serve"]
 
 [tasks."docs:preview"]
 run = "pnpm --filter @makigas/genshi-docs run preview"
-
-[tasks."svelte:serve"]
-depends = ["css:build"]
-hide = true
-run = "pnpm --filter @makigas/genshi-svelte run dev"
-
-[tasks."svelte:dev"]
-depends = ["css:watch", "svelte:serve"]

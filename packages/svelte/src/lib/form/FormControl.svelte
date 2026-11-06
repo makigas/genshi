@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { sizeClass, type Size } from '$lib/common.js';
+	import { sizeClass, type Size } from '../common.js';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 

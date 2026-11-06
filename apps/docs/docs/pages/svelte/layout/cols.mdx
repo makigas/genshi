@@ -1,0 +1,45 @@
+---
+layout: ../../../layouts/DocLayout.astro
+title: Cols
+renditions: [html, svelte]
+---
+
+import Example from "../../../examples/svelte/ColsExamples.svelte";
+
+Cols create equally sized columns to render HTML. The grid gives each child an equal-width column.
+
+To create a cols, use the following code:
+
+```svelte
+<script>
+  import { Cols } from "@makigas/genshi-svelte";
+</script>
+
+<Cols>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+</Cols>
+```
+
+<Example example="basic" />
+
+## Density
+
+To change the density of the columns, you can tweak the gap, via the `density` parameter:
+
+- `density="gapless"` to disable the gap completely.
+- `density="compact"` to use a compact layout.
+- `density="normal"` to use the default gap - this is the default value for the parameter.
+- `density="cozy"` to add more spacing between the elements.
+
+<Example example="density" />
+
+<Example example="density-2" />
+
+<Example example="density-3" />
+
+<Example example="density-4" />

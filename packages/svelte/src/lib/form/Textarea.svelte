@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLTextareaAttributes } from 'svelte/elements';
 	import FormControl from './FormControl.svelte';
-	import { ariaInvalid, type FormControlProps } from '$lib/common.js';
+	import { ariaInvalid, type FormControlProps } from '../common.js';
 	import type { Icon } from '@lucide/svelte';
 
 	interface Props extends FormControlProps<HTMLTextareaAttributes> {

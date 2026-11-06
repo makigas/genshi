@@ -40,6 +40,8 @@ to see how the project advances.
 
 ## Installation instructions
 
+For Svelte, see the [Svelte installation and examples](/genshi/svelte/).
+
 Genshi is available both in [NPM][npm] and in the [GitHub Packages registry][ghcr].
 
 ```bash

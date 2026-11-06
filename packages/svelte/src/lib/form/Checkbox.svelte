@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ariaInvalid, sizeClass, type FormControlProps } from '$lib/common.js';
+	import { ariaInvalid, sizeClass, type FormControlProps } from '../common.js';
 	import type { HTMLInputAttributes } from 'svelte/elements';
 
 	interface Props extends FormControlProps<HTMLInputAttributes> {

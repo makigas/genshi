@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { colorClass, sizeClass, type Color, type Size } from '$lib/common.js';
+	import { colorClass, sizeClass, type Color, type Size } from '../common.js';
 	import type { Icon } from '@lucide/svelte';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';

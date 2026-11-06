@@ -7,7 +7,4 @@ bun.lockb
 
 # Generated output
 .svelte-kit/
-build/
 dist/
-playwright-report/
-test-results/
