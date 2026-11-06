@@ -87,7 +87,6 @@ Work from the repository root; no prior chat context required.
    - `pnpm run test`
 
 2. Re-read root and package `package.json` files; run relevant newer checks.
-   Install the configured Playwright browser when needed for the existing tests.
    Astro build success does not prove separate type-check success.
 3. Format changed files only; avoid repository-wide autoformatting. Separate
    pre-existing failures from regressions.
