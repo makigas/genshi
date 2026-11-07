@@ -21,6 +21,7 @@
     "url": "git+https://github.com/makigas/genshi.git"
   },
   "files": [
+    "CHANGELOG.md",
     "dist/*.{css,map}",
     "docs/assets/genshi*.png"
   ],

@@ -54,7 +54,7 @@ For additional usage instructions, [read the docs][docs].
 
 Genshi is published under the terms of the GNU Lesser Public License 3.0.
 
-[changelog]: https://github.com/makigas/genshi/blob/trunk/CHANGELOG.md
+[changelog]: https://github.com/makigas/genshi/blob/trunk/packages/css/CHANGELOG.md
 [docs]: https://makigas.github.io/genshi/
 [npm]: https://www.npmjs.com/package/@makigas/genshi
 [ghcr]: https://github.com/makigas/genshi/pkgs/npm/genshi

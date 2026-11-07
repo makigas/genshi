@@ -29,4 +29,4 @@ import "@makigas/genshi";
 
 [npm]: https://www.npmjs.com/package/@makigas/genshi
 [ghcr]: https://github.com/makigas/genshi/pkgs/npm/genshi
-[changelog]: https://github.com/makigas/genshi/blob/trunk/CHANGELOG.md
+[changelog]: https://github.com/makigas/genshi/blob/trunk/packages/css/CHANGELOG.md

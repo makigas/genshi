@@ -2,8 +2,23 @@
 
 ## trunk
 
-- Fixed:
-  - Invalid width/height for .GenshiButton_icon class
+Genshi is now a monorepo. @makigas/genshi is still the core package.
+
+Added:
+
+- Colors:
+  - New color tokens -50 and -950 have been defined.
+
+Changed:
+
+- Colors:
+  - Color palette now uses more vivid colors with improved math for the chroma and luma sweeps.
+  - Minified version of the CSS now emits hexadecimal colors, to further reduce file size.
+
+Fixed:
+
+- Form/Button:
+  - Icons in buttons were not scaling up and down.
 
 ## 1.0.0-alpha.1
 

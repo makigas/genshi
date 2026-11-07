@@ -51,4 +51,4 @@ your global scope.
 
 [npm]: https://www.npmjs.com/package/@makigas/genshi-svelte
 [ghcr]: https://github.com/makigas/genshi-svelte/pkgs/npm/genshi-svelte
-[changelog]: https://github.com/makigas/genshi/blob/trunk/CHANGELOG.md
+[changelog]: https://github.com/makigas/genshi/blob/trunk/packages/svelte/CHANGELOG.md
