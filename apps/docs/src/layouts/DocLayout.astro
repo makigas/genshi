@@ -1,0 +1,41 @@
+---
+import RootLayout from "./RootLayout.astro";
+
+interface Props {
+  frontmatter?: {
+    title?: string;
+  };
+  title?: string;
+}
+
+const { frontmatter, title } = Astro.props;
+const pageTitle = title ?? frontmatter?.title;
+---
+
+<style>
+  .pageHeader {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .pageHeader {
+      align-items: center;
+      flex-direction: row;
+      margin-bottom: 0;
+      height: 6rem;
+    }
+  }
+
+  .pageHeader h1 {
+    margin: 0;
+  }
+</style>
+
+<RootLayout title={pageTitle}>
+  <header class="pageHeader">{pageTitle && <h1>{pageTitle}</h1>}</header>
+  <slot />
+</RootLayout>

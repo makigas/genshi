@@ -1,0 +1,89 @@
+---
+layout: ../../../layouts/DocLayout.astro
+title: Textarea
+---
+
+import Example from "../../../examples/svelte/TextareaExamples.svelte";
+
+The textarea is similar to the [Text Field](/genshi/svelte/form/text-field). However, it is used to
+render textareas, which are multiline areas where text can be written.
+
+```svelte
+<script>
+  import { Textarea } from "@makigas/genshi-svelte";
+</script>
+
+<Textarea
+  label="Your bio"
+  placeholder="Write your bio"
+  helper="A bio helps your profile be more interesting." />
+```
+
+<Example example="basic" />
+
+## Monospace
+
+Add the `mono` prop to render the textarea using monospaced fonts.
+
+```svelte
+<Textarea mono label="Custom HTML code" />
+```
+
+<Example example="monospace" />
+
+## Disabled and readonly
+
+Add the `disabled` prop to your textarea to make it disabled.
+
+```svelte
+<Textarea
+  disabled
+  label="User bio"
+  value="CEO of the world"
+  helper="You cannot change your bio right now" />
+```
+
+<Example example="disabled-and-readonly" />
+
+Similarly, you can use the `readonly` prop to make it readonly.
+
+```svelte
+<Textarea
+  readonly
+  label="User bio"
+  value="CEO of the world"
+  helper="You cannot change your bio right now" />
+```
+
+<Example example="disabled-and-readonly-2" />
+
+## Icons
+
+You can use the `iconBefore` and `iconAfter` attributes to pass a Lucide component const to render
+it at the start or at the end of the field.
+
+<Example example="icons" />
+
+## Validation
+
+You can add the `validation` prop to mark the field as valid or invalid with either the `"valid"` or
+`"invalid"` string. Absence of this prop will mark the field as default.
+
+<Example example="validation" />
+
+## Sizes
+
+You can use the `size` prop to change the size of the component.
+
+If you don't want to use the default medium size, change it via the `size` parameter, which accepts
+one of the possible values in: `xs sm md lg xl`.
+
+<Example example="sizes" />
+
+<Example example="sizes-2" />
+
+<Example example="sizes-3" />
+
+<Example example="sizes-4" />
+
+<Example example="sizes-5" />

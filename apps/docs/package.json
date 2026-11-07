@@ -9,7 +9,7 @@
     "build": "astro build",
     "dev": "astro dev",
     "preview": "astro preview",
-    "clean": "rimraf www .astro",
+    "clean": "rimraf dist .astro",
     "lint": "pnpm run fmt:check",
     "lint:fix": "pnpm run fmt",
     "fmt": "prettier -w .",

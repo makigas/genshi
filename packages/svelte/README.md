@@ -4,66 +4,62 @@
   <img alt="Genshi" src="src/doc/genshi.png" />
 </picture>
 
-# Genshi-Svelte
+Use the [Genshi][genshi] components inside Svelte components using a native API.
 
-These are the Svelte Components required to integrate Genshi into a Svelte application.
-
-**Genshi** is the design system in use in makigas.es. Genshi is the japanese word for atom, because
-this project defines atomic components that can be used to build bigger user interfaces and layouts.
-
-For more information, please check out [the Svelte documentation][genshi].
-
-## Is it stable?
-
-**No**. It's as unstable as the original Genshi, at least for now. If you want to follow updates,
-watch the repo on GitHub so that you can get notified of new releases to see how the project
-advances.
-
-## Installation instructions
-
-Genshi-Svelte is available both in [NPM][npm] and the [GitHub Packages Registry][ghcr]. Note that
-installing Genshi-Svelte only pulls the Svelte components. To use the stylesheet, you'll have to
-install `@makigas/genshi` as well:
-
-```bash
-npm i --save @makigas/genshi @makigas/genshi-svelte
-
-# Import Montserrat for titles. You can replace this by tweaking the CSS variables.
-npm i --save @fontsource/montserrat
-
-# If you plan on using icons, Genshi-Svelte integrates with Lucide.
-npm i --save @lucide/svelte
+```html
+<button type="button" class="GenshiButton GenshiButton--md">A button</button>
 ```
 
-Note that until 1.0.0 is reached, every alpha may have breaking changes. Reading the [changelog] is
-important, but also it is important to pin the version in use, and manually update, to prevent
-accidental layout breaks.
+becomes just:
+
+```tsx
+<Button size="md">A button</Button>
+```
+
+## Install
+
+Install `@makigas/genshi-svelte`, available both from [npm] and the [GitHub Packages
+Registry][ghcr]. Keep in mind that you also need the base `@makigas/genshi` too:
+
+```bash
+npm add @makigas/genshi @makigas/genshi-svelte
+pnpm add @makigas/genshi @makigas/genshi-svelte
+yarn add @makigas/genshi @makigas/genshi-svelte
+```
+
+Keep in mind that Genshi right now is alpha and may have breaking changes. Pin your version until
+1.0.0 is released, and read the [changelog] before updating.
 
 ```json
-"dependencies": {
-  "@makigas/genshi": "1.0.0-alpha.1",
-  "@makigas/genshi-svelte": "1.0.0-alpha.1",
+{
+	"dependencies": {
+		"@makigas/genshi": "1.0.0-alpha.1",
+		"@makigas/genshi-svelte": "1.0.0-alpha.1"
+	}
 }
 ```
 
-Then, the most straightforward to embed Genshi is to add the imports for the font and the CSS
-stylesheet into `src/routes/+layout.svelte`, or wherever you plan to use it:
+Then you can start importing components from Svelte code. Remember to also add the stylesheet in
+your global scope.
 
-```svelte
+```html
 <script>
-	import '@fontsource/montserrat/400.css';
-	import '@fontsource/montserrat/700.css';
 	import '@makigas/genshi';
+
+	import { Link, Button, Stack } from '@makigas/genshi-svelte';
 </script>
 ```
 
+## Usage
+
+For additional usage instructions, [read the docs][docs].
+
 ## License
 
-Genshi is published under the terms of the GNU Lesser Public License 3.0, or simply GNU LGPL 3.0.
-Make sure you [read the public license][lgpl] before using this library in your project.
+Genshi is published under the terms of the GNU Lesser Public License 3.0.
 
 [npm]: https://www.npmjs.com/package/@makigas/genshi-svelte
 [ghcr]: https://github.com/makigas/genshi-svelte/pkgs/npm/genshi-svelte
 [changelog]: https://github.com/makigas/genshi/blob/trunk/packages/svelte/CHANGELOG.md
-[genshi]: https://makigas.github.io/genshi/svelte/
-[lgpl]: https://www.gnu.org/licenses/lgpl-3.0.en.html
+[genshi]: https://makigas.github.io/genshi
+[docs]: https://makigas.github.io/genshi/svelte

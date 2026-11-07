@@ -1,0 +1,269 @@
+---
+import { sections } from "../navigation.mjs";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const path = Astro.url.pathname.slice(base.length).replace(/\/?$/, "/");
+const rendition = path.startsWith("/svelte/") ? "svelte" : "html";
+const libraries = {
+  html: { label: "HTML/CSS" },
+  svelte: { label: "Svelte" },
+};
+const reference = path.match(/^\/(?:html|svelte)(\/(?:layout|form)\/[^/]+\/)$/)?.[1];
+---
+
+<style>
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+  }
+
+  [aria-current="page"] {
+    font-weight: bold;
+  }
+
+  li {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  nav > ul > li + li,
+  .libraryPanel > ul > li + li {
+    margin-top: 1rem;
+  }
+
+  nav > ul ul {
+    margin-top: 0.25rem;
+  }
+
+  .libraryPanel summary {
+    cursor: pointer;
+  }
+
+  .libraryPanel > ul {
+    margin-bottom: 0;
+  }
+
+  :global(html[data-library-script]) .libraryPanel > summary,
+  :global(html[data-library-script]) nav:not([data-library-enhanced])
+    [data-library-section]:not([data-library-initial]) {
+    display: none;
+  }
+
+  [data-library-picker][hidden] {
+    display: none;
+  }
+
+  :global(html[data-library-script]) [data-library-picker][hidden] {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    background-color: var(--genshi-gray-100);
+    padding: 1rem;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .burguer {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--genshi-gray-200);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--genshi-link-color);
+    }
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    nav {
+      background-color: var(--genshi-gray-900);
+    }
+
+    .burguer {
+      border-bottom-color: var(--genshi-gray-700);
+    }
+  }
+
+  .burguer input {
+    display: none;
+  }
+
+  .burguer:has(input:checked) + nav {
+    display: block;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .burguer {
+      display: none;
+    }
+
+    nav {
+      margin: 0;
+      padding: 0;
+      display: block;
+      text-align: right;
+      background: transparent;
+    }
+  }
+</style>
+
+<label class="burguer" aria-label="Open menu">
+  <input type="checkbox" />
+  <svg
+    viewBox="0 0 24 24"
+    width="1.25rem"
+    height="1.25rem"
+    stroke="currentColor"
+    stroke-width="2"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="css-i6dzq1">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+  Navigation
+</label>
+<nav data-library-nav>
+  <ul>
+    <li>
+      <a href={base + "/install"}>Install</a>
+    </li>
+    <li>
+      <strong>Theme</strong>
+      <ul>
+        <li>
+          <a
+            href={base + "/theme/typography/"}
+            aria-current={path === "/theme/typography/" ? "page" : undefined}>
+            Typography
+          </a>
+        </li>
+        <li>
+          <a
+            href={base + "/theme/colors/"}
+            aria-current={path === "/theme/colors/" ? "page" : undefined}>
+            Colors
+          </a>
+        </li>
+      </ul>
+    </li>
+    <hr />
+    <li class="GenshiSelect" data-library-picker hidden>
+      <select
+        class="GenshiSelect__control"
+        id="docs-library"
+        aria-label="Library"
+        aria-description={
+          reference ? "Changing library opens the matching reference page." : undefined
+        }>
+        {Object.entries(libraries).map(([key, { label }]) => (
+          <option
+            value={key}
+            selected={key === rendition}
+            data-href={reference ? base + "/" + key + reference : undefined}>
+            {label}
+          </option>
+        ))}
+      </select>
+    </li>
+    {Object.entries(libraries).map(([key, { label }]) => (
+      <li data-library-section={key} data-library-initial={key === rendition ? "" : undefined}>
+        <details class="libraryPanel" open={key === rendition}>
+          <summary>
+            <strong>{label}</strong>
+          </summary>
+          <ul>
+            {key === "svelte" && (
+              <li>
+                <a href={base + "/svelte/"} aria-current={path === "/svelte/" ? "page" : undefined}>
+                  Integration
+                </a>
+              </li>
+            )}
+            {Object.entries(sections).map(([section, pages]) => (
+              <li>
+                <strong>{section === "layout" ? "Layout" : "Form"}</strong>
+                <ul>
+                  {pages.map(({ slug, title }) => {
+                    const route = "/" + key + "/" + section + "/" + slug + "/";
+                    return (
+                      <li>
+                        <a href={base + route} aria-current={path === route ? "page" : undefined}>
+                          {title}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </details>
+      </li>
+    ))}
+    <hr />
+    <li>
+      <strong>Links</strong>
+      <ul>
+        <li>
+          <a href="https://github.com/makigas/genshi">GitHub</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<script>
+  const nav = document.querySelector<HTMLElement>("[data-library-nav]");
+  const picker = nav?.querySelector<HTMLElement>("[data-library-picker]");
+  const select = picker?.querySelector("select");
+
+  if (nav && picker && select) {
+    const sections = nav.querySelectorAll<HTMLElement>("[data-library-section]");
+    const initialLibrary = Array.from(select.options).find(
+      (option) => option.defaultSelected,
+    )?.value;
+
+    if (initialLibrary) {
+      const showLibrary = (library: string) => {
+        for (const section of sections) {
+          const visible = section.dataset.librarySection === library;
+          section.hidden = !visible;
+          section.querySelector("details")!.open = visible;
+        }
+      };
+
+      select.value = initialLibrary;
+      showLibrary(initialLibrary);
+      select.addEventListener("change", () => {
+        const destination = select.selectedOptions[0]?.dataset.href;
+        if (destination) {
+          const url = new URL(destination, location.href);
+          url.hash = location.hash;
+          select.value = initialLibrary;
+          location.assign(url);
+        } else {
+          showLibrary(select.value);
+        }
+      });
+
+      nav.dataset.libraryEnhanced = "";
+      picker.hidden = false;
+    }
+  }
+</script>

@@ -3,7 +3,7 @@ import { unified } from "@astrojs/markdown-remark";
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import svelte from "@astrojs/svelte";
-import { sections } from "./docs/navigation.mjs";
+import { sections } from "./src/navigation.mjs";
 
 const base = "/genshi";
 
@@ -11,9 +11,6 @@ const base = "/genshi";
 export default defineConfig({
   site: "https://makigas.github.io",
   base,
-  srcDir: "docs",
-  outDir: "www",
-  publicDir: "docs/public",
   compressHTML: true,
   integrations: [mdx(), svelte()],
   redirects: Object.fromEntries(
