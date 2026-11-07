@@ -1,2 +1,5 @@
+.agents/skills/
+apps/
 dist/
+packages/
 pnpm-lock.yaml

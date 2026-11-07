@@ -82,16 +82,15 @@ Work from the repository root; no prior chat context required.
    - `pnpm audit`
    - `pnpm run fmt:check`
    - `pnpm run lint`
-   - `pnpm run dist`
-   - `pnpm run dist:min`
-   - `pnpm run docs`
+   - `pnpm run check`
+   - `pnpm run build`
+   - `pnpm run test`
 
-2. Re-read `package.json`; run relevant newer checks. Currently no `build`,
-   `test` or `typecheck` scripts: do not invent them or install tools merely to
-   fill gaps. Astro build success does not prove separate type-check success.
+2. Re-read root and package `package.json` files; run relevant newer checks.
+   Astro build success does not prove separate type-check success.
 3. Format changed files only; avoid repository-wide autoformatting. Separate
    pre-existing failures from regressions.
-4. Inspect `dist/genshi.css`, `dist/genshi.min.css` and source maps. Investigate
+4. Inspect `packages/css/dist/genshi.css`, `packages/css/dist/genshi.min.css` and source maps. Investigate
    unexpected selector/declaration changes after Sass upgrades, even if builds pass.
 5. Run `pnpm run docs:preview`; smoke-test production docs at `/genshi/` or the
    configured base: navigation; representative form/layout/theme pages;
