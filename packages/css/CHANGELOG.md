@@ -1,6 +1,6 @@
 # Changelog for @makigas/genshi
 
-## trunk
+## 1.0.0-alpha.2
 
 Genshi is now a monorepo. @makigas/genshi is still the core package.
 Genshi is now released under the terms of the AGPL-3.0-or-later license.

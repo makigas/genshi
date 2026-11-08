@@ -1,7 +1,7 @@
 {
 	"name": "@makigas/genshi-svelte",
 	"description": "The Svelte Components required to integrate Genshi into a Svelte application",
-	"version": "1.0.0-alpha.1",
+	"version": "1.0.0-alpha.2",
 	"license": "AGPL-3.0-or-later",
 	"repository": {
 		"type": "git",

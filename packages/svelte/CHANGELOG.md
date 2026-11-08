@@ -1,6 +1,6 @@
 # Changelog for @makigas/genshi-svelte
 
-## trunk
+## 1.0.0-alpha.2
 
 Genshi is now a monorepo. @makigas/genshi-svelte has been moved to
 https://github.com/makigas/genshi. Genshi is now released under the terms of

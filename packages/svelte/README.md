@@ -33,8 +33,8 @@ Keep in mind that Genshi right now is alpha and may have breaking changes. Pin y
 ```json
 {
 	"dependencies": {
-		"@makigas/genshi": "1.0.0-alpha.1",
-		"@makigas/genshi-svelte": "1.0.0-alpha.1"
+		"@makigas/genshi": "1.0.0-alpha.2",
+		"@makigas/genshi-svelte": "1.0.0-alpha.2"
 	}
 }
 ```
