@@ -3,7 +3,8 @@
 ## trunk
 
 Genshi is now a monorepo. @makigas/genshi-svelte has been moved to
-https://github.com/makigas/genshi.
+https://github.com/makigas/genshi. Genshi is now released under the terms of
+the AGPL-3.0-or-later license.
 
 Removed:
 

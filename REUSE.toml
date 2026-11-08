@@ -1,0 +1,36 @@
+version = 1
+SPDX-PackageName = "genshi"
+SPDX-PackageSupplier = "Dani Rodríguez"
+SPDX-PackageDownloadLocation = "https://github.com/makigas/genshi"
+
+[[annotations]]
+path = [
+  ".agents/skills/update-dependencies/SKILL.md",
+  ".agents/skills/update-dependencies/agents/openai.yaml",
+  "**/.gitignore",
+  "**/.prettierignore",
+  "**/.prettierrc",
+  "**/.prettierrc.js",
+  "**/.prettierrc.mjs",
+  "**/astro.config.mjs",
+  "**/eslint.config.js",
+  "**/package.json",
+  "**/pnpm*",
+  "**/stylelint.config.js",
+  "**/tsconfig.json",
+  "AGENTS.md",
+]
+SPDX-FileCopyrightText = "No copyright"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = [
+    "**/genshi.png",
+    "**/genshi@dark.png",
+    "apps/docs/public/favicon.svg",
+    "apps/docs/src/assets/opengraph.png",
+    "**/CHANGELOG.md",
+    "**/README.md",
+]
+SPDX-FileCopyrightText = "Copyright (c) 2025-2026 Dani Rodríguez"
+SPDX-License-Identifier = "CC-BY-SA-4.0"

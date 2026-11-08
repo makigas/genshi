@@ -52,7 +52,8 @@ For additional usage instructions, [read the docs][docs].
 
 ## License
 
-Genshi is published under the terms of the GNU Lesser Public License 3.0.
+Genshi is published under the terms of the GNU Affero General Public License 3.0 or later
+(AGPL-3.0-or-later).
 
 [changelog]: https://github.com/makigas/genshi/blob/trunk/packages/css/CHANGELOG.md
 [docs]: https://makigas.github.io/genshi/

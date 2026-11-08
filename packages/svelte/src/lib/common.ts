@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: Copyright (c) 2025-2026 Dani Rodríguez
 import type { Component } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
 

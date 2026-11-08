@@ -56,7 +56,8 @@ For additional usage instructions, [read the docs][docs].
 
 ## License
 
-Genshi is published under the terms of the GNU Lesser Public License 3.0.
+Genshi is published under the terms of the GNU Affero General Public License 3.0 or later
+(AGPL-3.0-or-later).
 
 [npm]: https://www.npmjs.com/package/@makigas/genshi-svelte
 [ghcr]: https://github.com/makigas/genshi-svelte/pkgs/npm/genshi-svelte

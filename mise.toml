@@ -1,6 +1,11 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: No copyright
+
 [tools]
 node = "24"
 pnpm = "latest"
+python = "3.14" # mostly for REUSE
+pipx = "1.18.15" # mostly for REUSE
 
 [tasks."css:build"]
 run = "pnpm --filter @makigas/genshi run build"
@@ -28,3 +33,6 @@ depends = ["css:watch", "docs:serve"]
 
 [tasks."docs:preview"]
 run = "pnpm --filter @makigas/genshi-docs run preview"
+
+[tasks.reuse]
+run = "pipx run --with charset-normalizer reuse lint"

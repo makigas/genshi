@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
+<!-- SPDX-FileCopyrightText: Copyright (c) 2025-2026 Dani Rodríguez -->
 <script lang="ts">
 	import { ariaInvalid, type FormControlProps } from '../common.js';
 	import type { Snippet } from 'svelte';
