@@ -4,7 +4,7 @@
 [tools]
 node = "24"
 pnpm = "latest"
-python = "3.14" # mostly for REUSE
+python = "3.14"  # mostly for REUSE
 pipx = "1.18.15" # mostly for REUSE
 
 [tasks."css:build"]
