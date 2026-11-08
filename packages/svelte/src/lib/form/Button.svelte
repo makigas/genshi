@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { colorClass, sizeClass, type Color, type Size } from '../common.js';
-	import type { Icon } from '@lucide/svelte';
+	import type { IconComponent } from '../common.js';
 	import type { Snippet } from 'svelte';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 
@@ -9,8 +9,8 @@
 		bold?: boolean;
 		color?: Color;
 		size?: Size;
-		iconBefore?: typeof Icon;
-		iconAfter?: typeof Icon;
+		iconBefore?: IconComponent;
+		iconAfter?: IconComponent;
 		disabled?: boolean;
 	}
 

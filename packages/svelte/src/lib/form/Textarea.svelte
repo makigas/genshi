@@ -2,7 +2,7 @@
 	import type { HTMLTextareaAttributes } from 'svelte/elements';
 	import FormControl from './FormControl.svelte';
 	import { ariaInvalid, type FormControlProps } from '../common.js';
-	import type { Icon } from '@lucide/svelte';
+	import type { IconComponent } from '../common.js';
 
 	interface Props extends FormControlProps<HTMLTextareaAttributes> {
 		value?: string;
@@ -10,8 +10,8 @@
 		rows?: number;
 		mono?: boolean;
 		readonly?: boolean;
-		iconBefore?: typeof Icon;
-		iconAfter?: typeof Icon;
+		iconBefore?: IconComponent;
+		iconAfter?: IconComponent;
 	}
 
 	let {
