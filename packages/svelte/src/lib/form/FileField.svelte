@@ -2,11 +2,11 @@
 	import type { HTMLInputAttributes } from 'svelte/elements';
 	import FormControl from './FormControl.svelte';
 	import { ariaInvalid, type FormControlProps } from '../common.js';
-	import type { Icon } from '@lucide/svelte';
+	import type { IconComponent } from '../common.js';
 
 	interface Props extends FormControlProps<HTMLInputAttributes> {
 		files?: FileList;
-		iconAfter?: typeof Icon;
+		iconAfter?: IconComponent;
 	}
 
 	let {
