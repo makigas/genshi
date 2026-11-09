@@ -163,7 +163,6 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  rimraf@6.1.3>glob: 14.0.3
   '@typescript-eslint/typescript-estree@8.72.1>minimatch': 11.0.4
   eslint@10.14.0>minimatch: 11.0.4
   '@eslint/config-array@0.23.5>minimatch': 11.0.4
@@ -191,8 +190,8 @@ importers:
         specifier: ^4.1.1
         version: 4.1.1(prettier@3.9.10)(svelte@5.57.3(@typescript-eslint/types@8.72.1))
       rimraf:
-        specifier: ^6.1.3
-        version: 6.1.3
+        specifier: ^6.1.4
+        version: 6.1.4
       sass:
         specifier: ^1.107.1
         version: 1.107.1
@@ -209,8 +208,8 @@ importers:
         specifier: ^17.0.0
         version: 17.0.0(postcss@8.5.32)(stylelint@17.16.0(supports-color@10.2.2)(typescript@6.0.3))
       stylelint-order:
-        specifier: ^8.1.2
-        version: 8.1.2(stylelint@17.16.0(supports-color@10.2.2)(typescript@6.0.3))
+        specifier: ^8.1.3
+        version: 8.1.3(stylelint@17.16.0(supports-color@10.2.2)(typescript@6.0.3))
       stylelint-prettier:
         specifier: ^5.0.3
         version: 5.0.3(prettier@3.9.10)(stylelint@17.16.0(supports-color@10.2.2)(typescript@6.0.3))
@@ -284,8 +283,8 @@ importers:
         specifier: ^10.1.8
         version: 10.1.8(eslint@10.14.0(supports-color@10.2.2))
       eslint-plugin-svelte:
-        specifier: ^3.23.1
-        version: 3.23.1(eslint@10.14.0(supports-color@10.2.2))(svelte@5.57.3(@typescript-eslint/types@8.72.1))
+        specifier: ^3.24.0
+        version: 3.24.0(eslint@10.14.0(supports-color@10.2.2))(svelte@5.57.3(@typescript-eslint/types@8.72.1))
       globals:
         specifier: ^17.14.0
         version: 17.14.0
@@ -1641,8 +1640,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-svelte@3.23.1:
-    resolution: {integrity: sha512-+w86Jlx4IRUuuvtqD6j4njql+akx+81JnpvbN5de3AV5iq2SexvST/Jr51CiTlKeY0i+vhoKjPO/ywFKIP75sA==}
+  eslint-plugin-svelte@3.24.0:
+    resolution: {integrity: sha512-nppLmSSkWFs4JmPfcXJTFXsGILlYQhVSbJiP803kyMF0d9VxEJ5UIF5QjdbVx0U4bV6g8qkuvZUqkhsusrOzXA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.1 || ^9.0.0 || ^10.0.0
@@ -2932,8 +2931,8 @@ packages:
     resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
-  rimraf@6.1.3:
-    resolution: {integrity: sha512-LKg+Cr2ZF61fkcaK1UdkH2yEBBKnYjTyWzTJT6KNPcSPaiT7HSdhtMXQuN5wkTX0Xu72KQ1l8S42rlmexS2hSA==}
+  rimraf@6.1.4:
+    resolution: {integrity: sha512-Fk3reQDVPZUMbEm7Zwxz03BWQMW3V5buSk9aU8OckTrO8A1nQtbqvYsAantGNermwsIsXcuOBqcoJ3HuMELctw==}
     engines: {node: 20 || >=22}
     hasBin: true
 
@@ -3185,11 +3184,11 @@ packages:
     peerDependencies:
       stylelint: ^17.0.0
 
-  stylelint-order@8.1.2:
-    resolution: {integrity: sha512-A+bxnIMVmzkWr6KlIwHnjQqTWBXPlIixoJa962BpK1N5bkhq3lXhKHjs4fY8ecooktjd3B3TtRiqoLSj+MfbxQ==}
+  stylelint-order@8.1.3:
+    resolution: {integrity: sha512-sItAojls5EBcn4iQMe0p0wwcs8twQoEZ3G36yBriXOM4okA0vxScP8XQnE2WfRpnxtEpVcaWmcaFYpxGMuo26w==}
     engines: {node: '>=20.19.0'}
     peerDependencies:
-      stylelint: ^16.18.0 || ^17.0.0
+      stylelint: ^16.18.0 || ^17.0.0 || ^18.0.0
 
   stylelint-prettier@5.0.3:
     resolution: {integrity: sha512-B6V0oa35ekRrKZlf+6+jA+i50C4GXJ7X1PPmoCqSUoXN6BrNF6NhqqhanvkLjqw2qgvrS0wjdpeC+Tn06KN3jw==}
@@ -3233,8 +3232,8 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: ^5.0.0 || ^6.0.0
 
-  svelte-eslint-parser@1.10.0:
-    resolution: {integrity: sha512-1bNtsoGwEx/J1qNz1xa5dSt/Ue5+C7+WpV92cCPZDbF6dx/YXHKzC9yTP25vFvAK40yd/mHXi1WACZO7FGf0Bw==}
+  svelte-eslint-parser@1.10.1:
+    resolution: {integrity: sha512-owYBhrNRp/m+hDaQCH0S683kc0TMFy2bB+qvsMQQZRsjSFD9xp/3FYgI8FZoOKA3xk62gwkUj1HpVek0p6WgNw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0, pnpm: 10.34.6}
     peerDependencies:
       svelte: ^3.37.0 || ^4.0.0 || ^5.0.0
@@ -4980,7 +4979,7 @@ snapshots:
     dependencies:
       eslint: 10.14.0(supports-color@10.2.2)
 
-  eslint-plugin-svelte@3.23.1(eslint@10.14.0(supports-color@10.2.2))(svelte@5.57.3(@typescript-eslint/types@8.72.1)):
+  eslint-plugin-svelte@3.24.0(eslint@10.14.0(supports-color@10.2.2))(svelte@5.57.3(@typescript-eslint/types@8.72.1)):
     dependencies:
       '@eslint-community/eslint-utils': 4.10.1(eslint@10.14.0(supports-color@10.2.2))
       '@jridgewell/sourcemap-codec': 1.6.0
@@ -4992,7 +4991,7 @@ snapshots:
       postcss-load-config: 3.1.4(postcss@8.5.32)
       postcss-safe-parser: 7.1.0(postcss@8.5.32)
       semver: 7.8.6
-      svelte-eslint-parser: 1.10.0(svelte@5.57.3(@typescript-eslint/types@8.72.1))
+      svelte-eslint-parser: 1.10.1(svelte@5.57.3(@typescript-eslint/types@8.72.1))
     optionalDependencies:
       svelte: 5.57.3(@typescript-eslint/types@8.72.1)
     transitivePeerDependencies:
@@ -6675,7 +6674,7 @@ snapshots:
 
   reusify@1.1.0: {}
 
-  rimraf@6.1.3:
+  rimraf@6.1.4:
     dependencies:
       glob: 14.0.3
       package-json-from-dist: 1.0.1
@@ -6984,7 +6983,7 @@ snapshots:
     dependencies:
       css-property-sort-order-smacss: 3.0.0
       stylelint: 17.16.0(supports-color@10.2.2)(typescript@6.0.3)
-      stylelint-order: 8.1.2(stylelint@17.16.0(supports-color@10.2.2)(typescript@6.0.3))
+      stylelint-order: 8.1.3(stylelint@17.16.0(supports-color@10.2.2)(typescript@6.0.3))
 
   stylelint-config-recommended-scss@17.0.1(postcss@8.5.32)(stylelint@17.16.0(supports-color@10.2.2)(typescript@6.0.3)):
     dependencies:
@@ -7012,7 +7011,7 @@ snapshots:
       stylelint: 17.16.0(supports-color@10.2.2)(typescript@6.0.3)
       stylelint-config-recommended: 18.0.0(stylelint@17.16.0(supports-color@10.2.2)(typescript@6.0.3))
 
-  stylelint-order@8.1.2(stylelint@17.16.0(supports-color@10.2.2)(typescript@6.0.3)):
+  stylelint-order@8.1.3(stylelint@17.16.0(supports-color@10.2.2)(typescript@6.0.3)):
     dependencies:
       postcss: 8.5.32
       postcss-sorting: 10.0.0(postcss@8.5.32)
@@ -7106,7 +7105,7 @@ snapshots:
     transitivePeerDependencies:
       - picomatch
 
-  svelte-eslint-parser@1.10.0(svelte@5.57.3(@typescript-eslint/types@8.72.1)):
+  svelte-eslint-parser@1.10.1(svelte@5.57.3(@typescript-eslint/types@8.72.1)):
     dependencies:
       eslint-scope: 8.4.0
       eslint-visitor-keys: 4.2.1
