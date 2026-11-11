@@ -179,7 +179,7 @@ importers:
         version: 5.3.0
       astro:
         specifier: ^7.4.5
-        version: 7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.107.1)(yaml@2.9.1)
+        version: 7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.108.0)(yaml@2.9.1)
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
@@ -193,8 +193,8 @@ importers:
         specifier: ^6.1.4
         version: 6.1.4
       sass:
-        specifier: ^1.107.1
-        version: 1.107.1
+        specifier: ^1.108.0
+        version: 1.108.0
       sharp:
         specifier: ^0.35.5
         version: 0.35.5
@@ -228,10 +228,10 @@ importers:
         version: 7.3.5(supports-color@10.2.2)
       '@astrojs/mdx':
         specifier: ^8.1.2
-        version: 8.1.2(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(@astrojs/markdown-satteri@0.4.6)(astro@7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.107.1)(yaml@2.9.1))
+        version: 8.1.2(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(@astrojs/markdown-satteri@0.4.6)(astro@7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.108.0)(yaml@2.9.1))
       '@astrojs/svelte':
         specifier: ^9.1.2
-        version: 9.1.2(astro@7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.107.1)(yaml@2.9.1))(sass@1.107.1)(svelte@5.57.3(@typescript-eslint/types@8.72.1))(typescript@6.0.3)(yaml@2.9.1)
+        version: 9.1.2(astro@7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.108.0)(yaml@2.9.1))(sass@1.108.0)(svelte@5.57.3(@typescript-eslint/types@8.72.1))(typescript@6.0.3)(yaml@2.9.1)
       '@fontsource/montserrat':
         specifier: ^5.3.0
         version: 5.3.0
@@ -240,10 +240,10 @@ importers:
         version: 1.68.0(svelte@5.57.3(@typescript-eslint/types@8.72.1))
       astro:
         specifier: ^7.4.5
-        version: 7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.107.1)(yaml@2.9.1)
+        version: 7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.108.0)(yaml@2.9.1)
       sass:
-        specifier: ^1.107.1
-        version: 1.107.1
+        specifier: ^1.108.0
+        version: 1.108.0
       sharp:
         specifier: ^0.35.5
         version: 0.35.5
@@ -2960,8 +2960,8 @@ packages:
     resolution: {integrity: sha512-x/+Cz4YrimQxQccJf5mKEbIa1NzeCRNI5Ecl/ekmlYaampdNLPalVyIcCZNNH3MvmqBugV5TMYZXv0ljslUlaw==}
     engines: {node: '>= 0.4'}
 
-  sass@1.107.1:
-    resolution: {integrity: sha512-aJ1/LvxOOb04YhmiBjzZn3jVwdHKol+OVhoMV6fFl02fF9T3i+5Mg9l/CnzqtM+NX5Jn5o3lAbs/ZJivTCLHfQ==}
+  sass@1.108.0:
+    resolution: {integrity: sha512-9HwnefouIfwY+XuA1rS5xOhALH5vsoe3SzYICG3MEwpkMbE7tpuh5ytZFRXUKPYkxY7lKdIbqxl+DxQGo8jwQQ==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -3688,11 +3688,11 @@ snapshots:
       github-slugger: 2.0.0
       satteri: 0.10.5
 
-  '@astrojs/mdx@8.1.2(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(@astrojs/markdown-satteri@0.4.6)(astro@7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.107.1)(yaml@2.9.1))':
+  '@astrojs/mdx@8.1.2(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(@astrojs/markdown-satteri@0.4.6)(astro@7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.108.0)(yaml@2.9.1))':
     dependencies:
       '@astrojs/internal-helpers': 0.13.0
       '@astrojs/markdown-satteri': 0.4.6
-      astro: 7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.107.1)(yaml@2.9.1)
+      astro: 7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.108.0)(yaml@2.9.1)
       es-module-lexer: 3.0.4
     optionalDependencies:
       '@astrojs/markdown-remark': 7.3.5(supports-color@10.2.2)
@@ -3701,15 +3701,15 @@ snapshots:
     dependencies:
       prismjs: 1.30.0
 
-  '@astrojs/svelte@9.1.2(astro@7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.107.1)(yaml@2.9.1))(sass@1.107.1)(svelte@5.57.3(@typescript-eslint/types@8.72.1))(typescript@6.0.3)(yaml@2.9.1)':
+  '@astrojs/svelte@9.1.2(astro@7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.108.0)(yaml@2.9.1))(sass@1.108.0)(svelte@5.57.3(@typescript-eslint/types@8.72.1))(typescript@6.0.3)(yaml@2.9.1)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 7.3.1(svelte@5.57.3(@typescript-eslint/types@8.72.1))(vite@8.3.5(sass@1.107.1)(yaml@2.9.1))
-      astro: 7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.107.1)(yaml@2.9.1)
+      '@sveltejs/vite-plugin-svelte': 7.3.1(svelte@5.57.3(@typescript-eslint/types@8.72.1))(vite@8.3.5(sass@1.108.0)(yaml@2.9.1))
+      astro: 7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.108.0)(yaml@2.9.1)
       svelte: 5.57.3(@typescript-eslint/types@8.72.1)
       svelte2tsx: 0.7.63(svelte@5.57.3(@typescript-eslint/types@8.72.1))(typescript@6.0.3)
       typescript: 6.0.3
-      vite: 8.3.5(sass@1.107.1)(yaml@2.9.1)
-      vitefu: 1.1.3(vite@8.3.5(sass@1.107.1)(yaml@2.9.1))
+      vite: 8.3.5(sass@1.108.0)(yaml@2.9.1)
+      vitefu: 1.1.3(vite@8.3.5(sass@1.108.0)(yaml@2.9.1))
     transitivePeerDependencies:
       - '@types/node'
       - '@vitejs/devtools'
@@ -4291,14 +4291,14 @@ snapshots:
     optionalDependencies:
       typescript: 6.0.3
 
-  '@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3(@typescript-eslint/types@8.72.1))(vite@8.3.5(sass@1.107.1)(yaml@2.9.1))':
+  '@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3(@typescript-eslint/types@8.72.1))(vite@8.3.5(sass@1.108.0)(yaml@2.9.1))':
     dependencies:
       deepmerge: 4.3.1
       magic-string: 1.4.5
       obug: 2.2.1
       svelte: 5.57.3(@typescript-eslint/types@8.72.1)
-      vite: 8.3.5(sass@1.107.1)(yaml@2.9.1)
-      vitefu: 1.1.3(vite@8.3.5(sass@1.107.1)(yaml@2.9.1))
+      vite: 8.3.5(sass@1.108.0)(yaml@2.9.1)
+      vitefu: 1.1.3(vite@8.3.5(sass@1.108.0)(yaml@2.9.1))
 
   '@tybys/wasm-util@0.10.4':
     dependencies:
@@ -4500,7 +4500,7 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro@7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.107.1)(yaml@2.9.1):
+  astro@7.4.5(@astrojs/markdown-remark@7.3.5(supports-color@10.2.2))(sass@1.108.0)(yaml@2.9.1):
     dependencies:
       '@astrojs/compiler-rs': 0.5.2
       '@astrojs/internal-helpers': 0.13.0
@@ -4549,8 +4549,8 @@ snapshots:
       unifont: 1.0.3
       unstorage: 1.17.6
       verkit: 0.5.0
-      vite: 8.3.5(sass@1.107.1)(yaml@2.9.1)
-      vitefu: 1.1.3(vite@8.3.5(sass@1.107.1)(yaml@2.9.1))
+      vite: 8.3.5(sass@1.108.0)(yaml@2.9.1)
+      vitefu: 1.1.3(vite@8.3.5(sass@1.108.0)(yaml@2.9.1))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
       zod: 4.6.7
@@ -6727,7 +6727,7 @@ snapshots:
       es-errors: 1.3.0
       is-regex: 1.2.1
 
-  sass@1.107.1:
+  sass@1.108.0:
     dependencies:
       chokidar: 5.0.0
       immutable: 5.1.9
@@ -7355,7 +7355,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@8.3.5(sass@1.107.1)(yaml@2.9.1):
+  vite@8.3.5(sass@1.108.0)(yaml@2.9.1):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -7364,12 +7364,12 @@ snapshots:
       tinyglobby: 0.2.17
     optionalDependencies:
       fsevents: 2.3.3
-      sass: 1.107.1
+      sass: 1.108.0
       yaml: 2.9.1
 
-  vitefu@1.1.3(vite@8.3.5(sass@1.107.1)(yaml@2.9.1)):
+  vitefu@1.1.3(vite@8.3.5(sass@1.108.0)(yaml@2.9.1)):
     optionalDependencies:
-      vite: 8.3.5(sass@1.107.1)(yaml@2.9.1)
+      vite: 8.3.5(sass@1.108.0)(yaml@2.9.1)
 
   web-namespaces@2.0.1: {}
 
