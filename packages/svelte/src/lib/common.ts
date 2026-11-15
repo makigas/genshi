@@ -9,7 +9,7 @@ export type Density = 'gapless' | 'compact' | 'normal' | 'cozy';
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
-export type Color = 'normal' | 'suggested' | 'destructive';
+export type Appearance = 'outline' | 'accent' | 'destructive' | 'link';
 
 export type Validation = 'valid' | 'invalid' | null | undefined | false;
 
@@ -57,15 +57,16 @@ export function densityClass<T extends string>(element: T, density: Density) {
 	);
 }
 
-export function colorClass<T extends string>(element: T, color: Color) {
+export function appearanceClass<T extends string>(element: T, appearance: Appearance) {
 	return modifierClass(
 		element,
 		{
-			normal: null,
-			suggested: 'suggested',
+			outline: null,
+			accent: 'accent',
 			destructive: 'destructive',
+			link: 'link',
 		},
-		color,
+		appearance,
 	);
 }
 

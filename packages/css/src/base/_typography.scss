@@ -45,10 +45,14 @@
 }
 
 :where(a) {
-  color: var(--genshi-link-color);
+  color: var(--gs-link-text);
 
   &:hover {
-    color: var(--genshi-link-color-hover);
+    color: var(--gs-link-hover);
+  }
+
+  &:active {
+    color: var(--gs-link-active);
   }
 }
 
@@ -76,24 +80,26 @@
 }
 
 :where(mark) {
-  background-color: var(--genshi-mark-bg-color);
-  color: var(--genshi-mark-color);
+  background-color: var(--gs-mark-surface);
+  color: var(--gs-mark-text);
 }
 
 :where(ins) {
-  background-color: var(--genshi-ins-bg-color);
-  color: var(--genshi-ins-color);
+  background-color: var(--gs-ins-surface);
+  color: var(--gs-ins-text);
 }
 
 :where(del) {
-  background-color: var(--genshi-del-bg-color);
-  color: var(--genshi-del-color);
+  background-color: var(--gs-del-surface);
+  color: var(--gs-del-text);
 }
 
 :where(kbd) {
   padding: 0.12rem 0.36rem;
-  background-color: var(--genshi-kbd-bg-color);
-  color: var(--genshi-kbd-color);
+  border: 1px solid var(--gs-kbd-border);
+  border-radius: var(--gs-radius-md);
+  background-color: var(--gs-kbd-surface);
+  color: var(--gs-kbd-text);
   font-weight: 600;
 }
 
@@ -108,8 +114,8 @@
   padding: 1.5rem;
   overflow: hidden;
   overflow-x: auto;
-  border-radius: 10px;
-  background-color: var(--genshi-pre-code-bg-color);
+  border-radius: var(--gs-radius-md);
+  background-color: var(--gs-secondary-muted);
 }
 
 :where(small) {
@@ -119,7 +125,7 @@
 :where(blockquote) {
   margin: 1rem 2rem;
   padding-left: 1rem;
-  border-left: 3px solid oklch(from var(--genshi-accent-color) l c h / 25%);
+  border-left: 3px solid var(--gs-secondary-border);
 }
 
 :where(ul),

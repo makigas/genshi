@@ -1,0 +1,24 @@
+---
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-FileCopyrightText: Copyright (c) 2025-2026 Dani Rodríguez
+layout: ../../layouts/DocLayout.astro
+title: Colors
+---
+
+import Palette from "../../components/palettes/Palette.astro";
+
+Genshi is built around color palettes. These color palettes are the basis that create token themes.
+
+When you import Genshi into a page or application, you can inject accent and brand colors in order
+to change the default palettes, and you can re-define some tokens to modify which palette colors the
+tokens are derived from.
+
+### Neutral color palettes
+
+There are two neutral color palettes:
+
+- Neutral: the main grayscale color palette. A linear sweep from white to black.
+- Tint: an almost grayscale color palette that exposes a little bit of chroma. Used for tinting
+  purposes.
+
+<Palette variant="grayscale" />

@@ -62,41 +62,25 @@ the `size` parameter, which accepts one of the possible values in: `xs sm md lg 
 
 <Example example="button-sizes" />
 
-## Bold button
+## Button appearance
 
-While this design system doesn’t use outlined buttons, and every button has a background, by default
-the buttons will look like blended with the background. If you want to make the button stand out,
-mark it as `bold`.
+Depending on the intentions, a different visual indication of the button may help convey additional
+meaning.
 
-```svelte
-<Button bold>Back</Button>
-```
-
-<Example example="bold-button" />
-
-## Color buttons
-
-You can add some semantic accents to the colors. There are currently two variants:
-
-Use the `suggested` color variant to convey that this is the primary button, or the button that may
-complete a task.
+- Use the accent button to boldly indicate the suggested action. Do not abuse of this button,
+  though, because if every action is important, then there is no important action.
+- Use the destructive button to indicate that triggering an action may have consequences where data
+  is removed or affect the system.
+- Use the link button to disguise a button as a link, or to treat it as a ghost button.
 
 ```svelte
-<Button color="suggested">Save</Button>
-<Button color="suggested" bold>Submit</Button>
+<Button>Outline</Button>
+<Button appearance="accent">Accent</Button>
+<Button appearance="destructive">Destructive</Button>
+<Button appearance="link">Link</Button>
 ```
 
-<Example example="color-buttons" />
-
-Use the `destructive` variant to convey that the button is dangerous, which is often used to mark
-that pressing a button will have important consequences such as the destruction of records.
-
-```svelte
-<Button color="destructive">Save</Button>
-<Button color="destructive" bold>Submit</Button>
-```
-
-<Example example="color-buttons-2" />
+<Example example="button-appearance" />
 
 ## Disabled buttons
 

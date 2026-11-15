@@ -4,6 +4,7 @@
   "description": "An atomic design system",
   "main": "dist/genshi.css",
   "style": "dist/genshi.css",
+  "sass": "src/genshi.scss",
   "types": "index.d.ts",
   "scripts": {
     "prepack": "pnpm run fmt:check && pnpm run lint && pnpm run build",
@@ -25,7 +26,8 @@
     "CHANGELOG.md",
     "index.d.ts",
     "dist/*.{css,map}",
-    "docs/assets/genshi*.png"
+    "docs/assets/genshi*.png",
+    "src/*.scss"
   ],
   "keywords": [
     "genshi",

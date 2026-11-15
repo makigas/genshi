@@ -1,0 +1,20 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: Copyright (c) 2026 Dani Rodríguez
+@mixin colors($family) {
+  --field-validation-surface: var(--gs-#{$family}-surface);
+  --field-validation-text: var(--gs-#{$family}-text);
+  --field-validation-border: var(--gs-#{$family}-border);
+  --field-validation-focus-ring: var(--gs-#{$family}-focus-ring);
+  --field-validation-fill: var(--gs-#{$family}-fill);
+  --field-validation-on-fill: var(--gs-#{$family}-on-fill);
+}
+
+@mixin field {
+  &:has(&__control[aria-invalid="true"]) {
+    @include colors("danger");
+  }
+
+  &:has(&__control[aria-invalid="false"]) {
+    @include colors("success");
+  }
+}

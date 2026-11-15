@@ -56,8 +56,8 @@
 
 <style>
   :global(.boxed) > div {
-    border: 1px solid oklch(from var(--genshi-foreground-color) l c h / 30%);
-    background-color: oklch(from var(--genshi-foreground-color) l c h / 5%);
+    border: 1px solid var(--gs-primary-border);
+    background-color: var(--gs-primary-surface);
     padding: 2rem;
     border-radius: 5px;
     text-align: center;

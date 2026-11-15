@@ -53,48 +53,29 @@ Buttons come in a variety of sizes. Choose the one of your wish:
   <button type="button" class="GenshiButton GenshiButton--xl">Extra large</button>
 </p>
 
-## Bold button
+## Button appearance
 
-While this design system doesn't use outlined buttons, and every button has a background, by default
-the buttons will look like blended with the background. If you want to make the button stand out,
-mark it as bold, by using the `GenshiButton--bold` class:
+Depending on the intentions, a different visual indication of the button may help convey additional
+meaning.
+
+- Use the accent button to boldly indicate the suggested action. Do not abuse of this button,
+  though, because if every action is important, then there is no important action.
+- Use the destructive button to indicate that triggering an action may have consequences where data
+  is removed or affect the system.
+- Use the link button to disguise a button as a link, or to treat it as a ghost button.
 
 ```html
-<button class="GenshiButton GenshiButton--bold">Back</button>
+<button type="button" class="GenshiButton">Outline</button>
+<button type="button" class="GenshiButton GenshiButton--accent">Accent</button>
+<button type="button" class="GenshiButton GenshiButton--destructive">Destructive</button>
+<button type="button" class="GenshiButton GenshiButton--link">Link</button>
 ```
 
 <p>
-<button class="GenshiButton GenshiButton--bold">Back</button>
-</p>
-
-## Color buttons
-
-You can add some accent to the buttons by using one of the semantic classes. There are currently two
-classes:
-
-Use `GenshiButton--suggested` to convey the primary button, or the button that may complete a task.
-
-```html
-<button class="GenshiButton GenshiButton--suggested">Save</button>
-<button class="GenshiButton GenshiButton--suggested GenshiButton--bold">Submit</button>
-```
-
-<p>
-  <button class="GenshiButton GenshiButton--suggested">Save</button>
-  <button class="GenshiButton GenshiButton--suggested GenshiButton--bold">Submit</button>
-</p>
-
-Use `GenshiButton--destructive` to convey the dangerous button, which is often used to mark that
-pressing a button will have important consequences such as the destruction of records.
-
-```html
-<button class="GenshiButton GenshiButton--destructive">Revert</button>
-<button class="GenshiButton GenshiButton--destructive GenshiButton--bold">Delete</button>
-```
-
-<p>
-  <button class="GenshiButton GenshiButton--destructive">Revert</button>
-  <button class="GenshiButton GenshiButton--destructive GenshiButton--bold">Delete</button>
+  <button type="button" class="GenshiButton">Outline</button>
+  <button type="button" class="GenshiButton GenshiButton--accent">Accent</button>
+  <button type="button" class="GenshiButton GenshiButton--destructive">Destructive</button>
+  <button type="button" class="GenshiButton GenshiButton--link">Link</button>
 </p>
 
 ## Buttons with icons
@@ -134,7 +115,7 @@ purposes. (I shouldn't be the one telling you here...)
       <line x1="14" y1="11" x2="14" y2="17"></line>
     </svg>
   </button>
-  <button type="button" class="GenshiButton GenshiButton--suggested GenshiButton--bold" aria-label="New element">
+  <button type="button" class="GenshiButton GenshiButton--accent" aria-label="New element">
     <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
       fill="none" stroke-linecap="round" stroke-linejoin="round" class="GenshiButton__icon">
       <circle cx="12" cy="12" r="10"></circle>
@@ -152,27 +133,9 @@ Simply add the `disabled` attribute to the button tag to mark it as disabled.
 <button type="button" disabled class="GenshiButton">Can't touch this</button>
 ```
 
-<div class="GenshiStack GenshiStack--v GenshiStack--compact">
-  <div>
-    <button type="button" disabled class="GenshiButton">
-      Can't touch this
-    </button>
-    <button type="button" disabled class="GenshiButton GenshiButton--suggested">
-      Can't create this
-    </button>
-    <button type="button" disabled class="GenshiButton GenshiButton--destructive">
-      Can't destroy this
-    </button>
-  </div>
-  <div>
-    <button type="button" disabled class="GenshiButton GenshiButton--bold">
-      Can't touch this
-    </button>
-    <button type="button" disabled class="GenshiButton GenshiButton--bold GenshiButton--suggested">
-      Can't create this
-    </button>
-    <button type="button" disabled class="GenshiButton GenshiButton--bold GenshiButton--destructive">
-      Can't destroy this
-    </button>
-  </div>
-</div>
+<p>
+  <button type="button" disabled class="GenshiButton">Outline</button>
+  <button type="button" disabled class="GenshiButton GenshiButton--accent">Accent</button>
+  <button type="button" disabled class="GenshiButton GenshiButton--destructive">Destructive</button>
+  <button type="button" disabled class="GenshiButton GenshiButton--link">Link</button>
+</p>

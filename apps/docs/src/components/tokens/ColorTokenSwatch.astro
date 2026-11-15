@@ -1,0 +1,38 @@
+---
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: Copyright (c) 2026 Dani Rodríguez
+
+interface Props {
+  name: string;
+  mode: "light" | "dark";
+}
+
+const { name, mode } = Astro.props;
+const property = `--gs-${name.replaceAll(".", "-")}`;
+---
+
+<span
+  class="token-swatch"
+  data-mode={mode}
+  style={`background-color: var(${property})`}
+  aria-hidden="true"
+></span>
+
+<style lang="scss">
+  @use "../../../../../packages/css/src/theme/colors/_index.scss" as colors;
+
+  .token-swatch[data-mode="light"] {
+    @include colors.genshi-color(colors.$light-tokens);
+  }
+
+  .token-swatch[data-mode="dark"] {
+    @include colors.genshi-color(colors.$dark-tokens);
+  }
+
+  .token-swatch {
+    display: inline-block;
+    width: 3rem;
+    height: 1rem;
+    border: 1px solid var(--gs-primary-border);
+  }
+</style>

@@ -1,29 +1,24 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // SPDX-FileCopyrightText: Copyright (c) 2025-2026 Dani Rodríguez
+@use "validation";
+
 .GenshiRadioGroup {
   margin-bottom: 1rem;
   padding: 0;
   border: none;
 
   &[aria-invalid="true"] {
-    --genshi-radiogroup-accent: var(--genshi-form-invalid-accent);
+    @include validation.colors("danger");
   }
 
   &[aria-invalid="false"] {
-    --genshi-radiogroup-accent: var(--genshi-form-valid-accent);
-  }
-
-  &[aria-invalid="true"],
-  &[aria-invalid="false"] {
-    --genshi-radiogroup-validation-accent: var(--genshi-radiogroup-accent);
-    --genshi-radiogroup-legend-color: var(--genshi-radiogroup-accent);
-    --genshi-radiogroup-helper-color: var(--genshi-radiogroup-accent);
+    @include validation.colors("success");
   }
 
   legend {
     margin-bottom: 0.5rem;
     padding-left: 0;
-    color: var(--genshi-radiogroup-legend-color, (var(--genshi-foreground)));
+    color: var(--field-validation-text, var(--gs-primary-text));
   }
 
   .GenshiInput {
@@ -32,7 +27,7 @@
 
   &__helper {
     display: inline-block;
-    color: var(--genshi-radiogroup-helper-color, var(--genshi-foreground));
+    color: var(--field-validation-text, var(--gs-primary-text));
     font-size: 0.875em;
   }
 

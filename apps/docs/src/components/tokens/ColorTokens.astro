@@ -1,0 +1,90 @@
+---
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: Copyright (c) 2026 Dani Rodríguez
+
+import ColorTokenSwatch from "./ColorTokenSwatch.astro";
+
+const TOKENS = [
+    ["Primary", ["primary.surface", "primary.text", "primary.border", "primary.muted"]],
+    ["Secondary", ["secondary.surface", "secondary.text", "secondary.border", "secondary.muted"]],
+    [
+        "Control",
+        [
+            "control.surface",
+            "control.text",
+            "control.border",
+            "control.hover",
+            "control.active",
+            "control.focus-ring",
+        ],
+    ],
+    [
+        "Accent",
+        [
+            "accent.surface",
+            "accent.text",
+            "accent.border",
+            "accent.fill",
+            "accent.hover",
+            "accent.active",
+            "accent.on-fill",
+            "accent.focus-ring",
+        ],
+    ],
+    [
+        "Danger",
+        [
+            "danger.surface",
+            "danger.text",
+            "danger.border",
+            "danger.fill",
+            "danger.active",
+            "danger.on-fill",
+            "danger.focus-ring",
+        ],
+    ],
+    [
+        "Success",
+        [
+            "success.surface",
+            "success.text",
+            "success.border",
+            "success.fill",
+            "success.active",
+            "success.on-fill",
+            "success.focus-ring",
+        ],
+    ],
+    ["Links", ["link.surface", "link.text", "link.hover", "link.active"]],
+    ["Highlights", ["mark.surface", "mark.text"]],
+    ["Insertions", ["ins.surface", "ins.text", "ins.border"]],
+    ["Deletions", ["del.surface", "del.text", "del.border"]],
+    ["Keyboard input", ["kbd.surface", "kbd.text", "kbd.border"]],
+] as const;
+---
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">CSS property</th>
+            <th scope="col">Light mode</th>
+            <th scope="col">Dark mode</th>
+        </tr>
+    </thead>
+    {TOKENS.map(([label, tokens]) => (
+        <tbody>
+            <tr>
+                <th scope="rowgroup" colspan="4">{label}</th>
+            </tr>
+            {tokens.map((token) => (
+                <tr>
+                    <td>{token}</td>
+                    <td><code>--gs-{token.replace('.', '-')}</code></td>
+                    <td><ColorTokenSwatch name={token} mode="light" /></td>
+                    <td><ColorTokenSwatch name={token} mode="dark" /></td>
+                </tr>
+            ))}
+        </tbody>
+    ))}
+</table>

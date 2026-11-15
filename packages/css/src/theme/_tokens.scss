@@ -1,0 +1,29 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: Copyright (c) 2026 Dani Rodríguez
+// Primitive tokens.
+
+$radius: (
+  none: 0px,
+  sm: 2px,
+  md: 4px,
+  lg: 6px,
+  xl: 8px,
+  circle: 100%,
+);
+$font-sizes: (
+  xs: 0.75rem,
+  sm: 0.9rem,
+  md: 1rem,
+  lg: 1.1rem,
+  xl: 1.25rem,
+);
+
+@mixin genshi-tokens {
+  @each $size, $value in $radius {
+    --gs-radius-#{$size}: #{$value};
+  }
+
+  @each $size, $value in $font-sizes {
+    --gs-font-#{$size}: #{$value};
+  }
+}

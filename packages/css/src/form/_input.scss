@@ -1,51 +1,17 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // SPDX-FileCopyrightText: Copyright (c) 2025-2026 Dani Rodríguez
+@use "validation";
+
 .GenshiInput {
-  --genshi-input-accent: var(--genshi-radiogroup-validation-accent, var(--genshi-foreground-color));
-  --genshi-input-foreground: var(--genshi-foreground-color);
-  --genshi-input-background-color: oklch(from var(--genshi-input-accent) l c h / 3%);
-  --genshi-input-border-color: oklch(from var(--genshi-input-accent) l c h / 20%);
-  --genshi-input-hover-border-color: oklch(from var(--genshi-accent-color) l c h / 40%);
-  --genshi-input-focus-border-color: oklch(from var(--genshi-accent-color) l c h / 60%);
-  --genshi-input-focus-outline-color: oklch(from var(--genshi-accent-color) l c h / 30%);
   --genshi-input-font-family: inherit;
-  --genshi-file-field-button-background: oklch(from var(--genshi-input-accent) l c h / 4%);
-  --genshi-file-field-button-hover-background: oklch(from var(--genshi-input-accent) l c h / 16%);
-  --genshi-file-field-button-active-background: oklch(from var(--genshi-input-accent) l c h / 24%);
-  --genshi-input-label-color: var(--genshi-radiogroup-validation-accent, var(--genshi-foreground));
-  --genshi-checkbox-background: var(
-    --genshi-radiogroup-validation-accent,
-    var(--genshi-form-checkbox-accent)
-  );
 
   display: block;
   margin-bottom: 1rem;
 
-  &:has(&__control[aria-invalid="true"]) {
-    --genshi-input-accent: var(--genshi-form-invalid-accent);
-  }
-
-  &:has(&__control[aria-invalid="false"]) {
-    --genshi-input-accent: var(--genshi-form-valid-accent);
-  }
-
-  &:has(&__control[aria-invalid="true"]),
-  &:has(&__control[aria-invalid="false"]) {
-    --genshi-accent-color: var(--genshi-input-accent);
-    --genshi-input-label-color: var(--genshi-input-accent);
-    --genshi-input-helper-color: var(--genshi-input-accent);
-    --genshi-checkbox-background: var(--genshi-input-accent);
-  }
-
-  &__control[type="checkbox"][aria-invalid="true"],
-  &__control[type="checkbox"][aria-invalid="false"],
-  &__control[type="radio"][aria-invalid="true"],
-  &__control[type="radio"][aria-invalid="false"] {
-    --genshi-input-border-color: var(--genshi-checkbox-background);
-  }
+  @include validation.field;
 
   &__label {
-    color: var(--genshi-input-label-color);
+    color: var(--field-validation-text, var(--gs-primary-text));
   }
 
   &__label:has(input[type="checkbox"]),
@@ -57,7 +23,7 @@
 
   &__helper {
     display: inline-block;
-    color: var(--genshi-input-helper-color, var(--genshi-foreground));
+    color: var(--field-validation-text, var(--gs-primary-text));
     font-size: 0.875em;
   }
 
@@ -66,8 +32,8 @@
     margin-left: 2.1em;
   }
 
-  &__label:has(input[type="checkbox"][disabled]),
-  &__label:has(input[type="radio"][disabled]) {
+  &__label:has(input[type="checkbox"]:disabled),
+  &__label:has(input[type="radio"]:disabled) {
     cursor: not-allowed;
   }
 
@@ -77,6 +43,11 @@
   }
 
   &__control {
+    --input-surface: var(--gs-control-surface);
+    --input-border: var(--gs-control-border);
+    --input-hover-border: var(--gs-control-text);
+    --input-focus-ring: var(--gs-control-focus-ring);
+
     display: block;
     box-sizing: border-box;
     width: 100%;
@@ -87,11 +58,11 @@
       outline-color 0.25s ease-in-out,
       background-color 0.125s ease-in-out,
       border-color 0.25s ease-in-out;
-    border: 1px solid var(--genshi-input-border-color);
-    border-radius: 4px;
+    border: 1px solid var(--field-validation-border, var(--input-border));
+    border-radius: var(--gs-radius-md);
     outline: 2px solid transparent;
-    background-color: var(--genshi-input-background-color);
-    color: var(--genshi-input-foreground);
+    background-color: var(--field-validation-surface, var(--input-surface));
+    color: var(--gs-control-text);
     font-family: var(--genshi-input-font-family);
     font-size: 1em;
 
@@ -99,38 +70,50 @@
       padding: 0.3em;
     }
 
-    @at-root input[type="checkbox"]#{&} {
+    @at-root input:is([type="checkbox"], [type="radio"])#{&} {
+      --input-surface: var(--gs-accent-surface);
+      --input-border: var(--gs-accent-border);
+      --input-hover-border: var(--gs-accent-text);
+      --input-focus-ring: var(--gs-accent-focus-ring);
+
       width: 1.25em;
       height: 1.25em;
       appearance: none;
       margin: 0;
       padding: 0;
-      border: 1px solid var(--genshi-input-border-color);
 
       &:checked {
-        background-color: oklch(from var(--genshi-checkbox-background) l c h / 80%);
-        background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20class%3D%22css-i6dzq1%22%3E%3Cpath%20d%3D%22M20%206%209%2017l-5-5%22%2F%3E%3C%2Fsvg%3E");
+        --input-check-color: var(--field-validation-on-fill, var(--gs-accent-on-fill));
+
+        background-color: var(--field-validation-fill, var(--gs-accent-fill));
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 1em 1em;
+      }
+    }
+
+    @at-root input[type="checkbox"]#{&} {
+      display: grid;
+      place-items: center;
+
+      &:checked::before {
+        content: "";
+        width: 1em;
+        height: 1em;
+        background-color: var(--input-check-color);
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m4 12 5 5L20 6' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+          center / contain no-repeat;
       }
     }
 
     @at-root input[type="radio"]#{&} {
-      width: 1.25em;
-      height: 1.25em;
-      appearance: none;
-      margin: 0;
-      padding: 0;
-      border: 1px solid var(--genshi-input-border-color);
-      border-radius: 100%;
+      border-radius: var(--gs-radius-circle);
 
       &:checked {
-        background-color: oklch(from var(--genshi-checkbox-background) l c h / 80%);
-        background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23fff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20class%3D%22css-i6dzq1%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%226%22%2F%3E%3C%2Fsvg%3E");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 1em 1em;
+        background-image: radial-gradient(
+          circle,
+          var(--input-check-color) calc(0.25em - 0.5px),
+          transparent calc(0.25em + 0.5px)
+        );
       }
     }
 
@@ -149,17 +132,22 @@
         margin-right: 1em;
         padding: 0.5em 1em;
         border: none;
-        border-right: 1px solid var(--genshi-input-border-color);
-        background-color: var(--genshi-file-field-button-background);
+        border-right: 1px solid var(--field-validation-border, var(--gs-control-border));
+        background-color: var(--gs-control-surface);
+        color: var(--gs-control-text);
 
         &:hover {
-          background-color: var(--genshi-file-field-button-hover-background);
+          background-color: var(--gs-control-hover);
         }
 
         &:focus,
         &:active {
-          background-color: var(--genshi-file-field-button-active-background);
+          background-color: var(--gs-control-active);
         }
+      }
+
+      &:disabled::file-selector-button {
+        background-color: var(--gs-control-surface);
       }
     }
 
@@ -173,19 +161,19 @@
   }
 
   &__control:hover {
-    border-color: var(--genshi-input-hover-border-color);
+    border-color: var(--field-validation-border, var(--input-hover-border));
   }
 
   &__control:focus {
-    border-color: var(--genshi-input-focus-border-color);
-    outline-color: var(--genshi-input-focus-outline-color);
+    outline-color: var(--field-validation-focus-ring, var(--input-focus-ring));
   }
 
   &__control[readonly] {
-    --genshi-input-focus-outline-color: transparent;
+    outline-color: transparent;
   }
 
-  &__control[disabled] {
+  &__control:disabled {
+    border-color: var(--field-validation-border, var(--input-border));
     opacity: 0.5;
     cursor: not-allowed;
   }
@@ -197,7 +185,7 @@
     width: 1.25em;
     height: 1.25em;
     transform: translateY(-50%);
-    stroke: var(--genshi-input-accent);
+    stroke: var(--field-validation-text, var(--gs-control-text));
   }
 
   &__control + &__icon {

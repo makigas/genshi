@@ -1,0 +1,45 @@
+---
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: Copyright (c) 2026 Dani Rodríguez
+
+const TOKENS = [
+  ["none", "none", "none"],
+  ["small", "sm", "2 px"],
+  ["medium", "md", "4 px"],
+  ["large", "lg", "6 px"],
+  ["xlarge", "xl", "8 px"],
+  ["circle", "circle", "100%"],
+]
+---
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Token</th>
+            <th>Size</th>
+            <th>Demo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {TOKENS.map(([code, token, amount]) => (
+          <tr>
+              <td>{code}</td>
+              <td><code>--gs-radius-{code}</code></td>
+              <td>{amount}</td>
+              <td>
+                  <div class="radius" style={{ borderRadius: `var(--gs-radius-${token})`}}></div>
+              </td>
+          </tr>
+        ))}
+    </tbody>
+</table>
+
+<style>
+.radius {
+    width: 64px;
+    height: 64px;
+    background-color: var(--gs-link-surface);
+    border: 1px solid var(--gs-link-text);
+}
+</style>

@@ -1,0 +1,81 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: Copyright (c) 2025-2026 Dani Rodríguez
+
+@use "sass:list";
+@use "palette";
+
+$tokens: (
+  primary: (
+    surface: list.nth(palette.$neutrals, 18),
+    text: list.nth(palette.$neutrals, 1),
+    border: list.nth(palette.$neutrals, 15),
+    muted: list.nth(palette.$neutrals, 17),
+  ),
+  secondary: (
+    surface: list.nth(palette.$tint, 18),
+    text: list.nth(palette.$tint, 1),
+    border: list.nth(palette.$tint, 15),
+    muted: list.nth(palette.$tint, 17),
+  ),
+  control: (
+    surface: list.nth(palette.$neutrals, 18),
+    text: list.nth(palette.$neutrals, 1),
+    border: list.nth(palette.$neutrals, 11),
+    hover: list.nth(palette.$neutrals, 17),
+    active: list.nth(palette.$neutrals, 16),
+    focus-ring: list.nth(palette.$neutrals, 13),
+  ),
+  accent: (
+    surface: list.nth(palette.$accent, 18),
+    text: list.nth(palette.$accent, 1),
+    border: list.nth(palette.$accent, 11),
+    fill: list.nth(palette.$accent, 14),
+    hover: list.nth(palette.$accent, 13),
+    active: list.nth(palette.$accent, 12),
+    on-fill: list.nth(palette.$neutrals, 1),
+    focus-ring: list.nth(palette.$accent, 12),
+  ),
+  danger: (
+    surface: list.nth(palette.$danger, 18),
+    text: list.nth(palette.$danger, 4),
+    border: list.nth(palette.$danger, 9),
+    fill: list.nth(palette.$danger, 13),
+    active: list.nth(palette.$danger, 12),
+    on-fill: list.nth(palette.$neutrals, 1),
+    focus-ring: list.nth(palette.$danger, 12),
+  ),
+  success: (
+    surface: list.nth(palette.$success, 18),
+    text: list.nth(palette.$success, 4),
+    border: list.nth(palette.$success, 9),
+    fill: list.nth(palette.$success, 13),
+    active: list.nth(palette.$success, 12),
+    on-fill: list.nth(palette.$neutrals, 1),
+    focus-ring: list.nth(palette.$success, 12),
+  ),
+  link: (
+    text: list.nth(palette.$accent, 4),
+    hover: list.nth(palette.$accent, 3),
+    active: list.nth(palette.$accent, 6),
+    surface: list.nth(palette.$accent, 18),
+  ),
+  mark: (
+    surface: list.nth(palette.$warning, 14),
+    text: list.nth(palette.$neutrals, 1),
+  ),
+  ins: (
+    surface: list.nth(palette.$success, 16),
+    text: list.nth(palette.$success, 1),
+    border: list.nth(palette.$success, 15),
+  ),
+  del: (
+    surface: list.nth(palette.$danger, 17),
+    text: list.nth(palette.$danger, 2),
+    border: list.nth(palette.$danger, 16),
+  ),
+  kbd: (
+    surface: list.nth(palette.$tint, 17),
+    text: list.nth(palette.$tint, 2),
+    border: list.nth(palette.$tint, 16),
+  ),
+);

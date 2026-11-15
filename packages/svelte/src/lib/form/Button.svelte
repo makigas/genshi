@@ -1,15 +1,14 @@
 <!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 <!-- SPDX-FileCopyrightText: Copyright (c) 2025-2026 Dani Rodríguez -->
 <script lang="ts">
-	import { colorClass, sizeClass, type Color, type Size } from '../common.js';
+	import { appearanceClass, sizeClass, type Appearance, type Size } from '../common.js';
 	import type { IconComponent } from '../common.js';
 	import type { Snippet } from 'svelte';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 
 	interface Props extends HTMLButtonAttributes {
 		children?: Snippet;
-		bold?: boolean;
-		color?: Color;
+		appearance?: Appearance;
 		size?: Size;
 		iconBefore?: IconComponent;
 		iconAfter?: IconComponent;
@@ -19,8 +18,7 @@
 	let {
 		children,
 		class: className,
-		bold,
-		color = 'normal',
+		appearance = 'outline',
 		size = 'md',
 		iconBefore: IconBefore,
 		iconAfter: IconAfter,
@@ -34,10 +32,7 @@
 	class={[
 		'GenshiButton',
 		sizeClass('GenshiButton', size),
-		colorClass('GenshiButton', color),
-		{
-			'GenshiButton--bold': bold,
-		},
+		appearanceClass('GenshiButton', appearance),
 		className,
 	]}
 	{...rest}>

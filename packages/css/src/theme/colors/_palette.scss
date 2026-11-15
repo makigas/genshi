@@ -1,0 +1,71 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: Copyright (c) 2026 Dani Rodríguez
+
+// Neutral grayscale color palette
+// ===============================
+// This is the basic sweep that goes from white to black.
+// Depending on colorscheme (light, dark), some values are used
+// and some others aren't.
+
+@use "sass:color";
+@use "sass:math";
+@use "sass:list";
+
+// You can override this color on import time.
+$accent-color: #4d6699 !default;
+$danger-color: #ae452c !default;
+$warning-color: #e7e05c !default;
+$success-color: #59cf51 !default;
+$info-color: #30c0ec !default;
+
+@debug $accent-color;
+
+$-steps: 20;
+$-peak-chroma-factor: 1.25;
+$-edge-chroma-factor: 0.0756;
+$neutrals: ();
+$-color-lightness-ramp: ();
+
+@for $step from 1 through $-steps {
+  $weight: math.percentage(math.div($step - 1, $-steps - 1));
+  $tone: color.mix(#000, #fff, $weight: $weight, $method: rgb);
+  $neutrals: list.append($neutrals, $tone);
+  $color-tone: color.mix(#0a0a0a, #f5f5f5, $weight: $weight, $method: rgb);
+  $-color-lightness-ramp: list.append($-color-lightness-ramp, $color-tone);
+}
+
+@function -build-sweep($seed, $lightness-ramp, $fade-chroma: true) {
+  $oklch-seed: color.to-space($seed, oklch);
+  $steps: list.length($lightness-ramp);
+  $sweep: ();
+
+  @for $step from 1 through $steps {
+    $reference: list.nth($lightness-ramp, $step);
+    $lightness: color.channel($reference, "lightness", $space: oklch);
+    $tone: color.change($oklch-seed, $lightness: $lightness, $alpha: 1);
+
+    @if $fade-chroma {
+      $position: math.div($step - 1, $steps - 1);
+      $distance: math.abs(2 * $position - 1);
+      $falloff: math.pow($distance, 4);
+      $edge-ratio: math.div($-edge-chroma-factor, $-peak-chroma-factor);
+      $factor: $-peak-chroma-factor * math.pow($edge-ratio, $falloff);
+      $tone: color.change($tone, $chroma: color.channel($tone, "chroma") * $factor);
+    }
+
+    $mapped: color.to-gamut($tone, $space: srgb, $method: local-minde);
+    $sweep: list.append($sweep, color.to-space($mapped, rgb));
+  }
+
+  @return $sweep;
+}
+
+$-accent-seed: color.to-space($accent-color, oklch);
+$-tint-chroma: math.min(color.channel($-accent-seed, "chroma") * 0.15, 0.02);
+$-tint-seed: color.change($-accent-seed, $chroma: $-tint-chroma);
+$accent: -build-sweep($-accent-seed, $-color-lightness-ramp);
+$tint: -build-sweep($-tint-seed, $neutrals, $fade-chroma: false);
+$danger: -build-sweep($danger-color, $-color-lightness-ramp);
+$warning: -build-sweep($warning-color, $-color-lightness-ramp);
+$success: -build-sweep($success-color, $-color-lightness-ramp);
+$info: -build-sweep($info-color, $-color-lightness-ramp);

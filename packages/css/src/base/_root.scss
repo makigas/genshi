@@ -12,8 +12,8 @@
 :where(body) {
   margin: 0;
   padding: 0;
-  background: var(--genshi-background-color);
-  color: var(--genshi-foreground-color);
+  background: var(--gs-primary-surface);
+  color: var(--gs-primary-text);
 }
 
 :where(h1),
@@ -43,7 +43,7 @@
   height: 0;
   margin-bottom: 1rem;
   border: 0;
-  border-top: 1px solid oklch(from var(--genshi-foreground-color) l c h / 50%);
+  border-top: 1px solid var(--gs-secondary-border);
 }
 
 :where(pre) {

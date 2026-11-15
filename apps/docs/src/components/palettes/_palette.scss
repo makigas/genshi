@@ -1,0 +1,36 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: Copyright (c) 2026 Dani Rodríguez
+@use "sass:list";
+@use "../../../../../packages/css/src/theme/colors/palette";
+
+$steps: list.length(palette.$neutrals);
+
+@for $step from 1 through $steps {
+  [data-neutral="#{$step}"] {
+    background-color: list.nth(palette.$neutrals, $step);
+  }
+
+  [data-tint="#{$step}"] {
+    background-color: list.nth(palette.$tint, $step);
+  }
+
+  [data-accent="#{$step}"] {
+    background-color: list.nth(palette.$accent, $step);
+  }
+
+  [data-danger="#{$step}"] {
+    background-color: list.nth(palette.$danger, $step);
+  }
+
+  [data-warning="#{$step}"] {
+    background-color: list.nth(palette.$warning, $step);
+  }
+
+  [data-success="#{$step}"] {
+    background-color: list.nth(palette.$success, $step);
+  }
+
+  [data-info="#{$step}"] {
+    background-color: list.nth(palette.$info, $step);
+  }
+}

@@ -1,0 +1,69 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: Copyright (c) 2026 Dani Rodríguez
+@forward "light" as light-*;
+@forward "dark" as dark-*;
+@use "sass:color";
+@use "sass:map";
+@use "sass:string";
+
+// hex express (clever name?) -- exists for minification.
+@function -hexpress($theme, $path...) {
+  $color: map.get($theme, $path...);
+  $argb: color.ie-hex-str($color);
+
+  @return "#" + string.slice($argb, 4);
+}
+
+@mixin genshi-color($theme) {
+  --gs-primary-surface: #{-hexpress($theme, "primary", "surface")};
+  --gs-primary-text: #{-hexpress($theme, "primary", "text")};
+  --gs-primary-border: #{-hexpress($theme, "primary", "border")};
+  --gs-primary-muted: #{-hexpress($theme, "primary", "muted")};
+  --gs-secondary-surface: #{-hexpress($theme, "secondary", "surface")};
+  --gs-secondary-text: #{-hexpress($theme, "secondary", "text")};
+  --gs-secondary-border: #{-hexpress($theme, "secondary", "border")};
+  --gs-secondary-muted: #{-hexpress($theme, "secondary", "muted")};
+  --gs-control-surface: #{-hexpress($theme, "control", "surface")};
+  --gs-control-text: #{-hexpress($theme, "control", "text")};
+  --gs-control-border: #{-hexpress($theme, "control", "border")};
+  --gs-control-hover: #{-hexpress($theme, "control", "hover")};
+  --gs-control-active: #{-hexpress($theme, "control", "active")};
+  --gs-control-focus-ring: #{-hexpress($theme, "control", "focus-ring")};
+  --gs-accent-surface: #{-hexpress($theme, "accent", "surface")};
+  --gs-accent-text: #{-hexpress($theme, "accent", "text")};
+  --gs-accent-border: #{-hexpress($theme, "accent", "border")};
+  --gs-accent-fill: #{-hexpress($theme, "accent", "fill")};
+  --gs-accent-hover: #{-hexpress($theme, "accent", "hover")};
+  --gs-accent-active: #{-hexpress($theme, "accent", "active")};
+  --gs-accent-on-fill: #{-hexpress($theme, "accent", "on-fill")};
+  --gs-accent-focus-ring: #{-hexpress($theme, "accent", "focus-ring")};
+  --gs-danger-surface: #{-hexpress($theme, "danger", "surface")};
+  --gs-danger-text: #{-hexpress($theme, "danger", "text")};
+  --gs-danger-border: #{-hexpress($theme, "danger", "border")};
+  --gs-danger-fill: #{-hexpress($theme, "danger", "fill")};
+  --gs-danger-active: #{-hexpress($theme, "danger", "active")};
+  --gs-danger-on-fill: #{-hexpress($theme, "danger", "on-fill")};
+  --gs-danger-focus-ring: #{-hexpress($theme, "danger", "focus-ring")};
+  --gs-success-surface: #{-hexpress($theme, "success", "surface")};
+  --gs-success-text: #{-hexpress($theme, "success", "text")};
+  --gs-success-border: #{-hexpress($theme, "success", "border")};
+  --gs-success-fill: #{-hexpress($theme, "success", "fill")};
+  --gs-success-active: #{-hexpress($theme, "success", "active")};
+  --gs-success-on-fill: #{-hexpress($theme, "success", "on-fill")};
+  --gs-success-focus-ring: #{-hexpress($theme, "success", "focus-ring")};
+  --gs-link-text: #{-hexpress($theme, "link", "text")};
+  --gs-link-surface: #{-hexpress($theme, "link", "surface")};
+  --gs-link-hover: #{-hexpress($theme, "link", "hover")};
+  --gs-link-active: #{-hexpress($theme, "link", "active")};
+  --gs-mark-surface: #{-hexpress($theme, "mark", "surface")};
+  --gs-mark-text: #{-hexpress($theme, "mark", "text")};
+  --gs-ins-surface: #{-hexpress($theme, "ins", "surface")};
+  --gs-ins-text: #{-hexpress($theme, "ins", "text")};
+  --gs-ins-border: #{-hexpress($theme, "ins", "border")};
+  --gs-del-surface: #{-hexpress($theme, "del", "surface")};
+  --gs-del-text: #{-hexpress($theme, "del", "text")};
+  --gs-del-border: #{-hexpress($theme, "del", "border")};
+  --gs-kbd-surface: #{-hexpress($theme, "kbd", "surface")};
+  --gs-kbd-text: #{-hexpress($theme, "kbd", "text")};
+  --gs-kbd-border: #{-hexpress($theme, "kbd", "border")};
+}
