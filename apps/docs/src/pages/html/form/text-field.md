@@ -178,7 +178,7 @@ You can add icons to the text field by making sure that the `<input>` field is w
 `GenshiInput__control` element. Then, attach an SVG with the `GenshiInput__icon` class, either
 before or after the input field.
 
-<div class="GenshiCols GenshiCols--cozy">
+<div class="GsCols GsGap--lg">
   <div class="GenshiInput">
     <label class="GenshiInput__label">
       Search
@@ -217,7 +217,7 @@ field.
 If you are going to do this, it is recommended to include an icon, to convey the validation status
 without depending on color.
 
-<div class="GenshiCols GenshiCols--cozy">
+<div class="GsCols GsGap--lg">
   <div class="GenshiInput">
     <label class="GenshiInput__label">
       User name
@@ -244,7 +244,7 @@ without depending on color.
 Use the `GenshiInput--xs`, `GenshiInput--sm`, `GenshiInput--lg` and `GenshiInput--lg` to alter its
 size.
 
-<div class="GenshiStack GenshiStack--v GenshiStack--gapless">
+<div class="GsStack GsStack--v GsGap--none">
   <div class="GenshiInput GenshiInput--xs">
     <label class="GenshiInput__label">
       E-mail address

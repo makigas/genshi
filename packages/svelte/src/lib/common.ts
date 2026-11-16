@@ -5,7 +5,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 export type IconComponent = Component<{ class?: string }>;
 
-export type Density = 'gapless' | 'compact' | 'normal' | 'cozy';
+export type Gap = 'none' | 'sm' | 'md' | 'lg' | 'xl';
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
@@ -44,17 +44,8 @@ export function modifierClass<E extends string, P extends string, M extends stri
 	return null;
 }
 
-export function densityClass<T extends string>(element: T, density: Density) {
-	return modifierClass(
-		element,
-		{
-			gapless: 'gapless',
-			compact: 'compact',
-			normal: null,
-			cozy: 'cozy',
-		},
-		density,
-	);
+export function gapClass(gap: Gap | undefined) {
+	return gap && `GsGap--${gap}`;
 }
 
 export function appearanceClass<T extends string>(element: T, appearance: Appearance) {

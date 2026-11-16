@@ -1,0 +1,54 @@
+---
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: Copyright (c) 2026 Dani Rodríguez
+
+const TOKENS = [
+  ["none", "0%"],
+  ["sm", "50%"],
+  ["md", "100%"],
+  ["lg", "150%"],
+  ["xl", "200%"],
+]
+---
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Token</th>
+            <th>CSS class</th>
+            <th>Size</th>
+            <th>Demo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {TOKENS.map(([code, amount]) => (
+          <tr>
+              <td>gap.{code}</td>
+              <td><code>--gs-gap-{code}</code></td>
+              <td><code>.GsGap--{code}</code></td>
+              <td>{amount}</td>
+              <td>
+                  <div class:list={["GsStack", "GsStack--middle", `GsGap--${code}`]}>
+                      <div class="gap"></div>
+                      <div class="gap"></div>
+                  </div>
+              </td>
+          </tr>
+        ))}
+    </tbody>
+</table>
+
+<style>
+.gaps {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.gap {
+    width: 32px;
+    height: 22px;
+    background-color: var(--gs-link-surface);
+    box-shadow: 0 0 0 1px var(--gs-link-text);
+}
+</style>

@@ -82,7 +82,7 @@ Multiple selection lists can be disabled as well.
 
 You can use the `aria-invalid` attribute to set the validity of the component.
 
-<div class="GenshiCols">
+<div class="GsCols">
   <div class="GenshiSelect">
   <label class="GenshiSelect__label">
     Continent
@@ -119,7 +119,7 @@ You can use the `aria-invalid` attribute to set the validity of the component.
 
 ## Sizes
 
-<div class="GenshiStack GenshiStack--v GenshiStack--gapless">
+<div class="GsStack GsStack--v GsGap--none">
   <div class="GenshiSelect GenshiSelect--xs">
     <label class="GenshiSelect__label">
       Continent

@@ -12,7 +12,7 @@ export { default as Select } from './form/Select.svelte';
 export { default as SelectOption } from './form/SelectOption.svelte';
 export { default as TextField } from './form/TextField.svelte';
 export { default as Textarea } from './form/Textarea.svelte';
-export { default as Cols } from './layout/Cols.svelte';
+export { default as Cols } from './layout/cols/index.js';
 export { default as Stack } from './layout/Stack.svelte';
 export { default as Wrapper } from './layout/Wrapper.svelte';
 export { default as Link } from './typography/Link.svelte';

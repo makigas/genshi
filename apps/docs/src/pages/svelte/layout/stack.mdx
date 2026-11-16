@@ -7,10 +7,14 @@ title: Stack
 
 import Example from "../../../examples/svelte/StackExamples.svelte";
 
-Stacks allow to group horizontally or vertically a set of nodes. Note that the elements will keep
-their size. The stack uses flexbox.
+Place a set of elements one next to the other.
 
-To create an stack, use the following code:
+Use `Stack` when you need precise control over the alignment and spacing of similar items, such as
+in toolbars or button groups. Use `Cols` for proportional columns that fill the available width.
+
+## Usage
+
+Group the elements to stack in a `Stack` component.
 
 ```svelte
 <script>
@@ -27,31 +31,57 @@ To create an stack, use the following code:
 
 <Example example="basic" />
 
-## Stack positioning
+Items wrap onto another line when the container runs out of room. Use `Cols` for a single row of
+columns on larger screens. Resize the window to see the buttons wrap in the example below.
 
-Use the `align` prop to set where to locate the elements in the stack. For instance, use
-`align="end"` to move items to the end of the stack.
+<Example example="wrapping" />
 
-<Example example="stack-positioning" />
+## Props
 
-Or center them using `align="center"`:
+| Name        | Type                                         | Purpose                                         |
+| ----------- | -------------------------------------------- | ----------------------------------------------- |
+| `direction` | `"horizontal" \| "vertical"`                 | Main axis direction of the elements.            |
+| `align`     | `"start" \| "end" \| "center" \| "fill"`     | Axis alignment of the elements.                 |
+| `reversed`  | `boolean`                                    | Reverse the order of the nodes in the document. |
+| `baseline`  | `"top" \| "middle" \| "bottom" \| "hexpand"` | Opposite order of the elements.                 |
+| `gap`       | `"none" \| "sm" \| "md" \| "lg" \| "xl"`     | Gap between elements.                           |
 
-<Example example="stack-positioning-2" />
+## Stack alignment
 
-Or place space between each element with `align="between"`:
+Use the `align` prop to position items along the stack direction.
 
-<Example example="stack-positioning-3" />
+- `align="start"` groups items at the start of the container.
+- `align="end"` groups items at the end of the container.
+- `align="center"` centers the group in the container.
+- `align="fill"` spreads items across the container with space between them.
+
+<Example example="alignment" />
 
 ## Stack direction
 
-By default, the stack is horizontal: items are placed horizontally. You can change this with the
-additional modifiers:
+By default, the stack is horizontal and items follow the source order. Use `direction` and
+`reversed` to change the layout.
 
-To make a vertical stack, use the `direction="vertical"` prop:
+- `direction="horizontal"` lays out items horizontally.
+- `direction="horizontal" reversed` reverses the visual order in a horizontal stack.
+- `direction="vertical"` stacks items vertically.
+- `direction="vertical" reversed` reverses the visual order in a vertical stack.
 
-<Example example="stack-direction" />
+<Example example="direction" />
 
-You can also reverse the positioning of the elements by using the `reversed` prop. If you use this
-prop, the order of the elements will be reversed.
+## Stack baseline
 
-<Example example="stack-direction-2" />
+Use the `baseline` prop to align items across the stack direction.
+
+- `baseline="top"` aligns items to the start of the cross axis.
+- `baseline="middle"` centers items on the cross axis.
+- `baseline="bottom"` aligns items to the end of the cross axis.
+- `baseline="hexpand"` stretches items along the cross axis.
+
+<Example example="baseline" />
+
+## Gap size
+
+Use the `gap` prop to set the space between items. The fallback is `md`.
+
+<Example example="gap" />

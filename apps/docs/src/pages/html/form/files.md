@@ -44,7 +44,7 @@ Add the `disabled` attribute to the `<input>` tag to disable the field.
 File controls do not properly support an icon before the element. You can add an icon after the
 element, though.
 
-<div class="GenshiCols GenshiCols--cozy">
+<div class="GsCols GsGap--lg">
   <div class="GenshiInput">
     <label class="GenshiInput__label">
       Hero image
@@ -64,7 +64,7 @@ field.
 If you are going to do this, it is recommended to include an icon, to convey the validation status
 without depending on color.
 
-<div class="GenshiCols GenshiCols--cozy">
+<div class="GsCols GsGap--lg">
   <div class="GenshiInput">
     <label class="GenshiInput__label">
       Avatar
@@ -91,7 +91,7 @@ without depending on color.
 Use the `GenshiInput--xs`, `GenshiInput--sm`, `GenshiInput--lg` and `GenshiInput--lg` to alter its
 size.
 
-<div class="GenshiStack GenshiStack--v GenshiStack--gapless">
+<div class="GsStack GsStack--v GsGap--none">
   <div class="GenshiInput GenshiInput--xs">
     <label class="GenshiInput__label">
       Attachment

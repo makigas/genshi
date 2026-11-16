@@ -10,6 +10,13 @@ $radius: (
   xl: 8px,
   circle: 100%,
 );
+$gaps: (
+  none: 0px,
+  sm: 0.5rem,
+  md: 1rem,
+  lg: 1.5rem,
+  xl: 2rem,
+);
 $font-sizes: (
   xs: 0.75rem,
   sm: 0.9rem,
@@ -21,6 +28,13 @@ $font-sizes: (
 @mixin genshi-tokens {
   @each $size, $value in $radius {
     --gs-radius-#{$size}: #{$value};
+  }
+
+  @each $size, $value in $gaps {
+    --gs-gap-#{$size}: #{$value};
+    .GsGap--#{$size} {
+      --gs-gap: var(--gs-gap-#{$size});
+    }
   }
 
   @each $size, $value in $font-sizes {

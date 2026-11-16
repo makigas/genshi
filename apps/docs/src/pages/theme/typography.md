@@ -59,7 +59,7 @@ Links will use the Genshi style and color by default. For example:
 
 Here are some inline tags supported by Genshi.
 
-<div class="GenshiCols">
+<div class="GsCols">
   <div>
     <p>This text is <strong>strong</strong>.</p>
     <p>This text has <em>emphasis</em>.</p>
@@ -82,7 +82,7 @@ Here are some inline tags supported by Genshi.
 
 Add code blocks with the `<pre>` tag:
 
-<pre><code>&lt;div class="GenshiCols"&gt;
+<pre><code>&lt;div class="GsCols"&gt;
   &lt;div&gt;
     Column...
   &lt;/div&gt;
@@ -96,7 +96,7 @@ Add code blocks with the `<pre>` tag:
 
 However, if you want your code tag to stand out, you will have to add the `.code` tag:
 
-<pre class="code"><code>&lt;div class="GenshiCols"&gt;
+<pre class="code"><code>&lt;div class="GsCols"&gt;
   &lt;div&gt;
     Column...
   &lt;/div&gt;
@@ -122,7 +122,7 @@ should do so using appropriate CSS.
 
 ## Lists
 
-<div class="GenshiCols">
+<div class="GsCols">
   <div>
     <ul>
       <li>Unordered list.</li>

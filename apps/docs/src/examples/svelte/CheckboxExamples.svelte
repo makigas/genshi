@@ -29,7 +29,7 @@
   <Checkbox disabled label="Subscribe to updates" helper="Not available at this moment" />
 {:else if example === "validation"}
   <Stack align="start">
-    <Stack density="compact" direction="vertical">
+    <Stack gap="sm" direction="vertical">
       <Checkbox
         checked
         label="I have read the terms and conditions"
@@ -40,7 +40,7 @@
         helper="Please, read the terms before continuing."
         validation="invalid" />
     </Stack>
-    <Stack density="compact" direction="vertical">
+    <Stack gap="sm" direction="vertical">
       <Checkbox
         checked
         label="Send notification to Discord"

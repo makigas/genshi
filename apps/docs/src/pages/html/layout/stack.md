@@ -6,13 +6,21 @@ layout: ../../../layouts/DocLayout.astro
 title: Stack
 ---
 
-Stacks allow to group horizontally or vertically a set of nodes. Note that the elements will keep
-their size. In other words, this is not a flexbox, but a grid.
+Place a set of elements one next to the other.
 
-To create an stack, use the following code:
+Use these in contexts where you want to place similar elements in a tidy fashion, with precise
+control over the alignment and spacing of elements, such as toolbars or button groups.
+
+The alternative, GsCols, can be used instead when you need to fit the whole container with the
+elements. This is not how the stack works and therefore you shouldn't use this component when you
+need full width.
+
+## Usage
+
+Group the elements to stack in a container with the `GsStack` class.
 
 ```html
-<div class="GenshiStack">
+<div class="GsStack">
   <div>Node</div>
   <div>Node</div>
   <div>Node</div>
@@ -20,20 +28,20 @@ To create an stack, use the following code:
 </div>
 ```
 
-<div class="GenshiStack">
+<div class="GsStack">
   <button type="button" class="GenshiButton">Compose</button>
   <button type="button" class="GenshiButton">Reply</button>
   <button type="button" class="GenshiButton">Reply All</button>
   <button type="button" class="GenshiButton">Forward</button>
 </div>
 
-The stack will wrap nicely if the screen isn't large enough for the items. If you have special
-needs, make sure that you aren't using a stack where you should be actually using a col, which
+The stack will wrap nicely if the screen isn't large enough for the items. If you can't accept
+flowing the elements when the viewport is too small to fit them all, switch to `GsCols`, which
 doesn't have this behaviour.
 
 Change the size of the window to test the behaviour in the following example:
 
-<div class="GenshiStack GenshiStack--compact">
+<div class="GsStack GsGap--sm">
   <button type="button" class="GenshiButton">Button 1</button>
   <button type="button" class="GenshiButton">Button 2</button>
   <button type="button" class="GenshiButton">Button 3</button>
@@ -42,107 +50,159 @@ Change the size of the window to test the behaviour in the following example:
   <button type="button" class="GenshiButton">Button 6</button>
 </div>
 
-## Stack positioning
+## Stack alignment
 
-You can further control the positioning of the stack by pushing the elements to the end of the view,
-using the `GenshiStack--end` modifier:
+You can position the stack elements with one of the following modifiers:
 
-<div class="GenshiStack GenshiStack--end">
-  <button type="button" class="GenshiButton">Compose</button>
-  <button type="button" class="GenshiButton">Reply</button>
-  <button type="button" class="GenshiButton">Reply All</button>
-  <button type="button" class="GenshiButton">Forward</button>
-</div>
+- `GsStack--start`: puts them at the start of the container.
+- `GsStack--end`: puts them at the end of the container.
+- `GsStack--center`: puts them centered in the container.
+- `GsStack--fill`: fill the whole container, with space in between.
 
-Or center the elements evenly with `GenshiStack--center`:
-
-<div class="GenshiStack GenshiStack--center">
-  <button type="button" class="GenshiButton">Compose</button>
-  <button type="button" class="GenshiButton">Reply</button>
-  <button type="button" class="GenshiButton">Reply All</button>
-  <button type="button" class="GenshiButton">Forward</button>
-</div>
-
-Or just place space between the elements with `GenshiStack--between`:
-
-<div class="GenshiStack GenshiStack--between">
-  <button type="button" class="GenshiButton">Compose</button>
-  <button type="button" class="GenshiButton">Reply</button>
-  <button type="button" class="GenshiButton">Reply All</button>
-  <button type="button" class="GenshiButton">Forward</button>
+<div class="GsStack GsStack--v GsGap--lg example">
+    <div class="GsStack GsStack--start">
+    <button type="button" class="GenshiButton">Compose</button>
+    <button type="button" class="GenshiButton">Reply</button>
+    <button type="button" class="GenshiButton">Reply All</button>
+    <button type="button" class="GenshiButton">Forward</button>
+    </div>
+    <div class="GsStack GsStack--center">
+    <button type="button" class="GenshiButton">Compose</button>
+    <button type="button" class="GenshiButton">Reply</button>
+    <button type="button" class="GenshiButton">Reply All</button>
+    <button type="button" class="GenshiButton">Forward</button>
+    </div>
+    <div class="GsStack GsStack--end">
+    <button type="button" class="GenshiButton">Compose</button>
+    <button type="button" class="GenshiButton">Reply</button>
+    <button type="button" class="GenshiButton">Reply All</button>
+    <button type="button" class="GenshiButton">Forward</button>
+    </div>
+    <div class="GsStack GsStack--fill">
+    <button type="button" class="GenshiButton">Compose</button>
+    <button type="button" class="GenshiButton">Reply</button>
+    <button type="button" class="GenshiButton">Reply All</button>
+    <button type="button" class="GenshiButton">Forward</button>
+    </div>
 </div>
 
 ## Stack direction
 
-By default, the stack is horizontal: items are placed horizontally. You can change this with the
-additional modifiers:
+By default, the stack is horizontal: items are placed horizontally and in the order they are input.
+You can change this with the additional modifiers:
 
-- To make a vertical stack, use `GenshiButton--v` (`v` stands for `vertical`).
-- To make an horizontal stack with reverse order, use `GenshiButton--hr`.
-- To make a vertical stack with reverse order, use `GenshiButton--vr`.
+- `GsStack--h`: horizontal mode.
+- `GsStack--hr`: horizontal mode, reversed.
+- `GsStack--v`: vertical mode.
+- `GsStack--vr`: vertical mode, reversed.
 
-<div class="GenshiStack GenshiStack--cozy GenshiStack--center">
-  <div class="GenshiStack GenshiStack--v GenshiStack--cozy">
-    <div class="GenshiStack GenshiStack--inline">
+<div class="GsCols GsGap--lg GsCols--force">
+  <div class="GsStack GsStack--v GsGap--lg">
+    <div class="GsStack GsStack--h GsStack--center">
       <button type="button" class="GenshiButton">1</button>
       <button type="button" class="GenshiButton">2</button>
       <button type="button" class="GenshiButton">3</button>
-      <button type="button" class="GenshiButton">4</button>
     </div>
-    <div class="GenshiStack GenshiStack--inline GenshiStack--hr">
+    <div class="GsStack GsStack--hr GsStack--center">
       <button type="button" class="GenshiButton">1</button>
       <button type="button" class="GenshiButton">2</button>
       <button type="button" class="GenshiButton">3</button>
-      <button type="button" class="GenshiButton">4</button>
     </div>
   </div>
-  <div class="GenshiStack GenshiStack--cozy">
-    <div class="GenshiStack GenshiStack--inline GenshiStack--v">
+  <div class="GsStack GsGap--lg">
+    <div class="GsStack GsStack--v GsStack--center">
       <button type="button" class="GenshiButton">1</button>
       <button type="button" class="GenshiButton">2</button>
       <button type="button" class="GenshiButton">3</button>
-      <button type="button" class="GenshiButton">4</button>
     </div>
-    <div class="GenshiStack GenshiStack--inline GenshiStack--vr">
+    <div class="GsStack GsStack--vr GsStack--center">
       <button type="button" class="GenshiButton">1</button>
       <button type="button" class="GenshiButton">2</button>
       <button type="button" class="GenshiButton">3</button>
-      <button type="button" class="GenshiButton">4</button>
     </div>
+  </div>
+</div>
+
+## Stack baseline
+
+Use the baseline modifiers to align items across the stack direction.
+
+- `GsStack--top` aligns items to the start of the cross axis.
+- `GsStack--middle` centers items on the cross axis.
+- `GsStack--bottom` aligns items to the end of the cross axis.
+- `GsStack--hexpand` stretches items along the cross axis.
+
+<div class="GsStack GsStack--v example baseline-example">
+  <div class="GsStack GsStack--top">
+    <button type="button" class="GenshiButton">Compose</button>
+    <button type="button" class="GenshiButton">Reply</button>
+    <button type="button" class="GenshiButton">Reply All</button>
+    <button type="button" class="GenshiButton">Forward</button>
+  </div>
+  <div class="GsStack GsStack--middle">
+    <button type="button" class="GenshiButton">Compose</button>
+    <button type="button" class="GenshiButton">Reply</button>
+    <button type="button" class="GenshiButton">Reply All</button>
+    <button type="button" class="GenshiButton">Forward</button>
+  </div>
+  <div class="GsStack GsStack--bottom">
+    <button type="button" class="GenshiButton">Compose</button>
+    <button type="button" class="GenshiButton">Reply</button>
+    <button type="button" class="GenshiButton">Reply All</button>
+    <button type="button" class="GenshiButton">Forward</button>
+  </div>
+  <div class="GsStack GsStack--hexpand">
+    <button type="button" class="GenshiButton">Compose</button>
+    <button type="button" class="GenshiButton">Reply</button>
+    <button type="button" class="GenshiButton">Reply All</button>
+    <button type="button" class="GenshiButton">Forward</button>
   </div>
 </div>
 
 ## Gap size
 
-Use an additional modifier to configure the size of the gap:
+Use the standard gap modifier to configure the size of the gap.
 
-- Gap-less (no gap): `GenshiStack--gapless`
-- Compact (0.5rem): `GenshiStack--compact`
-- Cozy (1.5rem): `GenshiStack--cozy`
-
-<div class="GenshiStack GenshiStack--v">
-  <div class="GenshiStack GenshiStack--gapless">
+<div class="GsStack GsStack--v">
+  <div class="GsStack GsGap--none">
     <button type="button" class="GenshiButton">Compose</button>
     <button type="button" class="GenshiButton">Reply</button>
     <button type="button" class="GenshiButton">Reply All</button>
     <button type="button" class="GenshiButton">Forward</button>
   </div>
-  <div class="GenshiStack GenshiStack--compact">
+  <div class="GsStack GsGap--sm">
     <button type="button" class="GenshiButton">Compose</button>
     <button type="button" class="GenshiButton">Reply</button>
     <button type="button" class="GenshiButton">Reply All</button>
     <button type="button" class="GenshiButton">Forward</button>
   </div>
-  <div class="GenshiStack">
+  <div class="GsStack GsGap--md">
     <button type="button" class="GenshiButton">Compose</button>
     <button type="button" class="GenshiButton">Reply</button>
     <button type="button" class="GenshiButton">Reply All</button>
     <button type="button" class="GenshiButton">Forward</button>
   </div>
-  <div class="GenshiStack GenshiStack--cozy">
+  <div class="GsStack GsGap--lg">
+    <button type="button" class="GenshiButton">Compose</button>
+    <button type="button" class="GenshiButton">Reply</button>
+    <button type="button" class="GenshiButton">Reply All</button>
+    <button type="button" class="GenshiButton">Forward</button>
+  </div>
+  <div class="GsStack GsGap--xl">
     <button type="button" class="GenshiButton">Compose</button>
     <button type="button" class="GenshiButton">Reply</button>
     <button type="button" class="GenshiButton">Reply All</button>
     <button type="button" class="GenshiButton">Forward</button>
   </div>
 </div>
+
+<style>
+  .example > div {
+    box-shadow: 0 0 0 1px var(--gs-primary-border);
+    width: 100%;
+  }
+  
+  .baseline-example > div {
+    min-height: 80px;
+  }
+</style>

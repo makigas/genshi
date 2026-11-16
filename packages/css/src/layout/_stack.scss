@@ -1,38 +1,64 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // SPDX-FileCopyrightText: Copyright (c) 2025-2026 Dani Rodríguez
-@use "../theme/responsive";
-@use "../traits";
+@use "sass:map";
 
-.GenshiStack {
+// Stack
+// =====
+// Place a set of elements one next to the other.
+//
+// Use these in contexts where you want to place similar elements in a tidy
+// fashion, with precise control over the alignment and spacing of elements,
+// such as toolbars or button groups.
+//
+// The alternative, GsCols, can be used instead when you need to fit the whole
+// container with the elements. This is not how the stack works and therefore
+// you shouldn't use this component when you need full width.
+
+$stack-align: (
+  start: "start",
+  end: "end",
+  center: "center",
+  fill: "space-between",
+);
+$stack-direction: (
+  h: "row",
+  v: "column",
+  hr: "row-reverse",
+  vr: "column-reverse",
+);
+$stack-baseline: (
+  top: "start",
+  middle: "center",
+  bottom: "end",
+  hexpand: "stretch",
+);
+
+.GsStack {
+  --gs-stack-align: #{map.get($stack-align, "start")};
+  --gs-stack-baseline: #{map.get($stack-baseline, "top")};
+  --gs-stack-direction: #{map.get($stack-direction, "h")};
+
   display: flex;
-  flex-flow: wrap row;
-  gap: 1rem;
-  align-items: start;
-  margin-bottom: 1rem;
+  flex-flow: var(--gs-stack-direction) wrap;
+  align-items: var(--gs-stack-baseline);
+  justify-content: var(--gs-stack-align);
+  gap: var(--gs-gap, var(--gs-gap-md));
 
-  @include traits.gap-density;
-
-  &--end {
-    justify-content: end;
+  @each $token, $alignment in $stack-align {
+    &--#{$token} {
+      --gs-stack-align: #{$alignment};
+    }
   }
 
-  &--between {
-    justify-content: space-between;
+  @each $token, $direction in $stack-direction {
+    &--#{$token} {
+      --gs-stack-direction: #{$direction};
+    }
   }
 
-  &--center {
-    justify-content: space-evenly;
-  }
-
-  &--v {
-    flex-direction: column;
-  }
-
-  &--hr {
-    flex-direction: row-reverse;
-  }
-
-  &--vr {
-    flex-direction: column-reverse;
+  @each $token, $baseline in $stack-baseline {
+    &--#{$token} {
+      --gs-stack-baseline: #{$baseline};
+    }
   }
 }

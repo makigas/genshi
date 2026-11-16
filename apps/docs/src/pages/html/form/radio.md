@@ -115,8 +115,8 @@ However, this can be changed by applying the `--inline` modifier to the `GenshiR
 
 Radio buttons may be valid or invalid.
 
-<div class="GenshiCols GenshiCols--cozy">
-  <div class="GenshiStack GenshiStack--v GenshiStack--gapless">
+<div class="GsCols GsGap--lg">
+  <div class="GsStack GsStack--v GsGap--none">
     <div class="GenshiInput">
       <label class="GenshiInput__label">
         <input type="radio" class="GenshiInput__control" checked name="invalid1" value="a" aria-invalid="false" />
@@ -136,7 +136,7 @@ Radio buttons may be valid or invalid.
       </small>
     </div>
   </div>
-  <div class="GenshiStack GenshiStack--v GenshiStack--gapless">
+  <div class="GsStack GsStack--v GsGap--none">
     <div class="GenshiInput">
       <label class="GenshiInput__label">
         <input type="radio" class="GenshiInput__control" aria-invalid="false" name="invalid2" value="a" />
@@ -188,7 +188,7 @@ fieldset as invalid.
 
 ## Component sizes
 
-<div class="GenshiStack GenshiStack--v GenshiStack--gapless">
+<div class="GsStack GsStack--v GsGap--none">
   <div class="GenshiInput GenshiInput--xs">
     <label class="GenshiInput__label">
       <input type="radio" checked name="update2" value="1" class="GenshiInput__control" />

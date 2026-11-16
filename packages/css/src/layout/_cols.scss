@@ -1,33 +1,48 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // SPDX-FileCopyrightText: Copyright (c) 2025-2026 Dani Rodríguez
-// Columns
-// =======
-// Use this component to render multiple HTML nodes using columns.
 
-// One thing to notice is that flex is always enabled in cols, even in mobile
-// mode. However, on mobile, the flex is set to column to stack vertically
-// the elements. This is done to keep the stacked columns separated by a gap.
-// Otherwise, the last element of a column and the first element of the next
-// column will be too close.
+// Cols
+// ====
+// Split multiple HTML nodes in columns.
+//
+// Each node will have its own column, and every column will take by default a
+// proportional slice of the full available width. On mobile, the elements will
+// be stacked by default anyway.
+//
+// Use this component when you want to present multiple items distributed by
+// column, such as a side by side comparison. Do not use this component if you
+// need to reflow elements, or if you want precise positioning of the elements.
+// That is the job of the GsStack element.
 
-@use "../traits";
 @use "../theme/responsive";
 
-.GenshiCols {
-  --genshi-cols-direction: column;
+.GsCols {
+  --gs-cols-dir: column;
+  --gs-cols-respdir: row;
 
   display: flex;
-  flex-direction: var(--genshi-cols-direction);
+  flex-direction: var(--gs-cols-dir);
+  gap: var(--gs-gap, var(--gs-gap-md));
   width: 100%;
-  margin-bottom: 1rem;
 
   & > * {
-    flex: 1;
+    flex: 1 1 0;
+    min-inline-size: 0;
   }
 
   @include responsive.on-flow {
-    --genshi-cols-direction: row;
+    --gs-cols-dir: var(--gs-cols-respdir);
   }
 
-  @include traits.gap-density;
+  &--force {
+    --gs-cols-dir: var(--gs-cols-respdir);
+  }
+
+  & > &__fit {
+    flex: 0 1 auto;
+  }
+
+  &--reverse {
+    --gs-cols-respdir: row-reverse;
+  }
 }

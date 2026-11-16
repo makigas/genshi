@@ -7,9 +7,17 @@ title: Cols
 
 import Example from "../../../examples/svelte/ColsExamples.svelte";
 
-Cols create equally sized columns to render HTML. The grid gives each child an equal-width column.
+Split multiple HTML nodes in columns.
 
-To create a cols, use the following code:
+Each direct child gets its own column, and every column takes a proportional share of the available
+width by default. On mobile, the elements stack vertically.
+
+Use `Cols` to present multiple items distributed by column, such as a side-by-side comparison. Use
+`Stack` when you need items to wrap or want precise positioning.
+
+## Usage
+
+Group the elements in a `Cols` component.
 
 ```svelte
 <script>
@@ -28,19 +36,68 @@ To create a cols, use the following code:
 
 <Example example="basic" />
 
-## Density
+## Props
 
-To change the density of the columns, you can tweak the gap, via the `density` parameter:
+### Cols
 
-- `density="gapless"` to disable the gap completely.
-- `density="compact"` to use a compact layout.
-- `density="normal"` to use the default gap - this is the default value for the parameter.
-- `density="cozy"` to add more spacing between the elements.
+| Name       | Type                                     | Purpose                                           |
+| ---------- | ---------------------------------------- | ------------------------------------------------- |
+| `force`    | `boolean`                                | Force column layout even on mobile viewports.     |
+| `reversed` | `boolean`                                | Reverse the order of the columns in the document. |
+| `gap`      | `"none" \| "sm" \| "md" \| "lg" \| "xl"` | Gap between columns.                              |
 
-<Example example="density" />
+### Cols.Col
 
-<Example example="density-2" />
+| Name  | Type      | Purpose                                               |
+| ----- | --------- | ----------------------------------------------------- |
+| `fit` | `boolean` | Exclude this column from having a proportional width. |
 
-<Example example="density-3" />
+## Force columns
 
-<Example example="density-4" />
+Cols are rendered as a vertical stack on mobile, where space is limited. Add the `force` prop to
+keep columns side by side at any viewport width.
+
+```svelte
+<Cols force>
+  <div>1</div>
+  <div>2</div>
+</Cols>
+```
+
+Resize the window to see the columns stay side by side at a narrow viewport width.
+
+<Example example="force" />
+
+## Fit element
+
+Use `<Cols.Col fit>` as a direct child to opt it out of taking a proportional width. Combine it with
+other props to create layouts such as sidebars.
+
+```svelte
+<Cols>
+  <Cols.Col fit>Filters</Cols.Col>
+  <div>Results</div>
+</Cols>
+```
+
+<Example example="fit" />
+
+## Reverse
+
+Add the `reversed` prop to reverse the visual order when columns are side by side. Use it with
+`force` to reverse the columns at any viewport width. The vertical layout keeps the source order.
+
+```svelte
+<Cols reversed>
+  <div>1</div>
+  <div>2</div>
+</Cols>
+```
+
+<Example example="reverse" />
+
+## Gap size
+
+Use the `gap` prop to set the space between columns. The fallback is `md`.
+
+<Example example="gap" />

@@ -1,61 +1,39 @@
 <!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 <!-- SPDX-FileCopyrightText: Copyright (c) 2025-2026 Dani Rodríguez -->
 <script lang="ts">
-  import { Cols } from "@makigas/genshi-svelte";
+  import { Cols, Stack } from "@makigas/genshi-svelte";
 
-  let { example }: { example: "basic" | "density" | "density-2" | "density-3" | "density-4" } =
-    $props();
+  let { example }: { example: "basic" | "force" | "fit" | "reverse" | "gap" } = $props();
+  const gaps = ["none", "sm", "md", "lg", "xl"] as const;
 </script>
 
-{#if example === "basic"}
-  <Cols class="boxed">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
+{#snippet columns(count: number)}
+  {#each Array(count) as _, index (index)}
+    <div>{index + 1}</div>
+  {/each}
+{/snippet}
+
+{#if example === "fit"}
+  <Cols class="cols-example">
+    <Cols.Col fit>Filters</Cols.Col>
+    <div>Results</div>
   </Cols>
-{:else if example === "density"}
-  <Cols density="gapless" class="boxed">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-  </Cols>
-{:else if example === "density-2"}
-  <Cols density="compact" class="boxed">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-  </Cols>
-{:else if example === "density-3"}
-  <Cols density="normal" class="boxed">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-  </Cols>
-{:else if example === "density-4"}
-  <Cols density="cozy" class="boxed">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
+{:else if example === "gap"}
+  <Stack direction="vertical">
+    {#each gaps as gap (gap)}
+      <Cols {gap} class="cols-example">
+        {@render columns(6)}
+      </Cols>
+    {/each}
+  </Stack>
+{:else}
+  <Cols force={example === "force"} reversed={example === "reverse"} class="cols-example">
+    {@render columns(example === "force" ? 2 : 6)}
   </Cols>
 {/if}
 
 <style>
-  :global(.boxed) > div {
+  :global(.cols-example > div) {
     border: 1px solid var(--gs-primary-border);
     background-color: var(--gs-primary-surface);
     padding: 2rem;

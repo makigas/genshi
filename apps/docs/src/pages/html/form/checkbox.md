@@ -20,7 +20,7 @@ The checkbox component.
 </div>
 ```
 
-<div class="GenshiStack GenshiStack--v GenshiStack--gapless">
+<div class="GsStack GsStack--v GsGap--none">
   <div class="GenshiInput">
     <label class="GenshiInput__label">
       <input type="checkbox" checked name="subscribe_to_updates" class="GenshiInput__control" />
@@ -54,8 +54,8 @@ The checkbox component.
 
 Checkboxes may also be valid or invalid.
 
-<div class="GenshiCols GenshiCols--cozy">
-  <div class="GenshiStack GenshiStack--v GenshiStack--gapless">
+<div class="GsCols GsGap--lg">
+  <div class="GsStack GsStack--v GsGap--none">
     <div class="GenshiInput">
       <label class="GenshiInput__label">
         <input type="checkbox" class="GenshiInput__control" checked aria-invalid="false" />
@@ -75,7 +75,7 @@ Checkboxes may also be valid or invalid.
       </small>
     </div>
   </div>
-  <div class="GenshiStack GenshiStack--v GenshiStack--gapless">
+  <div class="GsStack GsStack--v GsGap--none">
     <div class="GenshiInput">
       <label class="GenshiInput__label">
         <input type="checkbox" class="GenshiInput__control" aria-invalid="false" />
@@ -99,7 +99,7 @@ Checkboxes may also be valid or invalid.
 
 ## Component sizes
 
-<div class="GenshiStack GenshiStack--v GenshiStack--gapless">
+<div class="GsStack GsStack--v GsGap--none">
   <div class="GenshiInput GenshiInput--xs">
     <label class="GenshiInput__label">
       <input type="checkbox" checked name="subscribe_to_updates" class="GenshiInput__control" />
